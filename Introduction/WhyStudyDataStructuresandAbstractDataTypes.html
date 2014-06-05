@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Why Study Data Structures and Abstract Data Types? &mdash; Problem Solving with Algorithms and Data Structures</title>
+    <title>Для чего изучать структуры и абстрактные типы данных? &mdash; Problem Solving with Algorithms and Data Structures</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -74,7 +74,7 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
     <link rel="next" title="Why Study Algorithms?" href="WhyStudyAlgorithms.html" />
-    <link rel="prev" title="What Is Programming?" href="WhatIsProgramming.html" />
+    <link rel="prev" title="Что такое программирование?" href="WhatIsProgramming.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -265,7 +265,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Why Study Data Structures and Abstract Data Types?</a></li>
+<li><a class="reference internal" href="#">Для чего изучать структуры и абстрактные типы данных?</a></li>
 </ul>
 </ul>
 </li>
@@ -273,7 +273,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
         
         
           
-  <li id="relations-prev" title="Previous Chapter - What Is Programming?" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - Что такое программирование?" data-toggle="tooltip">
     <a href="WhatIsProgramming.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
@@ -310,55 +310,54 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 
 <div class="container" id="main-content">
   
-  <div class="section" id="why-study-data-structures-and-abstract-data-types">
-<h1>Why Study Data Structures and Abstract Data Types?<a class="headerlink" href="#why-study-data-structures-and-abstract-data-types" title="Permalink to this headline">¶</a></h1>
-<p>To manage the complexity of problems and the problem-solving process,
-computer scientists use abstractions to allow them to focus on the “big
-picture” without getting lost in the details. By creating models of the
-problem domain, we are able to utilize a better and more efficient
-problem-solving process. These models allow us to describe the data that
-our algorithms will manipulate in a much more consistent way with
-respect to the problem itself.</p>
-<p>Earlier, we referred to procedural abstraction as a process that hides
-the details of a particular function to allow the user or client to view
-it at a very high level. We now turn our attention to a similar idea,
-that of <strong>data abstraction</strong>. An <strong>abstract data type</strong>, sometimes
-abbreviated <strong>ADT</strong>, is a logical description of how we view the data
-and the operations that are allowed without regard to how they will be
-implemented. This means that we are concerned only with what the data is
-representing and not with how it will eventually be constructed. By
-providing this level of abstraction, we are creating an
-<strong>encapsulation</strong> around the data. The idea is that by encapsulating the
-details of the implementation, we are hiding them from the user’s view.
-This is called <strong>information hiding</strong>.</p>
-<p><a class="reference internal" href="#fig-adt"><em>Figure 2</em></a> shows a picture of what an abstract data type is and how it
-operates. The user interacts with the interface, using the operations
-that have been specified by the abstract data type. The abstract data
-type is the shell that the user interacts with. The implementation is
-hidden one level deeper. The user is not concerned with the details of
-the implementation.</p>
+  <div class="section" id="id1">
+<h1>Для чего изучать структуры и абстрактные типы данных?<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Чтобы управлять сложностью задач и процессом их решения, учёные-информатики
+используют абстракции, позволяющие им сфокусироваться на картине в
+целом, без блуждания в деталях. Создавая модель предметной области, мы
+можем использовать лучший и более эффективный процесс поиска решения.
+Такие модели позволяют нам описывать данные, которыми будут манипулировать
+наши алгоритмы, намного более подходящим для данной задачи образом.</p>
+<p>Ранее мы ссылались на процедурную абстракцию, как на процесс сокрытия
+деталей конкретной функции, чтобы дать пользователю (или клиенту)
+возможность рассматривать её на очень высоком уровне. Сейчас мы
+переключаем наше внимание на аналогичную идею <strong>абстракции данных</strong>.
+<strong>Абстрактный тип данных</strong>, иногда обозначаемый аббревиатурой <strong>АТД</strong>,
+это логическое описание того, как мы рассматриваем данные и разрешённые
+для них операции, безотносительно их реализации. Это значит, что мы
+сосредотачиваемся только на том, что данные из себя представляют, а не
+на том, как они в итоге будут сконструированы. Обеспечивая такой уровень
+абстракции, мы достигаем <strong>инкапсуляции данных</strong>. Идея здесь в том, что,
+инкапсулируя детали реализации, мы скрываем их от взгляда пользователя.
+Это называется <strong>сокрытием информации</strong>.</p>
+<p><a class="reference internal" href="#fig-adt"><em>Рисунок 2</em></a> наглядно демонстрирует, что такое абстрактный
+тип данных и как он работает. Пользователь взаимодействует с интерфейсом,
+используя операции, определённые в абстрактном типе данных. По сути,
+абстрактный тип данных - это оболочка, с которой контактирует клиент.
+Реализация скрыта на уровень ниже, и её детали совершенно не беспокоят
+пользователя.</p>
 <div class="figure align-center" id="fig-adt">
 <a class="reference internal image-reference" href="../_images/adt.png"><img alt="../_images/adt.png" src="../_images/adt.png" /></a>
-<p class="caption">Figure 2: Abstract Data Type</p>
+<p class="caption">Рисунок 2: Абстрактный Тип Данных</p>
 </div>
-<p>The implementation of an abstract data type, often referred to as a
-<strong>data structure</strong>, will require that we provide a physical view of the
-data using some collection of programming constructs and primitive data
-types. As we discussed earlier, the separation of these two perspectives
-will allow us to define the complex data models for our problems without
-giving any indication as to the details of how the model will actually
-be built. This provides an <strong>implementation-independent</strong> view of the
-data. Since there will usually be many different ways to implement an
-abstract data type, this implementation independence allows the
-programmer to switch the details of the implementation without changing
-the way the user of the data interacts with it. The user can remain
-focused on the problem-solving process.</p>
+<p>Реализация абстрактного типа данных, часто называемая <strong>структурой данных</strong>,
+требует, чтобы мы смотрели на данные с физической точки зрения, используя
+при этом некий набор из конструкций программирования и примитивных типов
+данных. Как мы уже обсуждали ранее, разделение этих двух точек зрения
+приводит нас к определению сложных моделей данных для наших задач без
+углубления в подробности того, как эти модели в итоге будут реализованы.
+Так обеспечивается <strong>независящий от реализации</strong> взгляд на данные. Так
+как обычно существует множество различных способов воплотить абстрактный
+тип данных, независимость реализации позволяет программисту изменять её
+детали, не меняя при этом способа взаимодействия пользователя с данными.
+Таким образом, пользователь остаётся сфокусированным только на процессе
+решения задачи.</p>
 </div>
 
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - What Is Programming?' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - Что такое программирование?' data-toggle="tooltip">
     <a href="WhatIsProgramming.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>

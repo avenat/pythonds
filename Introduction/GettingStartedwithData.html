@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Getting Started with Data &mdash; Problem Solving with Algorithms and Data Structures</title>
+    <title>Приступая к работе с данными &mdash; Problem Solving with Algorithms and Data Structures</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -74,7 +74,7 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
     <link rel="next" title="Input and Output" href="InputandOutput.html" />
-    <link rel="prev" title="Review of Basic Python" href="ReviewofBasicPython.html" />
+    <link rel="prev" title="Обзор основ Python" href="ReviewofBasicPython.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -265,8 +265,8 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Getting Started with Data</a><ul>
-<li><a class="reference internal" href="#built-in-atomic-data-types">Built-in Atomic Data Types</a></li>
+<li><a class="reference internal" href="#">Приступая к работе с данными</a><ul>
+<li><a class="reference internal" href="#id2">Встроенные элементарные типы данных</a></li>
 <li><a class="reference internal" href="#built-in-collection-data-types">Built-in Collection Data Types</a></li>
 </ul>
 </li>
@@ -277,7 +277,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Review of Basic Python" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - Обзор основ Python" data-toggle="tooltip">
     <a href="ReviewofBasicPython.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
@@ -314,29 +314,12 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 
 <div class="container" id="main-content">
   
-  <div class="section" id="getting-started-with-data">
-<h1>Getting Started with Data<a class="headerlink" href="#getting-started-with-data" title="Permalink to this headline">¶</a></h1>
-<p>We stated above that Python supports the object-oriented programming
-paradigm. This means that Python considers data to be the focal point of
-the problem-solving process. In Python, as well as in any other
-object-oriented programming language, we define a <strong>class</strong> to be a
-description of what the data look like (the state) and what the data can
-do (the behavior). Classes are analogous to abstract data types because
-a user of a class only sees the state and behavior of a data item. Data
-items are called <strong>objects</strong> in the object-oriented paradigm. An object
-is an instance of a class.</p>
-<div class="section" id="built-in-atomic-data-types">
-<h2>Built-in Atomic Data Types<a class="headerlink" href="#built-in-atomic-data-types" title="Permalink to this headline">¶</a></h2>
-<p>We will begin our review by considering the atomic data types. Python
-has two main built-in numeric classes that implement the integer and
-floating point data types. These Python classes are called <tt class="docutils literal"><span class="pre">int</span></tt> and
-<tt class="docutils literal"><span class="pre">float</span></tt>. The standard arithmetic operations, +, -, *, /, and **
-(exponentiation), can be used with parentheses forcing the order of
-operations away from normal operator precedence. Other very useful
-operations are the remainder (modulo) operator, %, and integer division,
-//. Note that when two integers are divided, the result is a floating
-point. The integer division operator returns the integer portion of the
-quotient by truncating any fractional part.</p>
+  <div class="section" id="id1">
+<h1>Приступая к работе с данными<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Выше мы уже отмечали, что Python поддерживает парадигму объектно-ориентированного программирования. Это означает, что в фокус процесса решения задачи Python ставит данные. В Python, как и в любом другом объектно-ориентированном языке программирования, мы определяем <strong>класс</strong>, являющийся описанием того, как, собственно, выглядят данные (состояние) и что они могут делать (поведение). Классы аналогичны абстрактным типам данных, поскольку пользователь класса видит только состояние и поведение единицы данных. Такие единицы в объектно-ориентированной парадигме называются <strong>объектами</strong>. Объект является экземпляром класса.</p>
+<div class="section" id="id2">
+<h2>Встроенные элементарные типы данных<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Начнём наш обзор с рассмотрения элементарных типов данных. У Python есть два основных встроенных числовых класса, реализующих типы для целых чисел и чисел с плавающей запятой. Они называются <tt class="docutils literal"><span class="pre">int</span></tt> и <tt class="docutils literal"><span class="pre">float</span></tt>. Стандартные арифметические операции +, -, <em>, / и *</em> (возведение в степень) могут использоваться со скобками, задающими порядок операций, отличный от обусловленного обычным приоритетом операторов. Другими полезными операциями являются оператор остатка целочисленного деления % и собственно целочисленного деления //. Обратите внимание, что при делении двух целых чисел результат - число с плавающей запятой. Оператор целочисленного деления возвращает целую часть частного путём отсечения от неё дробной части.</p>
 
 <div id="cont"></div>
 <div id="intro_1" lang="python" class="ac_section alert alert-warning" >
@@ -374,7 +357,7 @@ print 2**100
 
 </div> 
 <div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text">Basic Arithmetic Operators (intro_1)</span> </p>
+<p class="ac_caption"><span class="ac_caption_text">Основные арифметические операторы (intro_1)</span> </p>
 
 <script>
 if ('block' == 'none') {
@@ -424,10 +407,7 @@ else{
 
 </div>
 
-<p>The boolean data type, implemented as the Python <tt class="docutils literal"><span class="pre">bool</span></tt> class, will be
-quite useful for representing truth values. The possible state values
-for a boolean object are <tt class="docutils literal"><span class="pre">True</span></tt> and <tt class="docutils literal"><span class="pre">False</span></tt> with the standard
-boolean operators, <tt class="docutils literal"><span class="pre">and</span></tt>, <tt class="docutils literal"><span class="pre">or</span></tt>, and <tt class="docutils literal"><span class="pre">not</span></tt>.</p>
+<p>Логический тип данных, реализованный в Python как класс <tt class="docutils literal"><span class="pre">bool</span></tt>, будет весьма полезен для представления значений истинности. Возможными значениями для логического объекта являются <tt class="docutils literal"><span class="pre">True</span></tt> и <tt class="docutils literal"><span class="pre">False</span></tt> со стандартными булевыми операторами <tt class="docutils literal"><span class="pre">and</span></tt>, <tt class="docutils literal"><span class="pre">or</span></tt> и <tt class="docutils literal"><span class="pre">not</span></tt>.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="bp">True</span>
 <span class="go">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="bp">False</span>
@@ -440,60 +420,56 @@ boolean operators, <tt class="docutils literal"><span class="pre">and</span></tt
 <span class="go">True</span>
 </pre></div>
 </div>
-<p>Boolean data objects are also used as results for comparison operators
-such as equality (==) and greater than (<span class="math">\(&gt;\)</span>). In addition,
-relational operators and logical operators can be combined together to
-form complex logical questions. <a class="reference internal" href="#tab-relational"><em>Table&nbsp;1</em></a> shows the relational
-and logical operators with examples shown in the session that follows.</p>
+<p>Объекты булева типа данных также используются в качестве результатов операций сравнения, таких как &#8220;равно&#8221; (==) и &#8220;больше, чем&#8221; (<span class="math">\(&gt;\)</span>). Кроме того, операторы отношений и логических операций могут быть скомбинированы вместе в форме сложных логических вопросов. В <a class="reference internal" href="#tab-relational"><em>Таблице&nbsp;1</em></a> показаны операторы отношений и логические операторы вместе с примерами их использования.</p>
 <table border="1" class="docutils" id="tab-relational">
-<caption><strong>Table 1: Relational and Logical Operators</strong></caption>
+<caption><strong>Таблица 1: Логические операторы и операторы отношений</strong></caption>
 <colgroup>
 <col width="25%" />
 <col width="13%" />
 <col width="61%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head"><strong>Operation Name</strong></th>
-<th class="head"><strong>Operator</strong></th>
-<th class="head"><strong>Explanation</strong></th>
+<tr class="row-odd"><th class="head"><strong>Название</strong></th>
+<th class="head"><strong>Оператор</strong></th>
+<th class="head"><strong>Описание</strong></th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>less than</td>
+<tr class="row-even"><td>меньше</td>
 <td><span class="math">\(&lt;\)</span></td>
-<td>Less than operator</td>
+<td>Оператор &#8220;меньше&#8221;</td>
 </tr>
-<tr class="row-odd"><td>greater than</td>
+<tr class="row-odd"><td>больше</td>
 <td><span class="math">\(&gt;\)</span></td>
-<td>Greater than operator</td>
+<td>Оператор &#8220;больше&#8221;</td>
 </tr>
-<tr class="row-even"><td>less than or equal</td>
+<tr class="row-even"><td>меньше или равно</td>
 <td><span class="math">\(&lt;=\)</span></td>
-<td>Less than or equal to operator</td>
+<td>Оператор &#8220;меньше или равно&#8221;</td>
 </tr>
-<tr class="row-odd"><td>greater than or equal</td>
+<tr class="row-odd"><td>больше или равно</td>
 <td><span class="math">\(&gt;=\)</span></td>
-<td>Greater than or equal to operator</td>
+<td>Оператор &#8220;больше или равно&#8221;</td>
 </tr>
-<tr class="row-even"><td>equal</td>
+<tr class="row-even"><td>равно</td>
 <td><span class="math">\(==\)</span></td>
-<td>Equality operator</td>
+<td>Оператор равенства</td>
 </tr>
-<tr class="row-odd"><td>not equal</td>
+<tr class="row-odd"><td>не равно</td>
 <td><span class="math">\(!=\)</span></td>
-<td>Not equal operator</td>
+<td>Оператор неравенства</td>
 </tr>
-<tr class="row-even"><td>logical and</td>
+<tr class="row-even"><td>логическое &#8220;и&#8221;</td>
 <td><span class="math">\(and\)</span></td>
-<td>Both operands True for result to be True</td>
+<td>Если оба операнда истинны, то результат тоже истина</td>
 </tr>
-<tr class="row-odd"><td>logical or</td>
+<tr class="row-odd"><td>логическое &#8220;или&#8221;</td>
 <td><span class="math">\(or\)</span></td>
-<td>One or the other operand is True for the result to be True</td>
+<td>Если хотя бы один из операндов истина, то результат - истина</td>
 </tr>
-<tr class="row-even"><td>logical not</td>
+<tr class="row-even"><td>логическое &#8220;не&#8221;</td>
 <td><span class="math">\(not\)</span></td>
-<td>Negates the truth value, False becomes True, True becomes False</td>
+<td>Инвертирует значение: False становится True и наоборот</td>
 </tr>
 </tbody>
 </table>
@@ -576,16 +552,8 @@ else{
 
 </div>
 
-<p>Identifiers are used in programming languages as names. In Python,
-identifiers start with a letter or an underscore (_), are case
-sensitive, and can be of any length. Remember that it is always a good
-idea to use names that convey meaning so that your program code is
-easier to read and understand.</p>
-<p>A Python variable is created when a name is used for the first time on
-the left-hand side of an assignment statement. Assignment statements
-provide a way to associate a name with a value. The variable will hold a
-reference to a piece of data and not the data itself. Consider the
-following session:</p>
+<p>В качестве имён в языках программирования используются идентификаторы. В Python они начинаются с буквы или подчёркивания (_), чувствительны к регистру и могут быть произвольной длины. Не забывайте о том, что давать имена, отражающие смысл переменной, - всегда здравая идея, делающая ваш код более простым для чтения и понимания.</p>
+<p>В Python переменная создаётся при первом использовании имени с левой стороны от оператора присваивания. Присваивание предоставляет возможность ассоциировать имя со значением. Переменная будет содержать ссылку на кусочек данных, а не сами данные. Рассмотрим следующий код:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">theSum</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">theSum</span>
 <span class="go">0</span>
@@ -597,25 +565,14 @@ following session:</p>
 <span class="go">True</span>
 </pre></div>
 </div>
-<p>The assignment statement <tt class="docutils literal"><span class="pre">theSum</span> <span class="pre">=</span> <span class="pre">0</span></tt> creates a variable called
-<tt class="docutils literal"><span class="pre">theSum</span></tt> and lets it hold the reference to the data object <tt class="docutils literal"><span class="pre">0</span></tt> (see
-<a class="reference internal" href="#fig-assignment1"><em>Figure 3</em></a>). In general, the right-hand side of the assignment
-statement is evaluated and a reference to the resulting data object is
-“assigned” to the name on the left-hand side. At this point in our
-example, the type of the variable is integer as that is the type of the
-data currently being referred to by <tt class="docutils literal"><span class="pre">thesum</span></tt>. If the type of the data
-changes (see <a class="reference internal" href="#fig-assignment2"><em>Figure 4</em></a>), as shown above with the boolean
-value <tt class="docutils literal"><span class="pre">True</span></tt>, so does the type of the variable (<tt class="docutils literal"><span class="pre">thesum</span></tt> is now of
-the type boolean). The assignment statement changes the reference being
-held by the variable. This is a dynamic characteristic of Python. The
-same variable can refer to many different types of data.</p>
+<p>Присваивание <tt class="docutils literal"><span class="pre">theSum</span> <span class="pre">=</span> <span class="pre">0</span></tt> создаёт переменную с именем <tt class="docutils literal"><span class="pre">theSum</span></tt>, содержащую ссылку на объект данных <tt class="docutils literal"><span class="pre">0</span></tt> (см. <a class="reference internal" href="#fig-assignment1"><em>Рисунок 3</em></a>). В целом, когда правая часть оператора присваивания вычисляется, ссылка на результат &#8220;назначается&#8221; имени в левой части. В данный момент в нашем примере тип переменной - целое, и это тип данных, на которые сейчас ссылается &lt;code&gt;theSum&lt;/code&gt;. Если он изменится (см. <a class="reference internal" href="#fig-assignment2"><em>Рисунок 4</em></a>), как показано выше, на булево значение <tt class="docutils literal"><span class="pre">True</span></tt>, то изменится и тип переменной (сейчас <tt class="docutils literal"><span class="pre">theSum</span></tt> имеет тип <tt class="docutils literal"><span class="pre">bool</span></tt>). Оператор присваивания меняет ссылки, хранящиеся в переменной. Это динамическая характеристика Python. Одна и та же переменная может ссылаться на различные типы данных.</p>
 <div class="figure align-center" id="fig-assignment1">
 <img alt="../_images/assignment1.png" src="../_images/assignment1.png" />
-<p class="caption">Figure 3: Variables Hold References to Data Objects</p>
+<p class="caption">Рисунок 3: Переменная содержит ссылку на объект данных</p>
 </div>
 <div class="figure align-center" id="fig-assignment2">
 <img alt="../_images/assignment2.png" src="../_images/assignment2.png" />
-<p class="caption">Figure 4: Assignment Changes the Reference</p>
+<p class="caption">Рисунок 4: Присваивание изменяет ссылку</p>
 </div>
 </div>
 <div class="section" id="built-in-collection-data-types">
@@ -1559,7 +1516,7 @@ else{
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - Review of Basic Python' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - Обзор основ Python' data-toggle="tooltip">
     <a href="ReviewofBasicPython.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
