@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Control Structures &mdash; Problem Solving with Algorithms and Data Structures</title>
+    <title>Управляющие структуры &mdash; Problem Solving with Algorithms and Data Structures</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -74,7 +74,7 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
     <link rel="next" title="Exception Handling" href="ExceptionHandling.html" />
-    <link rel="prev" title="Input and Output" href="InputandOutput.html" />
+    <link rel="prev" title="Ввод и вывод" href="InputandOutput.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -265,7 +265,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Control Structures</a></li>
+<li><a class="reference internal" href="#">Управляющие структуры</a></li>
 </ul>
 </ul>
 </li>
@@ -273,7 +273,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Input and Output" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - Ввод и вывод" data-toggle="tooltip">
     <a href="InputandOutput.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
@@ -310,15 +310,15 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 
 <div class="container" id="main-content">
   
-  <div class="section" id="control-structures">
-<h1>Control Structures<a class="headerlink" href="#control-structures" title="Permalink to this headline">¶</a></h1>
-<p>As we noted earlier, algorithms require two important control
-structures: iteration and selection. Both of these are supported by
-Python in various forms. The programmer can choose the statement that is
-most useful for the given circumstance.</p>
-<p>For iteration, Python provides a standard <tt class="docutils literal"><span class="pre">while</span></tt> statement and a very
-powerful <tt class="docutils literal"><span class="pre">for</span></tt> statement. The while statement repeats a body of code
-as long as a condition is true. For example,</p>
+  <div class="section" id="id1">
+<h1>Управляющие структуры<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Как мы уже отмечали ранее, алгоритмам требуются две важные управляющие
+структуры: для итераций и для выбора. Обе они поддерживаются в Python
+в различных формах. Программисты могут выбирать тот способ, который
+будет более уместным в данных обстоятельствах.</p>
+<p>Для итераций Python предлагает стандартный оператор <tt class="docutils literal"><span class="pre">while</span></tt> и очень
+мощный оператор <tt class="docutils literal"><span class="pre">for</span></tt>. Первый из них повторяет тело кода столько раз,
+сколько остаётся истинным его условие. Например:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello, world&quot;</span><span class="p">)</span>
@@ -332,28 +332,27 @@ as long as a condition is true. For example,</p>
 <span class="go">Hello, world</span>
 </pre></div>
 </div>
-<p>prints out the phrase “Hello, world” five times. The condition on the
-<tt class="docutils literal"><span class="pre">while</span></tt> statement is evaluated at the start of each repetition. If the
-condition is <tt class="docutils literal"><span class="pre">True</span></tt>, the body of the statement will execute. It is
-easy to see the structure of a Python <tt class="docutils literal"><span class="pre">while</span></tt> statement due to the
-mandatory indentation pattern that the language enforces.</p>
-<p>The <tt class="docutils literal"><span class="pre">while</span></tt> statement is a very general purpose iterative structure
-that we will use in a number of different algorithms. In many cases, a
-compound condition will control the iteration. A fragment such as</p>
+<p>напечатает фразу “Hello, world” пять раз. Условие оператора <tt class="docutils literal"><span class="pre">while</span></tt>
+вычисляется каждый раз в начале итерации. Если оно истинно, то будет
+выполнено тело оператора. Структуру оператора Python <tt class="docutils literal"><span class="pre">while</span></tt> легко
+увидеть через обязательные шаблоны отступов, которые навязывает этот язык.</p>
+<p>Оператор <tt class="docutils literal"><span class="pre">while</span></tt> представляет собой итерационную структуру очень
+общего назначения, которая может использоваться во многих различных
+алгоритмах. Очень часто итерации контролирует составное условие. Код</p>
 <div class="highlight-python"><div class="highlight"><pre>while counter &lt;= 10 and not done:
 ...
 </pre></div>
 </div>
-<p>would cause the body of the statement to be executed only in the case
-where both parts of the condition are satisfied. The value of the
-variable <tt class="docutils literal"><span class="pre">counter</span></tt> would need to be less than or equal to 10 and the
-value of the variable <tt class="docutils literal"><span class="pre">done</span></tt> would need to be <tt class="docutils literal"><span class="pre">False</span></tt> (<tt class="docutils literal"><span class="pre">not</span> <span class="pre">False</span></tt>
-is <tt class="docutils literal"><span class="pre">True</span></tt>) so that <tt class="docutils literal"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">True</span></tt> results in <tt class="docutils literal"><span class="pre">True</span></tt>.</p>
-<p>Even though this type of construct is very useful in a wide variety of
-situations, another iterative structure, the <tt class="docutils literal"><span class="pre">for</span></tt> statement, can be
-used in conjunction with many of the Python collections. The <tt class="docutils literal"><span class="pre">for</span></tt>
-statement can be used to iterate over the members of a collection, so
-long as the collection is a sequence. So, for example,</p>
+<p>приведёт к тому, что тело оператора будет вычисляться только в случае,
+когда будут выполнены обе части условия. Значение переменной <tt class="docutils literal"><span class="pre">counter</span></tt>
+должно быть меньше или равно 10, а значение переменной <tt class="docutils literal"><span class="pre">done</span></tt> быть равным
+<tt class="docutils literal"><span class="pre">False</span></tt> (<tt class="docutils literal"><span class="pre">not</span> <span class="pre">False</span></tt> - это <tt class="docutils literal"><span class="pre">True</span></tt>), чтобы результат <tt class="docutils literal"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">True</span></tt>
+тоже был истиной.</p>
+<p>Несмотря на то, что этот тип конструкции широко используется во многих
+ситуациях, другая итеративная структура - оператор <tt class="docutils literal"><span class="pre">for</span></tt> - может быть
+использована в связке со многими коллекциями Python. <tt class="docutils literal"><span class="pre">for</span></tt> можно
+пользоваться для итерации по членам коллекции, если она является
+последовательной. Например,</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">]:</span>
 <span class="gp">... </span>   <span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 <span class="gp">...</span>
@@ -364,11 +363,11 @@ long as the collection is a sequence. So, for example,</p>
 <span class="go">5</span>
 </pre></div>
 </div>
-<p>assigns the variable <tt class="docutils literal"><span class="pre">item</span></tt> to be each successive value in the list
-[1,3,6,2,5]. The body of the iteration is then executed. This works for
-any collection that is a sequence (lists, tuples, and strings).</p>
-<p>A common use of the <tt class="docutils literal"><span class="pre">for</span></tt> statement is to implement definite iteration
-over a range of values. The statement</p>
+<p>присваивает переменной <tt class="docutils literal"><span class="pre">item</span></tt> каждое последующее значение из списка
+[1,3,6,2,5], после чего выполняется тело цикла. Этот способ работает
+для любой последовательной коллекции (списков, кортежей и строк).</p>
+<p>Общее применение оператора <tt class="docutils literal"><span class="pre">for</span></tt> заключается в том, чтобы реализовывать
+определённую итерацию на диапазоне значений. Оператор</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
 <span class="gp">... </span>   <span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">...</span>
@@ -380,15 +379,14 @@ over a range of values. The statement</p>
 <span class="go">&gt;&gt;&gt;</span>
 </pre></div>
 </div>
-<p>will perform the <tt class="docutils literal"><span class="pre">print</span></tt> function five times. The <tt class="docutils literal"><span class="pre">range</span></tt> function
-will return a range object representing the sequence 0,1,2,3,4 and each
-value will be assigned to the variable <tt class="docutils literal"><span class="pre">item</span></tt>. This value is then
-squared and printed.</p>
-<p>The other very useful version of this iteration structure is used to
-process each character of a string. The following code fragment iterates
-over a list of strings and for each string processes each character by
-appending it to a list. The result is a list of all the letters in all
-of the words.</p>
+<p>выполнит функцию <tt class="docutils literal"><span class="pre">print</span></tt> пять раз. Функция <tt class="docutils literal"><span class="pre">range</span></tt> вернёт диапазон,
+представляющий собой последовательность 0, 1, 2, 3, 4, и каждое из этих
+значений будет присвоено переменной <tt class="docutils literal"><span class="pre">item</span></tt>. Затем они будут возведены
+в квадрат и напечатаны.</p>
+<p>Другой очень полезной версией использования этой итерационной структуры
+является обработка каждого символа строки. Следующий фрагмент кода проходит
+по списку строк, обрабатывая каждый символ в них присоединением его к списку.
+Результатом будет список символов из всех слов.</p>
 
 <div id="cont"></div>
 <div id="intro_8" lang="python" class="ac_section alert alert-warning" >
@@ -421,7 +419,7 @@ print(letterlist)
 
 </div> 
 <div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text">Processing Each Character in a List of Strings (intro_8)</span> </p>
+<p class="ac_caption"><span class="ac_caption_text">Обработка каждого символа в список строк (intro_8)</span> </p>
 
 <script>
 if ('block' == 'none') {
@@ -471,25 +469,24 @@ else{
 
 </div>
 
-<p>Selection statements allow programmers to ask questions and then, based
-on the result, perform different actions. Most programming languages
-provide two versions of this useful construct: the <tt class="docutils literal"><span class="pre">ifelse</span></tt> and the
-<tt class="docutils literal"><span class="pre">if</span></tt>. A simple example of a binary selection uses the <tt class="docutils literal"><span class="pre">ifelse</span></tt>
-statement.</p>
+<p>Операторы выбора позволяют программистам задавать вопросы и выполнять
+различные действия, основываясь на результате. Большинство языков
+программирования предоставляют две версии полезных конструкций: <tt class="docutils literal"><span class="pre">ifelse</span></tt>
+и <tt class="docutils literal"><span class="pre">if</span></tt>. Простой пример бинарного использования оператора <tt class="docutils literal"><span class="pre">ifelse</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="n">n</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
    <span class="k">print</span><span class="p">(</span><span class="s">&quot;Sorry, value is negative&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
    <span class="k">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>In this example, the object referred to by <tt class="docutils literal"><span class="pre">n</span></tt> is checked to see if it
-is less than zero. If it is, a message is printed stating that it is
-negative. If it is not, the statement performs the <tt class="docutils literal"><span class="pre">else</span></tt> clause and
-computes the square root.</p>
-<p>Selection constructs, as with any control construct, can be nested so
-that the result of one question helps decide whether to ask the next.
-For example, assume that <tt class="docutils literal"><span class="pre">score</span></tt> is a variable holding a reference to
-a score for a computer science test.</p>
+<p>В этом примере объект, ссылающийся на <tt class="docutils literal"><span class="pre">n</span></tt>, проверяется на условие
+&#8220;меньше нуля&#8221;. Если это так, то печатается сообщение, что <tt class="docutils literal"><span class="pre">n</span></tt> -
+отрицательное число. В противном случае выполняется ветка else,
+в которой вычисляется квадратный корень.</p>
+<p>Конструкции выбора, как и любые управляющие конструкции, могут быть
+вложенными, чтобы результат одного ответа помогал определить, как
+ответить на следующий. Например, предположим, что <tt class="docutils literal"><span class="pre">score</span></tt> - это
+переменная, содержащая ссылку на результат теста по информатике.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">:</span>
    <span class="k">print</span><span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
@@ -505,19 +502,19 @@ a score for a computer science test.</p>
             <span class="k">print</span><span class="p">(</span><span class="s">&#39;F&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This fragment will classify a value called <tt class="docutils literal"><span class="pre">score</span></tt> by printing the
-letter grade earned. If the score is greater than or equal to 90, the
-statement will print <tt class="docutils literal"><span class="pre">A</span></tt>. If it is not (<tt class="docutils literal"><span class="pre">else</span></tt>), the next question
-is asked. If the score is greater than or equal to 80 then it must be
-between 80 and 89 since the answer to the first question was false. In
-this case print <tt class="docutils literal"><span class="pre">B</span></tt> is printed. You can see that the Python
-indentation pattern helps to make sense of the association between
-<tt class="docutils literal"><span class="pre">if</span></tt> and <tt class="docutils literal"><span class="pre">else</span></tt> without requiring any additional syntactic elements.</p>
-<p>An alternative syntax for this type of nested selection uses the
-<tt class="docutils literal"><span class="pre">elif</span></tt> keyword. The <tt class="docutils literal"><span class="pre">else</span></tt> and the next <tt class="docutils literal"><span class="pre">if</span></tt> are combined so as to
-eliminate the need for additional nesting levels. Note that the final
-<tt class="docutils literal"><span class="pre">else</span></tt> is still necessary to provide the default case if all other
-conditions fail.</p>
+<p>Этот фрагмент будет классифицировать значение под названием <tt class="docutils literal"><span class="pre">score</span></tt>
+с помощью вывода на печать буквы заработанной оценки. Если счёт выше
+или равен 90, то оператор напечатает <tt class="docutils literal"><span class="pre">А</span></tt>. Если это не так (<tt class="docutils literal"><span class="pre">else</span></tt>),
+то проверяется следующее условие. Если счёт выше или равен 80, то он
+должен лежать между 80 и 89, поскольку ответ на предыдущий вопрос был
+ложью. В этом случае печатается <tt class="docutils literal"><span class="pre">В</span></tt>. Вы можете видеть, как шаблоны
+отступов в Python помогают ассоциировать <tt class="docutils literal"><span class="pre">if</span></tt> и <tt class="docutils literal"><span class="pre">else</span></tt> без
+использования дополнительных синтаксических элементов.</p>
+<p>Альтернативным синтаксисом для вложенного таким образом выбора является
+использование ключевого слова <tt class="docutils literal"><span class="pre">elif</span></tt>. <tt class="docutils literal"><span class="pre">else</span></tt> и последующий <tt class="docutils literal"><span class="pre">if</span></tt>
+комбинируются, исключая таким образом дополнительные уровни. Заметьте,
+что конечное <tt class="docutils literal"><span class="pre">else</span></tt> по-прежнему необходимо, чтобы предоставить случай
+по умолчанию, если все остальные условия не выполняться.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">:</span>
    <span class="k">print</span><span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span><span class="mi">80</span><span class="p">:</span>
@@ -530,23 +527,22 @@ conditions fail.</p>
    <span class="k">print</span><span class="p">(</span><span class="s">&#39;F&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Python also has a single way selection construct, the <tt class="docutils literal"><span class="pre">if</span></tt> statement.
-With this statement, if the condition is true, an action is performed.
-In the case where the condition is false, processing simply continues on
-to the next statement after the <tt class="docutils literal"><span class="pre">if</span></tt>. For example, the following
-fragment will first check to see if the value of a variable <tt class="docutils literal"><span class="pre">n</span></tt> is
-negative. If it is, then it is modified by the absolute value function.
-Regardless, the next action is to compute the square root.</p>
+<p>Python также имеет вариант единичной конструкции выбора - оператор <tt class="docutils literal"><span class="pre">if</span></tt>.
+Для него, если условие истинно, то происходит выполнение действия. В
+противном случае процесс обработки просто переходит на следующий после
+<tt class="docutils literal"><span class="pre">if</span></tt> опеатор. Например, в коде ниже сначала проверится, является ли
+отрицательным значение <tt class="docutils literal"><span class="pre">n</span></tt>. Если это так, то его заменяют абсолютным
+значением. В любом случае, следующее действие - это извлечение квадратного корня.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="n">n</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
    <span class="n">n</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="admonition-self-check admonition">
-<p class="first admonition-title">Self Check</p>
-<p>Test your understanding of what we have covered so far by trying the following
-exercise.  Modify the code from Activecode 8 so that the final list only contains
-a single copy of each letter.</p>
+<div class="admonition- admonition">
+<p class="first admonition-title">Самопроверка</p>
+<p>Проверьте своё понимание изложенного материала, попробовав решить следующее упражнение.
+Измените код из Activecode 8 таким образом, чтобы итоговый список содержал только
+единичные копии каждой буквы.</p>
 
 <div id="cont"></div>
 <div id="self_check_1" lang="python" class="ac_section alert alert-warning" >
@@ -648,12 +644,12 @@ else{
 	  });
    });
 </script>
-<p>Returning to lists, there is an alternative method for creating a list
-that uses iteration and selection constructs. The is known as a <strong>list
-comprehension</strong>. A list comprehension allows you to easily create a list
-based on some processing or selection criteria. For example, if we would
-like to create a list of the first 10 perfect squares, we could use a
-<tt class="docutils literal"><span class="pre">for</span></tt> statement:</p>
+<p>Возвращаясь к спискам, приведём альтернативный метод создания списка с
+использованием итерационных конструкций и конструкций выбора. Он известен,
+как <strong>генератор списков</strong>, и позволяет легко создавать списки, основываясь
+на неких критериях обработки и выбора. Например, если мы захотим получить
+список из первых десяти идеальных квадратов, то можем использовать оператор
+<tt class="docutils literal"><span class="pre">for</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sqlist</span><span class="o">=</span><span class="p">[]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
 <span class="go">         sqlist.append(x*x)</span>
@@ -663,38 +659,38 @@ like to create a list of the first 10 perfect squares, we could use a
 <span class="go">&gt;&gt;&gt;</span>
 </pre></div>
 </div>
-<p>Using a list comprehension, we can do this in one step as</p>
+<p>А с использованием генератора списков это делается одной строкой:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sqlist</span><span class="o">=</span><span class="p">[</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sqlist</span>
 <span class="go">[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</span>
 <span class="go">&gt;&gt;&gt;</span>
 </pre></div>
 </div>
-<p>The variable <tt class="docutils literal"><span class="pre">x</span></tt> takes on the values 1 through 10 as specified by the
-<tt class="docutils literal"><span class="pre">for</span></tt> construct. The value of <tt class="docutils literal"><span class="pre">x*x</span></tt> is then computed and added to
-the list that is being constructed. The general syntax for a list
-comprehension also allows a selection criteria to be added so that only
-certain items get added. For example,</p>
+<p>Переменная <tt class="docutils literal"><span class="pre">x</span></tt> принимает значения от 1 до 10, как это определено для
+конструкции <tt class="docutils literal"><span class="pre">for</span></tt>. Затем вычисляется величина <tt class="docutils literal"><span class="pre">x*x</span></tt> и присоединяется
+к создаваемому списку. Общий синтаксис генераторов списков также разрешает
+использовать критерий выбора, чтобы добавлялись только подходящие элементы.
+Например,</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sqlist</span><span class="o">=</span><span class="p">[</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">%</span><span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sqlist</span>
 <span class="go">[1, 9, 25, 49, 81]</span>
 <span class="go">&gt;&gt;&gt;</span>
 </pre></div>
 </div>
-<p>This list comprehension constructed a list that only contained the
-squares of the odd numbers in the range from 1 to 10. Any sequence that
-supports iteration can be used within a list comprehension to construct
-a new list.</p>
+<p>Этот генератор списков создаёт список, содержащий квадраты только нечётных
+чисел в диапазоне от 1 до 10. Совместно с генераторами списков можно
+использовать любые поддерживающие итерации последовательности.
+Результатом будет новый список.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;[ch.upper() for ch in &#39;comprehension&#39; if ch not in &#39;aeiou&#39;]</span>
 <span class="go">[&#39;C&#39;, &#39;M&#39;, &#39;P&#39;, &#39;R&#39;, &#39;H&#39;, &#39;N&#39;, &#39;S&#39;, &#39;N&#39;]</span>
 <span class="go">&gt;&gt;&gt;</span>
 </pre></div>
 </div>
-<div class="admonition-self-check admonition">
-<p class="first admonition-title">Self Check</p>
-<p>Test your understanding of list comprehensions by redoing Activecode 8
-using list comprehensions.  For an extra challence, see if you can figure out
-how to remove the duplicates.</p>
+<div class="admonition- admonition">
+<p class="first admonition-title">Самопроверка</p>
+<p>Проверьте своё понимание генераторов списков, переделав Activecode 8
+с их использованием. Дополнительное задание: придумайте,
+как можно удалить дубликаты.</p>
 
 <div id="cont"></div>
 <div id="self_check_2" lang="python" class="ac_section alert alert-warning" >
@@ -801,7 +797,7 @@ else{
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - Input and Output' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - Ввод и вывод' data-toggle="tooltip">
     <a href="InputandOutput.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
