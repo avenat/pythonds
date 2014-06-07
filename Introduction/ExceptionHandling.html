@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Exception Handling &mdash; Problem Solving with Algorithms and Data Structures</title>
+    <title>Обработка исключений &mdash; Problem Solving with Algorithms and Data Structures</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -73,7 +73,7 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
-    <link rel="next" title="Defining Functions" href="DefiningFunctions.html" />
+    <link rel="next" title="Определение функций" href="DefiningFunctions.html" />
     <link rel="prev" title="Управляющие структуры" href="ControlStructures.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -265,7 +265,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Exception Handling</a></li>
+<li><a class="reference internal" href="#">Обработка исключений</a></li>
 </ul>
 </ul>
 </li>
@@ -279,7 +279,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Defining Functions' data-toggle="tooltip" >
+  <li id="relations-next" title='Next Chapter - Определение функций' data-toggle="tooltip" >
     <a href="DefiningFunctions.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
@@ -310,36 +310,35 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 
 <div class="container" id="main-content">
   
-  <div class="section" id="exception-handling">
-<h1>Exception Handling<a class="headerlink" href="#exception-handling" title="Permalink to this headline">¶</a></h1>
-<p>There are two types of errors that typically occur when writing
-programs. The first, known as a syntax error, simply means that the
-programmer has made a mistake in the structure of a statement or
-expression. For example, it is incorrect to write a for statement and
-forget the colon.</p>
+  <div class="section" id="id1">
+<h1>Обработка исключений<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Существует два типа ошибок, которые обычно возникают при написании
+программы. Первый известен как синтаксические ошибки, когда программист
+ошибается в написании структуры оператора или выражения. Вот пример
+неправильно написанного оператора и пропущенного двоеточия:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="go">SyntaxError: invalid syntax (&lt;pyshell#61&gt;, line 1)</span>
 </pre></div>
 </div>
-<p>In this case, the Python interpreter has found that it cannot complete
-the processing of this instruction since it does not conform to the
-rules of the language. Syntax errors are usually more frequent when you
-are first learning a language.</p>
-<p>The other type of error, known as a logic error, denotes a situation
-where the program executes but gives the wrong result. This can be due
-to an error in the underlying algorithm or an error in your translation
-of that algorithm. In some cases, logic errors lead to very bad
-situations such as trying to divide by zero or trying to access an item
-in a list where the index of the item is outside the bounds of the list.
-In this case, the logic error leads to a runtime error that causes the
-program to terminate. These types of runtime errors are typically called
-<strong>exceptions</strong>.</p>
-<p>Most of the time, beginning programmers simply think of exceptions as
-fatal runtime errors that cause the end of execution. However, most
-programming languages provide a way to deal with these errors that will
-allow the programmer to have some type of intervention if they so
-choose. In addition, programmers can create their own exceptions if they
-detect a situation in the program execution that warrants it.</p>
+<p>В этом случае интерпретатор Python находит, что не может выполнить эту
+инструкцию до тех пор, пока она не будет удовлетворять языковым правилам.
+Чаще всего синтаксические ошибки встречаются, когда вы только начинаете
+изучать новый язык программирования.</p>
+<p>Другой тип ошибок, известный как логические ошибки, имеет отношение к тем
+ситуациям, когда код выполняется, но выдаёт неправильный результат. Причиной
+может быть ошибка в основном алгоритме или неверная трансляция вами этого
+алгоритма. В некоторых случаях логические ошибки приводят к очень плохим
+ситуациям: делению на нуль или попыткам получить доступ к элементу списка,
+чей индекс выходит за списковые границы. В таком случае логическая ошибка
+влечёт за собой ошибку времени выполнения, которая вызывает завершение
+программы. Ошибки такого типа во время выполнения обычно называют <strong>исключениями</strong>.</p>
+<p>Большую часть времени начинающие программисты думают об исключениях, как
+о фатальных ошибках во время выполнения, приводящих экстренному завершению
+программы. Однако, большинство языков программирования предоставляют способ
+иметь дело с такого рода ошибками, что позволяет программисту вмешиваться в
+процесс, если он того пожелает. Более того, программисты могут создавать
+свои собственные исключения, если они обнаруживают в программе ситуацию,
+когда это может быть оправдано.</p>
 <p>When an exception occurs, we say that it has been “raised.” You can
 “handle” the exception that has been raised by using a <tt class="docutils literal"><span class="pre">try</span></tt>
 statement. For example, consider the following session that asks the
@@ -348,6 +347,14 @@ math library. If the user enters a value that is greater than or equal
 to 0, the print will show the square root. However, if the user enters a
 negative value, the square root function will report a <tt class="docutils literal"><span class="pre">ValueError</span></tt>
 exception.</p>
+<p>Когда возникает исключение, мы говорим, что оно &#8220;вызывается&#8221;. Вы можете
+&#8220;обработать&#8221; вызванное исключение, используя оператор &lt;code&gt;try&lt;/code&gt;.
+Рассмотрим, например, следующий код, который запрашивает у пользователя
+целое число, а затем вызывает функцию извлечения квадратного корня из
+математической библиотеки. Если пользователь вводит значение, которое
+больше или равно нулю, <tt class="docutils literal"><span class="pre">print</span></tt> выведет квадратный корень. Однако, если
+пользователь введёт отрицательное значение, то функция квадратного корня
+сообщит об исключении <tt class="docutils literal"><span class="pre">ValueError</span></tt>.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">anumber</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">&quot;Please enter an integer &quot;</span><span class="p">))</span>
 <span class="go">Please enter an integer -23</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">anumber</span><span class="p">))</span>
@@ -358,10 +365,10 @@ exception.</p>
 <span class="go">&gt;&gt;&gt;</span>
 </pre></div>
 </div>
-<p>We can handle this exception by calling the print function from within a
-<tt class="docutils literal"><span class="pre">try</span></tt> block. A corresponding <tt class="docutils literal"><span class="pre">except</span></tt> block “catches” the exception
-and prints a message back to the user in the event that an exception
-occurs. For example:</p>
+<p>Мы можем обработать это исключение, вызвав функцию <tt class="docutils literal"><span class="pre">print</span></tt> внутри <tt class="docutils literal"><span class="pre">try</span></tt>
+блока. Соответствующий <tt class="docutils literal"><span class="pre">except</span></tt>-блок &#8220;поймает&#8221; исключение и напечатает
+сообщение пользователю, в котором сообщит о возникновении исключения.
+Например:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
 <span class="go">       print(math.sqrt(anumber))</span>
 <span class="go">    except:</span>
@@ -375,18 +382,18 @@ occurs. For example:</p>
 <span class="go">&gt;&gt;&gt;</span>
 </pre></div>
 </div>
-<p>will catch the fact that an exception is raised by <tt class="docutils literal"><span class="pre">sqrt</span></tt> and will
-instead print the messages back to the user and use the absolute value
-to be sure that we are taking the square root of a non-negative number.
-This means that the program will not terminate but instead will continue
-on to the next statements.</p>
-<p>It is also possible for a programmer to cause a runtime exception by
-using the <tt class="docutils literal"><span class="pre">raise</span></tt> statement. For example, instead of calling the
-square root function with a negative number, we could have checked the
-value first and then raised our own exception. The code fragment below
-shows the result of creating a new <tt class="docutils literal"><span class="pre">RuntimeError</span></tt> exception. Note that
-the program would still terminate but now the exception that caused the
-termination is something explicitly created by the programmer.</p>
+<p>поймает тот факт, что при выполнении <tt class="docutils literal"><span class="pre">sqrt</span></tt> возникло исключение,
+напечатает сообщение об этом пользователю и возьмёт абсолютное значение
+аргумента, чтобы быть уверенным в его неотрицательности. Всё вместе это
+означает, что программа не завершится, а продолжит выполнение следующих
+операторов.</p>
+<p>У программиста также существует возможность искусственно вызвать исключение
+во время выполнения, используя оператор <tt class="docutils literal"><span class="pre">raise</span></tt>. Например, вместо вызова
+функции квадратного корня для отрицательного числа, мы прежде можем проверить
+значение и вызвать наше собственное исключение. Код ниже показывает результат
+создания нового исключения <tt class="docutils literal"><span class="pre">RuntimeError</span></tt>. Заметьте, что программа по-прежнему
+будет завершаться, но теперь исключением, вызывающим такое поведение, является
+нечто явно созданное программистом.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">anumber</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
 <span class="gp">... </span>   <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&quot;You can&#39;t use a negative number&quot;</span><span class="p">)</span>
 <span class="gp">... </span><span class="k">else</span><span class="p">:</span>
@@ -398,9 +405,10 @@ termination is something explicitly created by the programmer.</p>
 <span class="go">&gt;&gt;&gt;</span>
 </pre></div>
 </div>
-<p>There are many kinds of exceptions that can be raised in addition to the
-<tt class="docutils literal"><span class="pre">RuntimeError</span></tt> shown above. See the Python reference manual for a list
-of all the available exception types and for how to create your own.</p>
+<p>Существует множество типов исключений кроме показанного выше <tt class="docutils literal"><span class="pre">RuntimeError</span></tt>
+, которые могут быть вызваны. Смотрите ссылку на руководство по Python, где
+представлены список всех доступных типов исключений и инструкция по созданию
+своих собственных.</p>
 </div>
 
 
@@ -413,12 +421,12 @@ of all the available exception types and for how to create your own.</p>
   </li>
   <a class="navLinkBg" id="navLinkBgLeft"  href="ControlStructures.html" ></a>
   
-  <li id="relations-next" class="navLink" title='Next Section - Defining Functions' data-toggle="tooltip" >
+  <li id="relations-next" class="navLink" title='Next Section - Определение функций' data-toggle="tooltip" >
     <a href="DefiningFunctions.html" >
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="DefiningFunctions.html" >Next Section - Defining Functions</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="DefiningFunctions.html" >Next Section - Определение функций</a>
 
 <script type="text/javascript">
 

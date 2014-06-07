@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Defining Functions &mdash; Problem Solving with Algorithms and Data Structures</title>
+    <title>Определение функций &mdash; Problem Solving with Algorithms and Data Structures</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -74,7 +74,7 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
     <link rel="next" title="Object-Oriented Programming in Python: Defining Classes" href="ObjectOrientedProgramminginPythonDefiningClasses.html" />
-    <link rel="prev" title="Exception Handling" href="ExceptionHandling.html" />
+    <link rel="prev" title="Обработка исключений" href="ExceptionHandling.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -265,7 +265,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Defining Functions</a></li>
+<li><a class="reference internal" href="#">Определение функций</a></li>
 </ul>
 </ul>
 </li>
@@ -273,7 +273,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Exception Handling" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - Обработка исключений" data-toggle="tooltip">
     <a href="ExceptionHandling.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
@@ -310,15 +310,14 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 
 <div class="container" id="main-content">
   
-  <div class="section" id="defining-functions">
-<h1>Defining Functions<a class="headerlink" href="#defining-functions" title="Permalink to this headline">¶</a></h1>
-<p>The earlier example of procedural abstraction called upon a Python
-function called <tt class="docutils literal"><span class="pre">sqrt</span></tt> from the math module to compute the square
-root. In general, we can hide the details of any computation by defining
-a function. A function definition requires a name, a group of
-parameters, and a body. It may also explicitly return a value. For
-example, the simple function defined below returns the square of the
-value you pass into it.</p>
+  <div class="section" id="id1">
+<h1>Определение функций<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Предыдущим примером вызова процедурной абстракции Python была функция
+<tt class="docutils literal"><span class="pre">sqrt</span></tt> для вычисления квадратного корня из модуля <tt class="docutils literal"><span class="pre">math</span></tt>. Вообще говоря,
+мы можем скрывать детали любого вычисления с помощью определения функции.
+Оно требует её имя, группу параметров и тело. Также функция может явно
+возвращать значение. Например, простая функция, определённая ниже, возвращает
+квадрат значения, которое вы в неё помещаете.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
 <span class="gp">... </span>   <span class="k">return</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span>
 <span class="gp">...</span>
@@ -329,31 +328,29 @@ value you pass into it.</p>
 <span class="go">&gt;&gt;&gt;</span>
 </pre></div>
 </div>
-<p>The syntax for this function definition includes the name, <tt class="docutils literal"><span class="pre">square</span></tt>,
-and a parenthesized list of formal parameters. For this function, <tt class="docutils literal"><span class="pre">n</span></tt>
-is the only formal parameter, which suggests that <tt class="docutils literal"><span class="pre">square</span></tt> needs only
-one piece of data to do its work. The details, hidden “inside the box,”
-simply compute the result of <tt class="docutils literal"><span class="pre">n**2</span></tt> and return it. We can invoke or
-call the <tt class="docutils literal"><span class="pre">square</span></tt> function by asking the Python environment to
-evaluate it, passing an actual parameter value, in this case, <tt class="docutils literal"><span class="pre">3</span></tt>.
-Note that the call to <tt class="docutils literal"><span class="pre">square</span></tt> returns an integer that can in turn be
-passed to another invocation.</p>
-<p>We could implement our own square root function by using a well-known
-technique called “Newton’s Method.” Newton’s Method for approximating
-square roots performs an iterative computation that converges on the
-correct value. The equation
-<span class="math">\(newguess = \frac {1}{2} * (oldguess + \frac {n}{oldguess})\)</span>
-takes a value <span class="math">\(n\)</span> and repeatedly guesses the square root by
-making each <span class="math">\(newguess\)</span> the <span class="math">\(oldguess\)</span> in the subsequent
-iteration. The initial guess used here is <span class="math">\(\frac {n}{2}\)</span>.
-<a class="reference internal" href="#lst-root"><em>Listing 1</em></a> shows a function definition that accepts a value
-<span class="math">\(n\)</span> and returns the square root of <span class="math">\(n\)</span> after making 20
-guesses. Again, the details of Newton’s Method are hidden inside the
-function definition and the user does not have to know anything about
-the implementation to use the function for its intended purpose.
-<a class="reference internal" href="#lst-root"><em>Listing 1</em></a> also shows the use of the # character as a comment
-marker. Any characters that follow the # on a line are ignored.</p>
-<p id="lst-root"><strong>Listing 1</strong></p>
+<p>Синтаксис этого определения функции включает имя (<tt class="docutils literal"><span class="pre">square</span></tt>) и заключённый
+в скобки список формальных параметров. Для этой функции <tt class="docutils literal"><span class="pre">n</span></tt> - всего лишь
+формальный параметр, предполагающий, что <tt class="docutils literal"><span class="pre">square</span></tt> необходим только один
+кусочек данных для её работы. Детали, скрытые &#8220;внутри ящика&#8221;, просто вычисляют
+результат <tt class="docutils literal"><span class="pre">n**2</span></tt> и возвращают его. Мы можем вызвать функцию <tt class="docutils literal"><span class="pre">square</span></tt>,
+попросив среду разработки Python вычислить её и поместив внутрь актуальное
+значение параметра (<tt class="docutils literal"><span class="pre">3</span></tt> в данном случае). Заметьте, что вызов <tt class="docutils literal"><span class="pre">square</span></tt>
+возвращает целое, которое потом может быть передано другому вызову.</p>
+<p>Мы можем реализовать нашу собственную функцию извлечения квадратного корня,
+используя хорошо известную технологию под названием &#8220;метод Ньютона&#8221;. Этот
+метод получения приблизительного значения квадратного корня представляет
+собой итеративное вычисление, сходящееся к правильному значению. Уравнение
+<span class="math">\(newguess = \frac {1}{2} * (oldguess + \frac {n}{oldguess})\)</span> принимает
+значение <span class="math">\(n\)</span> и в цикле угадывает квадратный корень, создавая каждую
+<span class="math">\(newguess\)</span> из <span class="math">\(oldguess\)</span>, полученной на предыдущей итерации.
+Первоначальная догадка равна <span class="math">\(\frac {n}{2}\)</span>. <a class="reference internal" href="#lst-root"><em>Листинг 1</em></a>
+демонстрирует определение функции, принимающей значение <span class="math">\(n\)</span> и возвращающей
+его квадратный корень после совершения 20 предположений. Ещё раз, детали метода
+Ньютона скрыты внутри определения функции, и пользователь ничего не знает о
+реализации, когда использует функцию по её прямому назначению.
+<a class="reference internal" href="#lst-root"><em>Листинг 1</em></a> также показывает использование символа <tt class="docutils literal"><span class="pre">#</span></tt> как
+маркера комментария. Любые символы, идущие в строке после <tt class="docutils literal"><span class="pre">#</span></tt>, игнорируются.</p>
+<p id="lst-root"><strong>Листинг 1</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">squareroot</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">root</span> <span class="o">=</span> <span class="n">n</span><span class="o">/</span><span class="mi">2</span>    <span class="c">#initial guess will be 1/2 of n</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
@@ -369,16 +366,31 @@ marker. Any characters that follow the # on a line are ignored.</p>
 <span class="go">&gt;&gt;&gt;</span>
 </pre></div>
 </div>
-<div class="admonition-self-check admonition">
-<p class="first admonition-title">Self Check</p>
-<p>Here&#8217;s a self check that really covers everything so far.  You may have
-heard of the infinite monkey theorem?  The theorem states that a monkey hitting keys at random on a typewriter keyboard for an infinite amount of time will almost surely type a given text, such as the complete works of William Shakespeare.  Well, suppose we replace a monkey with a Python function.  How long do you think it would take for a Python function to generate just one sentence of Shakespeare?  The sentence we&#8217;ll shoot for is:  &#8220;methinks it is like a weasel&#8221;</p>
-<p>You&#8217;re not going to want to run this one in the browser, so fire up your favorite Python IDE.  The way we&#8217;ll simulate this is to write a function that generates a string that is 27 characters long by choosing random letters from the 26 letters in the alphabet plus the space.  We&#8217;ll write another function that will score each generated string by comparing the randomly generated string to the goal.</p>
-<p class="last">A third function will repeatedly call generate and score, then if 100% of the letters are correct we are done.  If the letters are not correct then we will generate a whole new string.To make it easier to follow your program&#8217;s progress this third function should print out the best string generated so far and its score every 1000 tries.</p>
+<div class="admonition- admonition">
+<p class="first admonition-title">Самопроверка</p>
+<p>Это задание охватывает весь изложенный выше материал. Вы когда-нибудь слышали
+о теореме о бесконечных обезьянах? В ней утверждается, что если обезьяна будет
+беспорядочно нажимать на клавиши клавиатуры бесконечное количество времени, то
+рано или поздно напечатает заданный текст (например, полное собрание сочинений
+Вильяма Шекспира). Что ж, предположим, что мы заменяем обезьяну функцией на Python.
+Как вы думаете, сколько она потратит времени на генерирование хотя бы одного
+предложения из Шекспира? Выберем для проверки фразу “methinks it is like a weasel”.</p>
+<p>Вам наверняка не захочется запускать эту программу в браузере, так что запускайте
+вашу любимую Python IDE. Симуляция будет выполняться с помощью функции, генерирующей
+строку из двадцати семи символов путём случайного выбора из двадцати шести букв
+алфавита + пробел. Мы напишем ещё одну функцию, которая будет оценивать каждую
+сгенерированную строку, сравнивая её с целью.</p>
+<p class="last">Третья функция будет циклично вызывать генератор и оценщик до тех пор, пока не
+совпадёт 100% букв. В случае несовпадения будет генерироваться новая строка целиком.
+Чтобы было проще следить за прогрессом программы, эта третья функция должна печатать
+лучшую из уже сгенерированных строк и её оценку каждые тысячу попыток.</p>
 </div>
-<div class="admonition-self-check-challenge admonition">
-<p class="first admonition-title">Self Check Challenge</p>
-<p class="last">See if you can improve upon the program in the self check by keeping letters that are correct and only modifying one character in the best string so far.  This is a type of algorithm in the class of &#8216;hill climbing&#8217; algorithms, that is we only keep the result if it is better than the previous one.</p>
+<div class="admonition- admonition">
+<p class="first admonition-title">Усложнённое задание для самопроверки</p>
+<p class="last">Посмотрите, сможете ли вы улучшить программу из самопроверки, сохраняя правильно
+стоящие буквы и изменяя всего лишь одну из оставшихся, чтобы приблизиться к результату.
+Алгоритм такого типа относится к классу &#8220;поиска с восхождением к вершине&#8221;, в которых
+результат сохраняется только в том случае, если он лучше предыдущего.</p>
 </div>
 <div id="monkeyvid" class="video_popup" >
 <video controls preload="none"  poster="../_static/videothumb.png">
@@ -408,7 +420,7 @@ heard of the infinite monkey theorem?  The theorem states that a monkey hitting 
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - Exception Handling' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - Обработка исключений' data-toggle="tooltip">
     <a href="ExceptionHandling.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
