@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>An Anagram Detection Example &mdash; Problem Solving with Algorithms and Data Structures</title>
+    <title>Пример с определением анаграммы &mdash; Problem Solving with Algorithms and Data Structures</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -74,7 +74,7 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
     <link rel="next" title="Performance of Python Data Structures" href="PerformanceofPythonDataStructures.html" />
-    <link rel="prev" title="Big-O Notation" href="BigONotation.html" />
+    <link rel="prev" title="Нотация “большое О”" href="BigONotation.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -265,11 +265,11 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">An Anagram Detection Example</a><ul>
-<li><a class="reference internal" href="#solution-1-checking-off">Solution 1: Checking Off</a></li>
-<li><a class="reference internal" href="#solution-2-sort-and-compare">Solution 2: Sort and Compare</a></li>
-<li><a class="reference internal" href="#solution-3-brute-force">Solution 3: Brute Force</a></li>
-<li><a class="reference internal" href="#solution-4-count-and-compare">Solution 4: Count and Compare</a></li>
+<li><a class="reference internal" href="#">Пример с определением анаграммы</a><ul>
+<li><a class="reference internal" href="#id2">Решение 1: Метки</a></li>
+<li><a class="reference internal" href="#id3">Решение 2: Сортируй и сравнивай</a></li>
+<li><a class="reference internal" href="#id4">Решение 3: Полный перебор</a></li>
+<li><a class="reference internal" href="#id5">Решение 4: Подсчитывай и сравнивай</a></li>
 </ul>
 </li>
 </ul>
@@ -279,7 +279,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Big-O Notation" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - Нотация &#8220;большое О&#8221;" data-toggle="tooltip">
     <a href="BigONotation.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
@@ -316,28 +316,27 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 
 <div class="container" id="main-content">
   
-  <div class="section" id="an-anagram-detection-example">
-<h1>An Anagram Detection Example<a class="headerlink" href="#an-anagram-detection-example" title="Permalink to this headline">¶</a></h1>
-<p>A good example problem for showing algorithms with different orders of
-magnitude is the classic anagram detection problem for strings. One
-string is an anagram of another if the second is simply a rearrangement
-of the first. For example, <tt class="docutils literal"><span class="pre">'heart'</span></tt> and <tt class="docutils literal"><span class="pre">'earth'</span></tt> are anagrams. The
-strings <tt class="docutils literal"><span class="pre">'python'</span></tt> and <tt class="docutils literal"><span class="pre">'typhon'</span></tt> are anagrams as well. For the sake
-of simplicity, we will assume that the two strings in question are of
-equal length and that they are made up of symbols from the set of 26
-lowercase alphabetic characters. Our goal is to write a boolean function
-that will take two strings and return whether they are anagrams.</p>
-<div class="section" id="solution-1-checking-off">
-<h2>Solution 1: Checking Off<a class="headerlink" href="#solution-1-checking-off" title="Permalink to this headline">¶</a></h2>
-<p>Our first solution to the anagram problem will check to see that each
-character in the first string actually occurs in the second. If it is
-possible to “checkoff” each character, then the two strings must be
-anagrams. Checking off a character will be accomplished by replacing it
-with the special Python value <tt class="docutils literal"><span class="pre">None</span></tt>. However, since strings in Python
-are immutable, the first step in the process will be to convert the
-second string to a list. Each character from the first string can be
-checked against the characters in the list and if found, checked off by
-replacement. <a class="reference internal" href="#lst-anagramsolution"><em>ActiveCode 4</em></a> shows this function.</p>
+  <div class="section" id="id1">
+<h1>Пример с определением анаграммы<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Хорошим примером для демонстрации алгоритмов с разным порядком величины
+является классическая задача для строк - определения анаграммы. Одна
+строка является анаграммой другой, если вторая получается простой
+перестановкой букв первой. Например, <tt class="docutils literal"><span class="pre">'heart'</span></tt> и <tt class="docutils literal"><span class="pre">'earth'</span></tt> - это
+анаграммы. Как и строки <tt class="docutils literal"><span class="pre">'python'</span></tt> и <tt class="docutils literal"><span class="pre">'typhon'</span></tt>. Для простоты будем
+полагать, что обе заданные строки одной длины и составлены из набора
+символов в 26 букв в нижнем регистре. Нашел целью будет написать булеву
+функцию, принимающую две строки и возвращающую ответ - являются ли они
+анаграммами?</p>
+<div class="section" id="id2">
+<h2>Решение 1: Метки<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Наше первое решение задачи про анаграмму будет проверять, входит ли
+каждый из символов первой строки во вторую. Если все символы будут
+&#8220;отмечены&#8221;, то строки являются анаграммами. &#8220;Пометка&#8221; символа будет
+выполняться с помощью замены его на специальное значение Python <tt class="docutils literal"><span class="pre">None</span></tt>.
+Однако, поскольку строки в Python иммутабельны, первым шагом обработки будет
+конвертирование второй строки в список. Каждый символ из первой строки может
+быть сверен с элементами списка и, если будет найден, отмечен оговоренной заменой.
+<a class="reference internal" href="#lst-anagramsolution"><em>ActiveCode 4</em></a> демонстрирует эту функцию.</p>
 
 <div id="cont"></div>
 <div id="active5" lang="python" class="ac_section alert alert-warning" >
@@ -389,7 +388,7 @@ print(anagramSolution1('abcd','dcba'))
 
 </div> 
 <div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text">Checking Off (active5)</span> </p>
+<p class="ac_caption"><span class="ac_caption_text">Метки (active5)</span> </p>
 
 <script>
 if ('block' == 'none') {
@@ -439,28 +438,29 @@ else{
 
 </div>
 
-<p>To analyze this algorithm, we need to note that each of the <em>n</em>
-characters in <tt class="docutils literal"><span class="pre">s1</span></tt> will cause an iteration through up to <em>n</em>
-characters in the list from <tt class="docutils literal"><span class="pre">s2</span></tt>. Each of the <em>n</em> positions in the
-list will be visited once to match a character from <tt class="docutils literal"><span class="pre">s1</span></tt>. The number
-of visits then becomes the sum of the integers from 1 to <em>n</em>. We stated
-earlier that this can be written as</p>
+<p>При анализе алгоритма нам стоит отметить, что каждый из <em>n</em> символов в
+<tt class="docutils literal"><span class="pre">s1</span></tt> вызовет цикл по <em>n</em> символам списка, полученного из <tt class="docutils literal"><span class="pre">s2</span></tt>.
+Каждая из <em>n</em> позиций списка будет посещена единожды, чтобы проверить её
+на соответствие <tt class="docutils literal"><span class="pre">s1</span></tt>. Количество таких посещений будет выражено через
+сумму целых чисел от 1 до <em>n</em>. Ранее мы уже говорили, что это может быть
+записано как</p>
 <div class="math">
 \[\begin{split}\sum_{i=1}^{n} i &amp;= \frac {n(n+1)}{2} \\
                  &amp;= \frac {1}{2}n^{2} + \frac {1}{2}n\end{split}\]</div>
-<p>As <span class="math">\(n\)</span> gets large, the <span class="math">\(n^{2}\)</span> term will dominate the
-<span class="math">\(n\)</span> term and the <span class="math">\(\frac {1}{2}\)</span> can be ignored.
-Therefore, this solution is <span class="math">\(O(n^{2})\)</span>.</p>
+<p>С увеличением <span class="math">\(n\)</span> слагаемое <span class="math">\(n^{2}\)</span> начнёт доминировать,
+так что <span class="math">\(n\)</span> и <span class="math">\(\frac {1}{2}\)</span> можно проигнорировать.
+Таким образом, решение является <span class="math">\(O(n^{2})\)</span></p>
 </div>
-<div class="section" id="solution-2-sort-and-compare">
-<h2>Solution 2: Sort and Compare<a class="headerlink" href="#solution-2-sort-and-compare" title="Permalink to this headline">¶</a></h2>
-<p>Another solution to the anagram problem will make use of the fact that
-even though <tt class="docutils literal"><span class="pre">s1</span></tt> and <tt class="docutils literal"><span class="pre">s2</span></tt> are different, they are anagrams only if
-they consist of exactly the same characters. So, if we begin by sorting
-each string alphabetically, from a to z, we will end up with the same
-string if the original two strings are anagrams. <a class="reference internal" href="#lst-ana2"><em>ActiveCode 5</em></a> shows
-this solution. Again, in Python we can use the built-in <tt class="docutils literal"><span class="pre">sort</span></tt> method
-on lists by simply converting each string to a list at the start.</p>
+<div class="section" id="id3">
+<h2>Решение 2: Сортируй и сравнивай<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Следующие решение задачи про анаграммы будет использовать тот факт, что
+даже если <tt class="docutils literal"><span class="pre">s1</span></tt> и <tt class="docutils literal"><span class="pre">s2</span></tt> различны, они будут анаграммами только если
+состоят из одинаковых символов. Следовательно, если мы отсортируем каждую
+строку в алфавитном порядке от <tt class="docutils literal"><span class="pre">a</span></tt> до <tt class="docutils literal"><span class="pre">z</span></tt>, то в итоге получим одинаковые
+строки (если, конечно, <tt class="docutils literal"><span class="pre">s1</span></tt> и <tt class="docutils literal"><span class="pre">s2</span></tt> - анаграммы). Это решение показано
+в <a class="reference internal" href="#lst-ana2"><em>ActiveCode 5</em></a>. Опять же, в Python мы можем использовать
+встроенный метод <tt class="docutils literal"><span class="pre">sort</span></tt>, для списков, полученных в начале функции конвертацией
+каждой строки.</p>
 
 <div id="cont"></div>
 <div id="active6" lang="python" class="ac_section alert alert-warning" >
@@ -506,7 +506,7 @@ print(anagramSolution2('abcde','edcba'))
 
 </div> 
 <div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text">Sort and Compare (active6)</span> </p>
+<p class="ac_caption"><span class="ac_caption_text">Сортируй и сравнивай (active6)</span> </p>
 
 <script>
 if ('block' == 'none') {
@@ -556,46 +556,43 @@ else{
 
 </div>
 
-<p>At first glance you may be tempted to think that this algorithm is
-<span class="math">\(O(n)\)</span>, since there is one simple iteration to compare the <em>n</em>
-characters after the sorting process. However, the two calls to the
-Python <tt class="docutils literal"><span class="pre">sort</span></tt> method are not without their own cost. As we will see in
-a later chapter, sorting is typically either <span class="math">\(O(n^{2})\)</span> or
-<span class="math">\(O(n\log n)\)</span>, so the sorting operations dominate the iteration.
-In the end, this algorithm will have the same order of magnitude as that
-of the sorting process.</p>
+<p>В первый момент вы можете подумать, что этот алгоритм имеет <span class="math">\(O(n)\)</span>,
+поскольку у него есть всего одна простая итерация для сравнения <em>n</em> символов
+после сортировки. Однако, два вызова Python-метода <tt class="docutils literal"><span class="pre">sort</span></tt> не проходят
+даром. Как мы увидим в следующих главах, сортировка обычно имеет
+<span class="math">\(O(n^{2})\)</span> или <span class="math">\(O(n\log n)\)</span>, так что эта операция доминирует над
+циклом. В итоге алгоритм будет иметь тот же порядок операций, что и
+сортировочные вычисления.</p>
 </div>
-<div class="section" id="solution-3-brute-force">
-<h2>Solution 3: Brute Force<a class="headerlink" href="#solution-3-brute-force" title="Permalink to this headline">¶</a></h2>
-<p>A <strong>brute force</strong> technique for solving a problem typically tries to
-exhaust all possibilities. For the anagram detection problem, we can
-simply generate a list of all possible strings using the characters from
-<tt class="docutils literal"><span class="pre">s1</span></tt> and then see if <tt class="docutils literal"><span class="pre">s2</span></tt> occurs. However, there is a difficulty
-with this approach. When generating all possible strings from <tt class="docutils literal"><span class="pre">s1</span></tt>,
-there are <em>n</em> possible first characters, <span class="math">\(n-1\)</span> possible
-characters for the second position, <span class="math">\(n-2\)</span> for the third, and so
-on. The total number of candidate strings is
-<span class="math">\(n*(n-1)*(n-2)*...*3*2*1\)</span>, which is <span class="math">\(n!\)</span>. Although some
-of the strings may be duplicates, the program cannot know this ahead of
-time and so it will still generate <span class="math">\(n!\)</span> different strings.</p>
-<p>It turns out that <span class="math">\(n!\)</span> grows even faster than <span class="math">\(2^{n}\)</span> as
-<em>n</em> gets large. In fact, if <tt class="docutils literal"><span class="pre">s1</span></tt> were 20 characters long, there would
-be <span class="math">\(20!=2,432,902,008,176,640,000\)</span> possible candidate strings.
-If we processed one possibility every second, it would still take us
-77,146,816,596 years to go through the entire list. This is probably not
-going to be a good solution.</p>
+<div class="section" id="id4">
+<h2>Решение 3: Полный перебор<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Техника <strong>полного перебора</strong> для решения задач обычно используется, когда
+все другие возможности уже исчерпаны. Для задачи определения анаграммы мы
+можем просто сгенерировать список всех возможных строк из символов <tt class="docutils literal"><span class="pre">s1</span></tt>
+и посмотреть, входит ли в него <tt class="docutils literal"><span class="pre">s2</span></tt>. Но в данном подходе есть одна
+закавырка: при генерации всех возможных строк из <tt class="docutils literal"><span class="pre">s1</span></tt> есть <em>n</em> возможных
+первых символов, <span class="math">\(n-1\)</span> возможных вторых символов и так далее. Отсюда
+общее количество строк-кандидатов будет <span class="math">\(n*(n-1)*(n-2)*...*3*2*1\)</span>,
+что есть <span class="math">\(n!\)</span>. Несмотря на то, что некоторые строки будут дублироваться,
+программа об этом заранее знать не будет, поэтому всё равно сгенерирует
+<span class="math">\(n!\)</span> различных строк.</p>
+<p>Решение <span class="math">\(n!\)</span> с увеличением <em>n</em> возрастает быстрее, чем даже
+<span class="math">\(2^{n}\)</span>. Фактически, при длине <tt class="docutils literal"><span class="pre">s1</span></tt> в 20 символов мы получим
+<span class="math">\(20!=2,432,902,008,176,640,000\)</span> возможных строк-кандидатов. Если мы
+будем обрабатывать одну вероятность каждую секунду, то на весь список уйдёт
+77 146 816 596 лет. Похоже, это совсем не хорошее решение.</p>
 </div>
-<div class="section" id="solution-4-count-and-compare">
-<h2>Solution 4: Count and Compare<a class="headerlink" href="#solution-4-count-and-compare" title="Permalink to this headline">¶</a></h2>
-<p>Our final solution to the anagram problem takes advantage of the fact
-that any two anagrams will have the same number of a’s, the same number
-of b’s, the same number of c’s, and so on. In order to decide whether
-two strings are anagrams, we will first count the number of times each
-character occurs. Since there are 26 possible characters, we can use a
-list of 26 counters, one for each possible character. Each time we see a
-particular character, we will increment the counter at that position. In
-the end, if the two lists of counters are identical, the strings must be
-anagrams. <a class="reference internal" href="#lst-ana4"><em>ActiveCode 6</em></a> shows this solution.</p>
+<div class="section" id="id5">
+<h2>Решение 4: Подсчитывай и сравнивай<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Наше последнее решения задачи про анаграммы воспользуется преимуществом
+того факта, что любые две анаграммы имеют одинаковое количество букв <em>a</em>,
+<em>b</em> и так далее. Для того, чтобы решить, являются ли строки анаграммами,
+мы сначала подсчитаем, сколько раз в них встречается каждый символ.
+Поскольку возможных букв 26, то мы можем использовать список из 26
+счётчиков - по одному на каждый символ. Каждый раз, когда мы видим конкретную
+букву, мы увеличиваем соответствующий ей счётчик на единицу. В итоге, если
+оба списка счётчиков идентичны, то строки - анаграммы. Это решение показано
+в <a class="reference internal" href="#lst-ana4"><em>ActiveCode 6</em></a></p>
 
 <div id="cont"></div>
 <div id="active7" lang="python" class="ac_section alert alert-warning" >
@@ -645,7 +642,7 @@ print(anagramSolution4('apple','pleap'))
 
 </div> 
 <div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text">Count and Compare (active7)</span> </p>
+<p class="ac_caption"><span class="ac_caption_text">Подсчитывай и сравнивай (active7)</span> </p>
 
 <script>
 if ('block' == 'none') {
@@ -695,30 +692,29 @@ else{
 
 </div>
 
-<p>Again, the solution has a number of iterations. However, unlike the
-first solution, none of them are nested. The first two iterations used
-to count the characters are both based on <em>n</em>. The third iteration,
-comparing the two lists of counts, always takes 26 steps since there are
-26 possible characters in the strings. Adding it all up gives us
-<span class="math">\(T(n)=2n+26\)</span> steps. That is <span class="math">\(O(n)\)</span>. We have found a
-linear order of magnitude algorithm for solving this problem.</p>
-<p>Before leaving this example, we need to say something about space
-requirements. Although the last solution was able to run in linear time,
-it could only do so by using additional storage to keep the two lists of
-character counts. In other words, this algorithm sacrificed space in
-order to gain time.</p>
-<p>This is a common occurrence. On many occasions you will need to make
-decisions between time and space trade-offs. In this case, the amount of
-extra space is not significant. However, if the underlying alphabet had
-millions of characters, there would be more concern. As a computer
-scientist, when given a choice of algorithms, it will be up to you to
-determine the best use of computing resources given a particular
-problem.</p>
-<div class="admonition-self-check admonition">
-<p class="first admonition-title">Self Check</p>
+<p>Решение вновь имеет некоторое количество циклов. Однако, в отличии от
+первого варианта, ни один из них не является вложенным. Два первых цикла,
+используемые для подсчёта символов, базируются на <em>n</em>.
+Третий цикл - сравнение двух списков счётчиков - всегда состоит из 26
+итераций (поскольку строки состоят из 26 возможных элементов). Складывая
+всё вместе, получим <span class="math">\(T(n)=2n+26\)</span> шагов, что является <span class="math">\(O(n)\)</span>.
+Мы нашли алгоритм с линейным порядком величины для решения нашей задачи.</p>
+<p>До того, как закончить с этим примером, стоит сказать несколько слов о
+пространственных требованиях. Хотя последнее решение и работает за линейное
+время, оно достигает этого путём использования дополнительных хранилищ для
+двух списков счётчиков. Другими словами, этот алгоритм приносит в жертву
+пространство, чтобы выиграть время.</p>
+<p>Это очень распространённый случай. Очень часто вам придётся делать выбор
+между временем и пространством. В данном случае объём места был не существенен.
+Однако, если основополагающий алфавит имеет миллионы символов, то это вызовет
+больше беспокойства. Как у учёных-информатиков, при выборе алгоритма только от
+вас будет зависеть определение наилучшего использования вычислительных ресурсов,
+выделенных под конкретную задачу.</p>
+<div class="admonition- admonition">
+<p class="first admonition-title">Самопроверка</p>
 
             <div id="analysis_1" class="alert alert-warning">
-            <p>Q-1: Given the following code fragment, what is its Big-O running time?</p>
+            <p>sc-1-10: Given the following code fragment, what is its Big-O running time?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">test</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -750,7 +746,7 @@ problem.</p>
             </div>
             
             <div id="analysis_2" class="alert alert-warning">
-            <p>Q-2: Given the following code fragment what is its Big-O running time?</p>
+            <p>sc-1-11: Given the following code fragment what is its Big-O running time?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">test</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
    <span class="n">test</span> <span class="o">=</span> <span class="n">test</span> <span class="o">+</span> <span class="mi">1</span>
@@ -784,7 +780,7 @@ problem.</p>
             </div>
             
             <div id="analysis_3" class="alert alert-warning">
-            <p>Q-3: Given the following code fragment what is its Big-O running time?</p>
+            <p>sc-1-12: Given the following code fragment what is its Big-O running time?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">i</span> <span class="o">=</span> <span class="n">n</span>
 <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
    <span class="n">k</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
@@ -821,7 +817,7 @@ problem.</p>
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - Big-O Notation' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - Нотация &#8220;большое О&#8221;' data-toggle="tooltip">
     <a href="BigONotation.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>

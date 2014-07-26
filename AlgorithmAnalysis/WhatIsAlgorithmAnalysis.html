@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>What Is Algorithm Analysis? &mdash; Problem Solving with Algorithms and Data Structures</title>
+    <title>Что такое “анализ алгоритмов”? &mdash; Problem Solving with Algorithms and Data Structures</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -74,7 +74,7 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
     <link rel="next" title="Big-O Notation" href="BigONotation.html" />
-    <link rel="prev" title="Objectives" href="Objectives.html" />
+    <link rel="prev" title="Цели" href="Objectives.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -265,7 +265,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">What Is Algorithm Analysis?</a></li>
+<li><a class="reference internal" href="#">Что такое &#8220;анализ алгоритмов&#8221;?</a></li>
 </ul>
 </ul>
 </li>
@@ -273,7 +273,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Objectives" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - Цели" data-toggle="tooltip">
     <a href="Objectives.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
@@ -310,28 +310,26 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 
 <div class="container" id="main-content">
   
-  <div class="section" id="what-is-algorithm-analysis">
-<h1>What Is Algorithm Analysis?<a class="headerlink" href="#what-is-algorithm-analysis" title="Permalink to this headline">¶</a></h1>
-<p>It is very common for beginning computer science students to
-compare their programs with one another. You may also have noticed that
-it is common for computer programs to look very similar, especially the
-simple ones. An interesting question often arises. When two programs
-solve the same problem but look different, is one program better than
-the other?</p>
-<p>In order to answer this question, we need to remember that there is an
-important difference between a program and the underlying algorithm that
-the program is representing. As we stated in Chapter 1, an algorithm is
-a generic, step-by-step list of instructions for solving a problem. It
-is a method for solving any instance of the problem such that given a
-particular input, the algorithm produces the desired result. A program,
-on the other hand, is an algorithm that has been encoded into some
-programming language. There may be many programs for the same algorithm,
-depending on the programmer and the programming language being used.</p>
-<p>To explore this difference further, consider the function shown in
-<a class="reference internal" href="#lst-sum1"><em>ActiveCode 1</em></a>. This function solves a familiar problem, computing the
-sum of the first <em>n</em> integers. The algorithm uses the idea of an
-accumulator variable that is initialized to 0. The solution then
-iterates through the <em>n</em> integers, adding each to the accumulator.</p>
+  <div class="section" id="id1">
+<h1>Что такое &#8220;анализ алгоритмов&#8221;?<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Студенты-первокурсники ИТ-специальностей очень часто сравнивают свои программы
+с другими. Вы могли замечать, что быть похожими друг на друга - общее свойство
+многих компьютерных программ, особенно простых. В связи с этим возникает
+интересный вопрос: если две программы решают одну и ту же задачу, но выглядят
+по разному, как понять, что одна из них лучше?</p>
+<p>Чтобы на него ответить, нам нужно вспомнить о важном различии между собственно
+программой и алгоритмом, который она воплощает. Как мы говорили в Главе 1,
+алгоритм - это универсальная пошаговая инструкция по решению задачи. Это метод
+для решения любого частного случая проблемы, такой, что при заданных входных
+значениях алгоритм выдаёт требуемый результат. С другой стороны, программа -
+это то, как алгоритм переложен на некий язык программирования. Может быть
+множество программ, реализующих один и тот же алгоритм в зависимости от
+программиста и языка, который он использует.</p>
+<p>Для дальнейшего исследования этого различия рассмотрим функцию в
+<a class="reference internal" href="#lst-sum1"><em>ActiveCode 1</em></a>. Она решает всем знакомую задачу
+вычисления суммы первых n целых чисел. Алгоритм использует идею
+переменной-аккумулятора, которая инициализируется нулём. В процессе
+решения перебираются n чисел, каждое из которых прибавляется к аккумулятору.</p>
 
 <div id="cont"></div>
 <div id="active1" lang="python" class="ac_section alert alert-warning" >
@@ -366,7 +364,7 @@ print(sumOfN(10))
 
 </div> 
 <div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text">Summation of the First n Integers (active1)</span> </p>
+<p class="ac_caption"><span class="ac_caption_text">Суммирование первых n целых чисел (active1)</span> </p>
 
 <script>
 if ('block' == 'none') {
@@ -416,12 +414,12 @@ else{
 
 </div>
 
-<p>Now look at the function in <a class="reference internal" href="#lst-sum2"><em>ActiveCode 2</em></a>. At first glance it may look
-strange, but upon further inspection you can see that this function is
-essentially doing the same thing as the previous one. The reason this is
-not obvious is poor coding. We did not use good identifier names to
-assist with readability, and we used an extra assignment statement
-during the accumulation step that was not really necessary.</p>
+<p>А сейчас посмотрите на функцию в <a class="reference internal" href="#lst-sum2"><em>ActiveCode 2</em></a>. На первый
+взгляд она может показаться странной, но при более близком рассмотрении вы
+увидите, что она делает в точности то же самое, что и предыдущая. Причина,
+по которой это не очевидно, в плохом качестве кода. Мы не используем понятные
+имена для идентификаторов, чтобы повысить читабельность, и мы делаем избыточное
+присваивание на шаге аккумуляции, что совершенно не является необходимым.</p>
 
 <div id="cont"></div>
 <div id="active2" lang="python" class="ac_section alert alert-warning" >
@@ -457,7 +455,7 @@ print(foo(10))
 
 </div> 
 <div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text">Another Summation of the First n Integers (active2)</span> </p>
+<p class="ac_caption"><span class="ac_caption_text">Другое суммирование первых n целых чисел (active2)</span> </p>
 
 <script>
 if ('block' == 'none') {
@@ -507,44 +505,38 @@ else{
 
 </div>
 
-<p>The question we raised earlier asked whether one function is better than
-another. The answer depends on your criteria. The function <tt class="docutils literal"><span class="pre">sumOfN</span></tt> is
-certainly better than the function <tt class="docutils literal"><span class="pre">foo</span></tt> if you are concerned with
-readability. In fact, you have probably seen many examples of this in
-your introductory programming course since one of the goals there is to
-help you write programs that are easy to read and easy to understand. In
-this course, however, we are also interested in characterizing the
-algorithm itself. (We certainly hope that you will continue to strive to
-write readable, understandable code.)</p>
-<p>Algorithm analysis is concerned with comparing algorithms based upon the
-amount of computing resources that each algorithm uses. We want to be
-able to consider two algorithms and say that one is better than the
-other because it is more efficient in its use of those resources or
-perhaps because it simply uses fewer. From this perspective, the two
-functions above seem very similar. They both use essentially the same
-algorithm to solve the summation problem.</p>
-<p>At this point, it is important to think more about what we really mean
-by computing resources. There are two different ways to look at this.
-One way is to consider the amount of space or memory an algorithm
-requires to solve the problem. The amount of space required by a problem
-solution is typically dictated by the problem instance itself. Every so
-often, however, there are algorithms that have very specific space
-requirements, and in those cases we will be very careful to explain the
-variations.</p>
-<p>As an alternative to space requirements, we can analyze and compare
-algorithms based on the amount of time they require to execute. This
-measure is sometimes referred to as the “execution time” or “running
-time” of the algorithm. One way we can measure the execution time for
-the function <tt class="docutils literal"><span class="pre">sumOfN</span></tt> is to do a benchmark analysis. This means that
-we will track the actual time required for the program to compute its
-result. In Python, we can benchmark a function by noting the starting
-time and ending time with respect to the system we are using. In the
-<tt class="docutils literal"><span class="pre">time</span></tt> module there is a function called <tt class="docutils literal"><span class="pre">time</span></tt> that will return the
-current system clock time in seconds since some arbitrary starting
-point. By calling this function twice, at the beginning and at the end,
-and then computing the difference, we can get an exact number of seconds
-(fractions in most cases) for execution.</p>
-<p id="lst-sum11"><strong>Listing 1</strong></p>
+<p>В ранее озвученном вопросе мы спрашивали: как понять, что одна функция лучше
+другой? Ответ будет зависеть от выбранных критериев. Функция sumOf естественно
+лучше, чем foo, если вы беспокоитесь о читабельности. Фактически, вы, возможно,
+видели множество подобных примеров в ваших вводных курсах по программированию,
+поскольку одной из их целей является желание помочь вам научиться писать программы,
+которые легко читать и понимать. Однако, в этом курсе мы заинтересованы в том,
+чтобы охарактеризовывать алгоритм сам по себе. (Мы также надеемся, что вы продолжите
+бороться за читаемый и хорошо понимаемый код.)</p>
+<p>Анализ алгоритмов основывается на сравнении алгоритмов по затрачиваемому каждым
+из них объёму вычислительных ресурсов. Мы хотим быть готовыми взять два алгоритма
+и сказать, что один из них лучше другого, потому что он более эффективно использует
+имеющиеся ресурсы или, возможно, ему их просто меньше нужно. С этой точки зрения две
+функции выше выглядят очень похожими. Они обе используют один и тот же алгоритм для
+решения проблемы суммирования.</p>
+<p>На данный момент становится важным поразмыслить над тем, что же мы подразумеваем
+под &#8220;вычислительными ресурсами&#8221;. Существует два различных подхода к этому вопросу.
+Первый рассматривает объём пространства или памяти, требуемый алгоритму для решения
+задачи. Эта величина обычно зависит от конкретного варианта проблемы. Однако, часто
+встречаются алгоритмы, имеющие специфические требования к объёму, и в таких случаях
+нам надо очень аккуратно подходить к объяснению вариантов.</p>
+<p>Альтернативой требований к пространству является анализ и сравнение алгоритмов
+по времени, которое им требуется для вычислений. Эту величину иногда называют
+&#8220;временем выполнения&#8221; алгоритма. Одним из способов измерить время выполнения
+функции <tt class="docutils literal"><span class="pre">sumOfN</span></tt> является проведение сравнительного анализа. Он подразумевает,
+что мы засечём реальное время, требуемое программе на вычисление результата.
+В Python мы можем проделать эту операцию, отметив время начала и время окончания
+работы программы относительно используемой нами системы. В модуле <tt class="docutils literal"><span class="pre">time</span></tt> есть
+функция <tt class="docutils literal"><span class="pre">time</span></tt>, которая возвращает текущее системное время в секундах, прошедшее
+с некоторого произвольного начального момента. Вызвав эту функцию дважды - в начале
+и в конце, - и затем посчитав разницу, мы получим точное количество секунд (дробное
+в большинстве случаев), затраченных на выполнение.</p>
+<p id="lst-sum11"><strong>Листинг 1</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">time</span>
 
 <span class="k">def</span> <span class="nf">sumOfN2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -559,12 +551,11 @@ and then computing the difference, we can get an exact number of seconds
    <span class="k">return</span> <span class="n">theSum</span><span class="p">,</span><span class="n">end</span><span class="o">-</span><span class="n">start</span>
 </pre></div>
 </div>
-<p><a class="reference internal" href="#lst-sum11"><em>Listing 1</em></a> shows the original <tt class="docutils literal"><span class="pre">sumOfN</span></tt> function with the timing
-calls embedded before and after the summation. The function returns a
-tuple consisting of the result and the amount of time (in seconds)
-required for the calculation. If we perform 5 invocations of the
-function, each computing the sum of the first 10,000 integers, we get
-the following:</p>
+<p><a class="reference internal" href="#lst-sum11"><em>Листинг 1</em></a> демонстрирует оригинальную функцию <tt class="docutils literal"><span class="pre">sumOfN</span></tt> с вызовами
+времени, встроенными до и после суммирования. Она возвращает кортеж, состоящий из
+результата и количества затраченного на вычисления времени (в секундах). Если мы
+выполним пять вызовов функции, в каждом из которых будет вычисляться сумма первых
+10000 целых чисел, то мы получим следующее:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;for i in range(5):</span>
 <span class="go">       print(&quot;Sum is %d required %10.7f seconds&quot;%sumOfN(10000))</span>
 <span class="go">Sum is 50005000 required  0.0018950 seconds</span>
@@ -574,9 +565,8 @@ the following:</p>
 <span class="go">Sum is 50005000 required  0.0019360 seconds</span>
 </pre></div>
 </div>
-<p>We discover that the time is fairly consistent and it takes on average
-about 0.0019 seconds to execute that code. What if we run the function
-adding the first 100,000 integers?</p>
+<p>Мы выяснили, что результат хорошо повторяем и что на выполнение кода затрачивается
+примерно 0,0019 секунд. Что, если теперь мы сложим первые 100000 целых?</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;for i in range(5):</span>
 <span class="go">       print(&quot;Sum is %d required %10.7f seconds&quot;%sumOfN(100000))</span>
 <span class="go">Sum is 5000050000 required  0.0199420 seconds</span>
@@ -587,9 +577,8 @@ adding the first 100,000 integers?</p>
 <span class="go">&gt;&gt;&gt;</span>
 </pre></div>
 </div>
-<p>Again, the time required for each run, although longer, is very
-consistent, averaging about 10 times more seconds. For <tt class="docutils literal"><span class="pre">n</span></tt> equal to
-1,000,000 we get:</p>
+<p>Снова времена, необходимые для каждого запуска, лежат близко друг к другу,
+но становятся длиннее - примерно в десять раз. Для n, равной 1000000 мы получим:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="go">&gt;&gt;&gt;for i in range(5):</span>
 <span class="go">       print(&quot;Sum is %d required %10.7f seconds&quot;%sumOfN(1000000))</span>
 <span class="go">Sum is 500000500000 required  0.1948988 seconds</span>
@@ -600,12 +589,11 @@ consistent, averaging about 10 times more seconds. For <tt class="docutils liter
 <span class="go">&gt;&gt;&gt;</span>
 </pre></div>
 </div>
-<p>In this case, the average again turns out to be about 10 times the
-previous.</p>
-<p>Now consider <a class="reference internal" href="#lst-sum3"><em>ActiveCode 3</em></a>, which shows a different means of solving
-the summation problem. This function, <tt class="docutils literal"><span class="pre">sumOfN3</span></tt>, takes advantage of a
-closed equation <span class="math">\(\sum_{i=1}^{n} i = \frac {(n)(n+1)}{2}\)</span> to
-compute the sum of the first <tt class="docutils literal"><span class="pre">n</span></tt> integers without iterating.</p>
+<p>Среднее значение вновь выросло примерно в десять раз, по сравнению с предыдущим.</p>
+<p>А теперь рассмотрим <a class="reference internal" href="#lst-sum3"><em>ActiveCode 3</em></a>, демонстрирующий другой способ
+решения задачи суммирования. Эта функция, <tt class="docutils literal"><span class="pre">sumOfN3</span></tt> использует преимущество
+замкнутой формулы <span class="math">\(\sum_{i=1}^{n} i = \frac {(n)(n+1)}{2}\)</span> для вычисления
+суммы первых n целых без выполнения итераций.</p>
 
 <div id="cont"></div>
 <div id="active3" lang="python" class="ac_section alert alert-warning" >
@@ -686,9 +674,9 @@ else{
 
 </div>
 
-<p>If we do the same benchmark measurement for <tt class="docutils literal"><span class="pre">sumOfN3</span></tt>, using five
-different values for <tt class="docutils literal"><span class="pre">n</span></tt> (10,000, 100,000, 1,000,000, 10,000,000, and
-100,000,000), we get the following results:</p>
+<p>Если мы проведём аналогичные контрольные замеры для <tt class="docutils literal"><span class="pre">sumOfN3</span></tt>, используя
+пять различных значений для <tt class="docutils literal"><span class="pre">n</span></tt> (10 000, 100 000, 1 000 000, 10 000 000
+и 100 000 000), то получим следующие результаты:</p>
 <div class="highlight-python"><div class="highlight"><pre>Sum is 50005000 required 0.00000095 seconds
 Sum is 5000050000 required 0.00000191 seconds
 Sum is 500000500000 required 0.00000095 seconds
@@ -696,33 +684,33 @@ Sum is 50000005000000 required 0.00000095 seconds
 Sum is 5000000050000000 required 0.00000119 seconds
 </pre></div>
 </div>
-<p>There are two important things to notice about this output. First, the
-times recorded above are shorter than any of the previous examples.
-Second, they are very consistent no matter what the value of <tt class="docutils literal"><span class="pre">n</span></tt>. It
-appears that <tt class="docutils literal"><span class="pre">sumOfN3</span></tt> is hardly impacted by the number of integers
-being added.</p>
-<p>But what does this benchmark really tell us? Intuitively, we can see
-that the iterative solutions seem to be doing more work since some
-program steps are being repeated. This is likely the reason it is taking
-longer. Also, the time required for the iterative solution seems to
-increase as we increase the value of <tt class="docutils literal"><span class="pre">n</span></tt>. However, there is a problem.
-If we ran the same function on a different computer or used a different
-programming language, we would likely get different results. It could
-take even longer to perform <tt class="docutils literal"><span class="pre">sumOfN3</span></tt> if the computer were older.</p>
-<p>We need a better way to characterize these algorithms with respect to
-execution time. The benchmark technique computes the actual time to
-execute. It does not really provide us with a useful measurement,
-because it is dependent on a particular machine, program, time of day,
-compiler, and programming language. Instead, we would like to have a
-characterization that is independent of the program or computer being
-used. This measure would then be useful for judging the algorithm alone
-and could be used to compare algorithms across implementations.</p>
+<p>Есть два важных момента, связанных с этими выходными данными, на которые
+стоит обратить внимание. Первый - затраченное время намного меньше, чем в
+любом из предыдущих примеров. И второй - все временные величины очень близки
+друг к другу, вне зависимости от значения n. Похоже, что sumOfN3 абсолютно
+всё равно, сколько чисел ей требуется сложить.</p>
+<p>Но что этот тест говорит нам в действительности? Интуитивно мы догадываемся,
+что итеративное решение будет выполнять больше работы из-за повторения некоего
+набора программных шагов. Это, скорее всего, причина, по которой оно занимает
+больше времени. Так же похоже, что время, требуемое итеративному решению,
+возрастает при увеличении значения <tt class="docutils literal"><span class="pre">n</span></tt>. Тут, однако, возникает проблема. Если
+мы запустим одну и ту же функцию на разных компьютерах или используем различные
+языки программирования, то вполне вероятно, что получим разные результаты.
+Вычисление <tt class="docutils literal"><span class="pre">sumOfN3</span></tt> займёт тем больше времени, чем старше компьютер.</p>
+<p>Нам нужен более хороший способ характеризовать алгоритмы относительно времени
+выполнения. Тестовая методика вычисляет действительное время выполнения. Она не
+предоставляет нам действительного полезного результата измерений, поскольку он
+зависит от конкретной машины, программы, времени дня, компилятора и языка
+программирования. Вместо этого мы хотели бы иметь характеристику, не зависящую
+от программы или компьютера. Такое измерение было бы полезным для оценки алгоритма
+самого по себе и его можно было бы использовать для сравнения алгоритмов в различных
+реализациях.</p>
 </div>
 
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - Objectives' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - Цели' data-toggle="tooltip">
     <a href="Objectives.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>

@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Big-O Notation &mdash; Problem Solving with Algorithms and Data Structures</title>
+    <title>Нотация “большое О” &mdash; Problem Solving with Algorithms and Data Structures</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -73,8 +73,8 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
-    <link rel="next" title="An Anagram Detection Example" href="AnAnagramDetectionExample.html" />
-    <link rel="prev" title="What Is Algorithm Analysis?" href="WhatIsAlgorithmAnalysis.html" />
+    <link rel="next" title="Пример с определением анаграммы" href="AnAnagramDetectionExample.html" />
+    <link rel="prev" title="Что такое “анализ алгоритмов”?" href="WhatIsAlgorithmAnalysis.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -265,7 +265,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Big-O Notation</a></li>
+<li><a class="reference internal" href="#">Нотация &#8220;большое О&#8221;</a></li>
 </ul>
 </ul>
 </li>
@@ -273,13 +273,13 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
         
         
           
-  <li id="relations-prev" title="Previous Chapter - What Is Algorithm Analysis?" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - Что такое &#8220;анализ алгоритмов&#8221;?" data-toggle="tooltip">
     <a href="WhatIsAlgorithmAnalysis.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - An Anagram Detection Example' data-toggle="tooltip" >
+  <li id="relations-next" title='Next Chapter - Пример с определением анаграммы' data-toggle="tooltip" >
     <a href="AnAnagramDetectionExample.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
@@ -310,130 +310,121 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 
 <div class="container" id="main-content">
   
-  <div class="section" id="big-o-notation">
-<h1>Big-O Notation<a class="headerlink" href="#big-o-notation" title="Permalink to this headline">¶</a></h1>
-<p>When trying to characterize an algorithm’s efficiency in terms of
-execution time, independent of any particular program or computer, it is
-important to quantify the number of operations or steps that the
-algorithm will require. If each of these steps is considered to be a
-basic unit of computation, then the execution time for an algorithm can
-be expressed as the number of steps required to solve the problem.
-Deciding on an appropriate basic unit of computation can be a
-complicated problem and will depend on how the algorithm is implemented.</p>
-<p>A good basic unit of computation for comparing the summation algorithms
-shown earlier might be to count the number of assignment statements
-performed to compute the sum. In the function <tt class="docutils literal"><span class="pre">sumOfN</span></tt>, the number of
-assignment statements is 1 (<span class="math">\(theSum = 0\)</span>)
-plus the value of <em>n</em> (the number of times we perform
-<span class="math">\(theSum=theSum+i\)</span>). We can denote this by a function, call it T,
-where <span class="math">\(T(n)=1 + n\)</span>. The parameter <em>n</em> is often referred to as
-the “size of the problem,” and we can read this as “T(n) is the time
-it takes to solve a problem of size n, namely 1+n steps.”</p>
-<p>In the summation functions given above, it makes sense to use the number
-of terms in the summation to denote the size of the problem. We can then
-say that the sum of the first 100,000 integers is a bigger instance of
-the summation problem than the sum of the first 1,000. Because of this,
-it might seem reasonable that the time required to solve the larger case
-would be greater than for the smaller case. Our goal then is to show how
-the algorithm’s execution time changes with respect to the size of the
-problem.</p>
-<p>Computer scientists prefer to take this analysis technique one step
-further. It turns out that the exact number of operations is not as
-important as determining the most dominant part of the <span class="math">\(T(n)\)</span>
-function. In other words, as the problem gets larger, some portion of
-the <span class="math">\(T(n)\)</span> function tends to overpower the rest. This dominant
-term is what, in the end, is used for comparison. The <strong>order of
-magnitude</strong> function describes the part of <span class="math">\(T(n)\)</span> that increases
-the fastest as the value of <em>n</em> increases. Order of magnitude is often
-called <strong>Big-O</strong> notation (for “order”) and written as
-<span class="math">\(O(f(n))\)</span>. It provides a useful approximation to the actual
-number of steps in the computation. The function <span class="math">\(f(n)\)</span> provides
-a simple representation of the dominant part of the original
-<span class="math">\(T(n)\)</span>.</p>
-<p>In the above example, <span class="math">\(T(n)=1+n\)</span>. As <em>n</em> gets large, the
-constant 1 will become less and less significant to the final result. If
-we are looking for an approximation for <span class="math">\(T(n)\)</span>, then we can drop
-the 1 and simply say that the running time is <span class="math">\(O(n)\)</span>. It is
-important to note that the 1 is certainly significant for
-<span class="math">\(T(n)\)</span>. However, as <em>n</em> gets large, our approximation will be
-just as accurate without it.</p>
-<p>As another example, suppose that for some algorithm, the exact number of
-steps is <span class="math">\(T(n)=5n^{2}+27n+1005\)</span>. When <em>n</em> is small, say 1 or 2,
-the constant 1005 seems to be the dominant part of the function.
-However, as <em>n</em> gets larger, the <span class="math">\(n^{2}\)</span> term becomes the most
-important. In fact, when <em>n</em> is really large, the other two terms become
-insignificant in the role that they play in determining the final
-result. Again, to approximate <span class="math">\(T(n)\)</span> as <em>n</em> gets large, we can
-ignore the other terms and focus on <span class="math">\(5n^{2}\)</span>. In addition, the
-coefficient <span class="math">\(5\)</span> becomes insignificant as <em>n</em> gets large. We
-would say then that the function <span class="math">\(T(n)\)</span> has an order of
-magnitude <span class="math">\(f(n)=n^{2}\)</span>, or simply that it is <span class="math">\(O(n^{2})\)</span>.</p>
-<p>Although we do not see this in the summation example, sometimes the
-performance of an algorithm depends on the exact values of the data
-rather than simply the size of the problem. For these kinds of
-algorithms we need to characterize their performance in terms of best
-case, <strong>worst case</strong>, or <strong>average case</strong> performance. The worst case
-performance refers to a particular data set where the algorithm performs
-especially poorly. Whereas a different data set for the exact same
-algorithm might have extraordinarily good performance. However, in most
-cases the algorithm performs somewhere in between these two extremes
-(average case). It is important for a computer scientist to understand
-these distinctions so they are not misled by one particular case.</p>
-<p>A number of very common order of magnitude functions will come up over
-and over as you study algorithms. These are shown in <a class="reference internal" href="#tbl-fntable"><em>Table 1</em></a>. In
-order to decide which of these functions is the dominant part of any
-<span class="math">\(T(n)\)</span> function, we must see how they compare with one another
-as <em>n</em> gets large.</p>
+  <div class="section" id="id1">
+<h1>Нотация &#8220;большое О&#8221;<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>При попытке охарактеризовать эффективность алгоритма в терминах времени
+выполнения независимо от конкретной программы или компьютера, очень важно
+оценить количество операций или шагов, которые потребуются алгоритму. Если
+каждый из этих шагов принять за базовую единицу вычисления, то время
+выполнения алгоритма может быть выражено, как количество шагов, требуемых
+для решения задачи. Принятие решение о том, что же является таким базовым
+блоком вычисления, может быть сложной задачей, зависящей от того, как
+алгоритм реализован.</p>
+<p>Хорошей базовой единицей вычисления для сравнения суммирующих алгоритмов,
+показанных ранее, может служить количество операций присваивания,
+используемых при подсчёте суммы. В функции sumOfN есть только одно такое
+присваивание 1 (<span class="math">\(theSum = 0\)</span>) плюс значение n (сколько раз мы вычисляем
+<span class="math">\(theSum=theSum+i\)</span>). Мы можем обозначить эту величину (назовём её T),
+где <span class="math">\(T(n)=1 + n\)</span>. Параметр n часто называют &#8220;размером задания&#8221;, так что
+мы можем прочитать это как &#8220;T(n) - это время, необходимое для решения задачи,
+размером n, за 1+n шагов.&#8221;</p>
+<p>В представленных выше функциях суммирования для обозначения размера задачи
+имеет смысл использовать количество слагаемых. Так мы сможем сказать, что
+суммирование первых 100 000 целых - задание большее, чем суммирование первой
+тысячи. Поэтому выглядит разумным положение, что время, требуемое на решение
+большего случая, будет больше, чем для меньшего случая. Таким образом, наша
+цель - показать, как время работы алгоритма изменяется в зависимости от
+размера задачи.</p>
+<p>Учёные-информатики при использовании такой техники анализа предпочитают
+идти на один шаг дальше. Выходит так, что точное количество операций не
+так важно, как определение наиболее доминирующей части функции <span class="math">\(T(n)\)</span>.
+Другими словами, когда задание становится больше, некая часть функции
+<span class="math">\(T(n)\)</span>, как правило, перекрывает всё остальное. Эта доминирующая
+часть в итоге и используется при сравнении. Функция <strong>порядка величины</strong>
+описывает ту часть <span class="math">\(T(n)\)</span>, которая сильнее возрастает при росте <em>n</em>.
+Порядок величины часто называют нотацией <strong>&#8220;большое О&#8221;</strong> (от order - порядок)
+и записывают как <span class="math">\(O(f(n))\)</span>. Он предоставляет целесообразное приближение
+к действительному числу шагов в вычислении. Функция <span class="math">\(f(n)\)</span> является
+простым представлением доминирующей части оригинальной <span class="math">\(T(n)\)</span>.</p>
+<p>В примере выше <span class="math">\(T(n)=1+n\)</span>. Чем больше становится <em>n</em>, тем менее значимой
+для конечного результата становится константа 1. При поиске приближения для
+<span class="math">\(T(n)\)</span> мы можем отбросить 1 и просто сказать, что временем выполнения
+является <span class="math">\(O(n)\)</span>. Важно отметить, что 1 безусловно важна для <span class="math">\(T(n)\)</span>.
+Однако, при росте <em>n</em> наше приближение останется столь же точным и без неё.</p>
+<p>Ещё один пример: предположим, что для некоего алгоритма точное число шагов
+<span class="math">\(T(n)=5n^{2}+27n+1005\)</span>. При малых <em>n</em> (скажем, 1 или 2) константа 1005
+выглядит доминирующей частью функции. Однако, с ростом <em>n</em>, превалирующим
+становится слагаемое <span class="math">\(n^{2}\)</span>. Фактически, когда <em>n</em> действительно велико,
+то два других слагаемых перестают играть хоть какую-нибудь значимую роль в
+определении конечного результата. Ещё раз, аппроксимируя <span class="math">\(T(n)\)</span> с ростом
+<em>n</em>, мы можем игнорировать другие слагаемые и сфокусироваться только на
+<span class="math">\(5n^{2}\)</span>. Дополнительно, коэффициент <span class="math">\(5\)</span> тоже становится неважным
+при увеличении <em>n</em>. Так что мы можем сказать, что функция <span class="math">\(T(n)\)</span> имеет
+порядок величины <span class="math">\(f(n)=n^{2}\)</span>, или просто <span class="math">\(O(n^{2})\)</span>.</p>
+<p>Хотя мы и не видим этого в примере с суммированием, иногда производительность
+алгоритма зависит от точных значений данных больше, чем от размера задачи. Для
+алгоритмов такого рода нам нужно характеризовать их эффективность с точки зрения
+наилучшего, наихудшего или усреднённого случая. Производительность для худшего
+случая относится к определённому набору данных, на котором алгоритм выполняется
+особенно плохо. В то время как различные наборы данных для точно такого же
+алгоритма могут иметь необычайно хорошую производительность, в большинстве случаев
+алгоритм имеет производительность где-то по середине между этими двумя экстремумами
+(усреднённый случай). Учёным-информатикам важно понимать эти различия, чтобы на
+впасть в заблуждение при рассмотрении одного конкретного случая.</p>
+<p>Некоторое количество очень распространённых функций порядка величины будет попадаться
+вам вновь и вновь в процессе изучения алгоритмов. Все они представлены в
+<a class="reference internal" href="#tbl-fntable"><em>Таблице 1</em></a>. Для того, чтобы увидеть, какая из них является
+доминирующей частью любое функции <span class="math">\(T(n)\)</span>, мы должны видеть, как они
+соотносятся друг с другом при возрастании <em>n</em>.</p>
 <table border="1" class="docutils" id="tbl-fntable">
-<caption><strong>Table 1: Common Functions for Big-O</strong></caption>
+<caption><strong>Таблица 1: Наиболее распространённые функции для &#8220;большого О&#8221;</strong></caption>
 <colgroup>
-<col width="57%" />
-<col width="43%" />
+<col width="41%" />
+<col width="59%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head"><strong>f(n)</strong></th>
-<th class="head"><strong>Name</strong></th>
+<th class="head"><strong>Название</strong></th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><span class="math">\(1\)</span></td>
-<td>Constant</td>
+<td>Константная</td>
 </tr>
 <tr class="row-odd"><td><span class="math">\(\log n\)</span></td>
-<td>Logarithmic</td>
+<td>Логарифмическая</td>
 </tr>
 <tr class="row-even"><td><span class="math">\(n\)</span></td>
-<td>Linear</td>
+<td>Линейная</td>
 </tr>
 <tr class="row-odd"><td><span class="math">\(n\log n\)</span></td>
-<td>Log Linear</td>
+<td>Линейно-логарифмическая</td>
 </tr>
 <tr class="row-even"><td><span class="math">\(n^{2}\)</span></td>
-<td>Quadratic</td>
+<td>Квадратичная</td>
 </tr>
 <tr class="row-odd"><td><span class="math">\(n^{3}\)</span></td>
-<td>Cubic</td>
+<td>Кубическая</td>
 </tr>
 <tr class="row-even"><td><span class="math">\(2^{n}\)</span></td>
-<td>Exponential</td>
+<td>Экспоненциальная</td>
 </tr>
 </tbody>
 </table>
-<p><a class="reference internal" href="#fig-graphfigure"><em>Figure 1</em></a> shows graphs of the common
-functions from <a class="reference internal" href="#tbl-fntable"><em>Table 1</em></a>. Notice that when <em>n</em> is small, the
-functions are not very well defined with respect to one another. It is
-hard to tell which is dominant. However, as <em>n</em> grows, there is a
-definite relationship and it is easy to see how they compare with one
-another.</p>
+<p>На <a class="reference internal" href="#fig-graphfigure"><em>Рисунке 1</em></a> показаны графики распространённых
+функций из <a class="reference internal" href="#tbl-fntable"><em>Таблицы 1</em></a>. Обратите внимание, что при малых
+<em>n</em> функции нелегко отличить друг от друга и тяжело сказать, какая из них
+доминирует. Однако, как только <em>n</em> вырастает, появляется определённая
+зависимость, и легко увидеть, как они соотносятся друг с другом.</p>
 <div class="figure" id="fig-graphfigure">
 <img alt="../_images/newplot.png" src="../_images/newplot.png" />
-<p class="caption">Figure 1: Plot of Common Big-O Functions</p>
+<p class="caption">Рисунок 1: Графики распространённых функций &#8220;большое О&#8221;</p>
 </div>
-<p>As a final example, suppose that we have the fragment of Python code
-shown in <a class="reference internal" href="#lst-dummycode"><em>Listing 2</em></a>. Although this program does not really do
-anything, it is instructive to see how we can take actual code and
-analyze performance.</p>
-<p id="lst-dummycode"><strong>Listing 2</strong></p>
+<p>В качестве заключительного примера предположим, что у нас есть фрагмент кода на
+Python, показанный в <a class="reference internal" href="#lst-dummycode"><em>Листинге 2</em></a>. Несмотря на то, что на
+самом деле эта программа ничего не делает, полезно будет посмотреть, как мы можем
+взять существующий код и проанализировать его производительность.</p>
+<p id="lst-dummycode"><strong>Листинг 2</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">a</span><span class="o">=</span><span class="mi">5</span>
 <span class="n">b</span><span class="o">=</span><span class="mi">6</span>
 <span class="n">c</span><span class="o">=</span><span class="mi">10</span>
@@ -448,31 +439,28 @@ analyze performance.</p>
 <span class="n">d</span> <span class="o">=</span> <span class="mi">33</span>
 </pre></div>
 </div>
-<p>The number of assignment operations is the sum of four terms. The first
-term is the constant 3, representing the three assignment statements at
-the start of the fragment. The second term is <span class="math">\(3n^{2}\)</span>, since
-there are three statements that are performed <span class="math">\(n^{2}\)</span> times due
-to the nested iteration. The third term is <span class="math">\(2n\)</span>, two statements
-iterated <em>n</em> times. Finally, the fourth term is the constant 1,
-representing the final assignment statement. This gives us
-<span class="math">\(T(n)=3+3n^{2}+2n+1=3n^{2}+2n+4\)</span>. By looking at the exponents,
-we can easily see that the <span class="math">\(n^{2}\)</span> term will be dominant and
-therefore this fragment of code is <span class="math">\(O(n^{2})\)</span>. Note that all of
-the other terms as well as the coefficient on the dominant term can be
-ignored as <em>n</em> grows larger.</p>
+<p>Число операций присваивания представляет собой сумму из четырёх слагаемых.
+Первое - константа 3, представляющая три присваивания в начале фрагмента.
+Второе - <span class="math">\(3n^{2}\)</span>, поскольку три присваивания выполняются <span class="math">\(n^{2}\)</span>
+раз внутри вложенной итерации. Третье - <span class="math">\(2n\)</span>, два присваивания,
+повторяющиеся <em>n</em> раз. Наконец, четвёртое слагаемое - константа 1, представляющая
+последний оператор присваивания. Всё вместе это даёт
+<span class="math">\(T(n)=3+3n^{2}+2n+1=3n^{2}+2n+4\)</span>. Глядя на степени, мы легко можем заметить,
+что слагаемое <span class="math">\(n^{2}\)</span> будет доминантой, и следовательно, этот фрагмент кода
+является <span class="math">\(O(n^{2})\)</span>. Обратите внимание, что прочие слагаемые (так же, как и
+коэффициенты) можно проигнорировать при возрастании <em>n</em>.</p>
 <div class="figure" id="fig-graphfigure2">
 <img alt="../_images/newplot2.png" src="../_images/newplot2.png" />
-<p class="caption">Figure 2: Comparing <span class="math">\(T(n)\)</span> with Common Big-O Functions</p>
+<p class="caption">Рисунок 2: Сравнение <span class="math">\(T(n)\)</span> с распространёнными функциями &#8220;большого О&#8221;</p>
 </div>
-<p><a class="reference internal" href="#fig-graphfigure2"><em>Figure 2</em></a> shows a few of the common Big-O functions as they
-compare with the <span class="math">\(T(n)\)</span> function discussed above. Note that
-<span class="math">\(T(n)\)</span> is initially larger than the cubic function. However, as
-n grows, the cubic function quickly overtakes <span class="math">\(T(n)\)</span>. It is easy
-to see that <span class="math">\(T(n)\)</span> then follows the quadratic function as
-<span class="math">\(n\)</span> continues to grow.</p>
-<div class="admonition-self-check admonition">
-<p class="first admonition-title">Self Check</p>
-<p class="last">Write two Python functions to find the minimum number in a list.  The first function should compare each number to every other number on the list. <span class="math">\(O(n^2)\)</span>.  The second function should be linear <span class="math">\(O(n)\)</span>.</p>
+<p>На <a class="reference internal" href="#fig-graphfigure2"><em>Рисунке 2</em></a> показаны графики нескольких распространённых
+функций &#8220;большое О&#8221; в сравнении с обсуждаемой выше функцией <span class="math">\(T(n)\)</span>. Обратите
+внимание, что в изначально <span class="math">\(T(n)\)</span> больше, чем кубическая функция, но с ростом <em>n</em>
+последняя быстро берёт верх над <span class="math">\(T(n)\)</span> Так же легко увидеть, что <span class="math">\(T(n)\)</span> с
+ростом <span class="math">\(n\)</span> следует квадратичной функции.</p>
+<div class="admonition- admonition">
+<p class="first admonition-title">Самопроверка</p>
+<p class="last">Напишите на Python две функции для поиска минимального значения в списке. Первая из них должна сравнивать каждое число со всеми другими значениями в списке. <span class="math">\(O(n^2)\)</span>. Вторая функция должна быть линейной с <span class="math">\(O(n)\)</span></p>
 </div>
 <div id="findMinVid" class="video_popup" >
 <video controls preload="none"  poster="../_static/function_intro.png">
@@ -502,19 +490,19 @@ to see that <span class="math">\(T(n)\)</span> then follows the quadratic functi
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - What Is Algorithm Analysis?' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - Что такое &#8220;анализ алгоритмов&#8221;?' data-toggle="tooltip">
     <a href="WhatIsAlgorithmAnalysis.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
   </li>
   <a class="navLinkBg" id="navLinkBgLeft"  href="WhatIsAlgorithmAnalysis.html" ></a>
   
-  <li id="relations-next" class="navLink" title='Next Section - An Anagram Detection Example' data-toggle="tooltip" >
+  <li id="relations-next" class="navLink" title='Next Section - Пример с определением анаграммы' data-toggle="tooltip" >
     <a href="AnAnagramDetectionExample.html" >
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="AnAnagramDetectionExample.html" >Next Section - An Anagram Detection Example</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="AnAnagramDetectionExample.html" >Next Section - Пример с определением анаграммы</a>
 
 <script type="text/javascript">
 

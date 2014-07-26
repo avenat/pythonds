@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Dictionaries &mdash; Problem Solving with Algorithms and Data Structures</title>
+    <title>Словари &mdash; Problem Solving with Algorithms and Data Structures</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -74,7 +74,7 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
     <link rel="next" title="Summary" href="Summary.html" />
-    <link rel="prev" title="Lists" href="Lists.html" />
+    <link rel="prev" title="Списки" href="Lists.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -265,7 +265,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Dictionaries</a></li>
+<li><a class="reference internal" href="#">Словари</a></li>
 </ul>
 </ul>
 </li>
@@ -273,7 +273,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Lists" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - Списки" data-toggle="tooltip">
     <a href="Lists.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
@@ -310,74 +310,69 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 
 <div class="container" id="main-content">
   
-  <div class="section" id="dictionaries">
-<h1>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h1>
-<p>The second major Python data structure is the dictionary. As you
-probably recall, dictionaries differ from lists in that you can access
-items in a dictionary by a key rather than a position. Later in this
-book you will see that there are many ways to implement a dictionary.
-The thing that is most important to notice right now is that the get
-item and set item operations on a dictionary are <span class="math">\(O(1)\)</span>. Another
-important dictionary operation is the contains operation. Checking to
-see whether a key is in the dictionary or not is also <span class="math">\(O(1)\)</span>.
-The efficiency of all dictionary operations is summarized in
-<a class="reference internal" href="#tbl-dictbigo"><em>Table 3</em></a>. One important side note on dictionary performance
-is that the efficiencies we provide in the table are for average
-performance. In some rare cases the contains, get item, and set item
-operations can degenerate into <span class="math">\(O(n)\)</span> performance but we will
-get into that in a later chapter when we talk about the different ways
-that a dictionary could be implemented.</p>
+  <div class="section" id="id1">
+<h1>Словари<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Второй основной структурой данных в Python является словарь. Как вы,
+наверное, помните, словари отличаются от списков тем, что в них вы получаете
+доступ к элементу по ключу, а не по позиции. Позднее в этой книге вы увидите
+множество способов реализации словаря. Сейчас же наиболее важно отметить, что
+операции получения и записи элемента в словарь имеют <span class="math">\(O(1)\)</span>. Другой важной
+операцией со словарями является определение принадлежности ему элемента. Проверка,
+есть ли с словаре данный ключ или нет, тоже <span class="math">\(O(1)\)</span>. Эффективности всех
+операций над словарями собраны в <a class="reference internal" href="#tbl-dictbigo"><em>Таблице 3</em></a>. Важное замечание
+в сторону относительно производительности словарей: эффективности, которые мы
+предоставляем в таблице, - это усреднённая производительность. В редких случаях
+принадлежность, получение или запись элемента могут деградировать до <span class="math">\(O(n)\)</span>.
+Мы встретимся с этим в одной из последующих глав, когда будем говорить о различных
+способах, которыми можно реализовать словарь.</p>
 <table border="1" class="docutils" id="tbl-dictbigo">
-<caption><strong>Table 3: Big-O Efficiency of Python Dictionary Operations</strong></caption>
+<caption><strong>Таблица 3: Эффективность операций над словарями в Python в терминах нотации &#8220;большое О&#8221;</strong></caption>
 <colgroup>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">operation</th>
-<th class="head">Big-O Efficiency</th>
+<tr class="row-odd"><th class="head">операция</th>
+<th class="head">эффективность</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>copy</td>
+<tr class="row-even"><td>копирование</td>
 <td>O(n)</td>
 </tr>
-<tr class="row-odd"><td>get item</td>
+<tr class="row-odd"><td>получить элемент</td>
 <td>O(1)</td>
 </tr>
-<tr class="row-even"><td>set item</td>
+<tr class="row-even"><td>записать элемент</td>
 <td>O(1)</td>
 </tr>
-<tr class="row-odd"><td>delete item</td>
+<tr class="row-odd"><td>удалить элемент</td>
 <td>O(1)</td>
 </tr>
-<tr class="row-even"><td>contains (in)</td>
+<tr class="row-even"><td>вхождение (in)</td>
 <td>O(1)</td>
 </tr>
-<tr class="row-odd"><td>iteration</td>
+<tr class="row-odd"><td>итерация</td>
 <td>O(n)</td>
 </tr>
 </tbody>
 </table>
-<p>For our last performance experiment we will compare the performance of
-the contains operation between lists and dictionaries. In the process we
-will confirm that the contains operator for lists is <span class="math">\(O(n)\)</span> and
-the contains operator for dictionaries is <span class="math">\(O(1)\)</span>. The experiment
-we will use to compare the two is simple. We’ll make a list with a range
-of numbers in it. Then we will pick numbers at random and check to see
-if the numbers are in the list. If our performance tables are correct
-the bigger the list the longer it should take to determine if any one
-number is contained in the list.</p>
-<p>We will repeat the same experiment for a dictionary that contains
-numbers as the keys. In this experiment we should see that determining
-whether or not a number is in the dictionary is not only much faster,
-but the time it takes to check should remain constant even as the
-dictionary grows larger.</p>
-<p><a class="reference internal" href="#lst-listvdict"><em>Listing 6</em></a> implements this comparison. Notice that we are
-performing exactly the same operation, <tt class="docutils literal"><span class="pre">number</span> <span class="pre">in</span> <span class="pre">container</span></tt>. The
-difference is that on line 7 <tt class="docutils literal"><span class="pre">x</span></tt> is a list, and on line 9 <tt class="docutils literal"><span class="pre">x</span></tt> is a
-dictionary.</p>
-<p id="lst-listvdict"><strong>Listing 6</strong></p>
+<p>В нашем последнем эксперименте с производительностью мы сравним эффективность
+операций принадлежности у списков и словарей. В процессе мы подтвердим, что
+оператор принадлежности для списков имеет <span class="math">\(O(n)\)</span>, а для словарей -
+<span class="math">\(O(1)\)</span>. Производить сравнение мы будем просто. Мы создадим список с
+диапазоном чисел, затем будем брать число случайным образом и смотреть, есть
+ли оно в списке. Если наша таблица производительности верна, то чем больше
+список, тем дольше будет происходить определение, содержится ли в нём данное
+число.</p>
+<p>Мы повторим тот же эксперимент со словарём, содержащим числа в качестве ключей.
+В этом эксперименте мы хотим увидеть, что определение есть или нет число в словаре
+не только намного быстрее, но и время, занимаемое для проверки, остаётся постоянным,
+даже если объём словаря возрастает.</p>
+<p><a class="reference internal" href="#lst-listvdict"><em>Листинг 6</em></a> реализовывает это сравнение. Заметьте, что мы
+выполняем в точности одинаковые операции <tt class="docutils literal"><span class="pre">number</span> <span class="pre">in</span> <span class="pre">container</span></tt>. Различие только в
+том, что в седьмой строке &lt;code&gt;x&lt;/code&gt; - это список, а в девятой - словарь.</p>
+<p id="lst-listvdict"><strong>Листинг 6</strong></p>
 <div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -401,32 +396,31 @@ dictionary.</p>
     <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%d</span><span class="s">,</span><span class="si">%10.3f</span><span class="s">,</span><span class="si">%10.3f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">lst_time</span><span class="p">,</span> <span class="n">d_time</span><span class="p">))</span>
 </pre></div>
 </td></tr></table></div>
-<p><a class="reference internal" href="#fig-listvdict"><em>Figure 4</em></a> summarizes the results of running
-<a class="reference internal" href="#lst-listvdict"><em>Listing 6</em></a>. You can see that the dictionary is consistently
-faster. For the smallest list size of 10,000 elements a dictionary is
-89.4 times faster than a list. For the largest list size of 990,000
-elements the dictionary is 11,603 times faster! You can also see that
-the time it takes for the contains operator on the list grows linearly
-with the size of the list. This verifies the assertion that the contains
-operator on a list is <span class="math">\(O(n)\)</span>. It can also be seen that the time
-for the contains operator on a dictionary is constant even as the
-dictionary size grows. In fact for a dictionary size of 10,000 the
-contains operation took 0.004 milliseconds and for the dictionary size
-of 990,000 it also took 0.004 milliseconds.</p>
+<p><a class="reference internal" href="#fig-listvdict"><em>Рисунок 4</em></a> подытоживает результаты запуска
+<a class="reference internal" href="#lst-listvdict"><em>Листинге 6</em></a>. Вы видите, что словарь стабильно быстрее.
+Для списков малых размеров на 10 000 элементов словарь быстрее в 89,4 раза.
+Для больших списков на 990 000 элементов разница становится в 11 603 раза!
+Вы также можете видеть, что время, требуемое операции проверки принадлежности
+для списка, линейно возрастает с ростом размера списка. Это подтверждает
+утверждение, что оператор принадлежности для списков имеет <span class="math">\(O(n)\)</span>. Так
+же хорошо видно, что аналогичная операция для словаря остаётся постоянной даже
+при возрастании объёма словаря. Фактически, для словаря размером в 10 000
+операция проверки принадлежности занимает 0,004 миллисекунды, как и для словаря
+на 990 000 элементов.</p>
 <div class="figure" id="fig-listvdict">
 <img alt="../_images/listvdict.png" src="../_images/listvdict.png" />
-<p class="caption">Figure 4: Comparing the <tt class="docutils literal"><span class="pre">in</span></tt> Operator for Python Lists and Dictionaries</p>
+<p class="caption">Рисунок 4: Сравнение операторов <tt class="docutils literal"><span class="pre">in</span></tt> для списков и словарей в Python</p>
 </div>
-<p>Since Python is an evolving language, there are always changes going on
-behind the scenes. The latest information on the performance of Python
-data structures can be found on the Python website. As of this writing
-the Python wiki has a nice time complexity page that can be found at the
-<a class="reference external" href="http://wiki.python.org/moin/TimeComplexity">Time Complexity Wiki</a>.</p>
-<div class="admonition-self-check admonition">
-<p class="first admonition-title">Self Check</p>
+<p>&lt;p&gt;Поскольку Python - развивающийся язык, то за сценой постоянно происходят
+изменения. Последнюю информацию о производительности структур данных в Python можно
+найти на сайте Python. На момент написания этих строк Python wiki имеет хорошую
+страничку, посвящённую временной сложности. Вы можете ознакомиться с ней
+<a class="reference external" href="http://wiki.python.org/moin/TimeComplexity">Time Complexity Wiki</a></p>
+<div class="admonition- admonition">
+<p class="first admonition-title">Самопроверка</p>
 
             <div id="mcpyperform" class="alert alert-warning">
-            Q-4: Which of the above list operations is not O(1)?<form name="mcpyperform_form" method="get" action="" onsubmit="return false;">
+            sc-1-13: Какая из перечисленных операций для списков не является O(1)?<form name="mcpyperform_form" method="get" action="" onsubmit="return false;">
             <input type="radio" name="group1" value="a" id="mcpyperform_opt_a" />
             <label for= "mcpyperform_opt_a">  a) list.pop(0)</label><br />
             
@@ -454,7 +448,7 @@ the Python wiki has a nice time complexity page that can be found at the
             </div>
             
             <div id="mcpydictperf" class="alert alert-warning">
-            Q-5: Which of the above dictionary operations is O(1)?<form name="mcpydictperf_form" method="get" action="" onsubmit="return false;">
+            sc-1-14: Какая из перечисленных операций для словарей не является O(1)?<form name="mcpydictperf_form" method="get" action="" onsubmit="return false;">
             <input type="radio" name="group1" value="a" id="mcpydictperf_opt_a" />
             <label for= "mcpydictperf_opt_a">  a) 'x' in mydict</label><br />
             
@@ -509,7 +503,7 @@ the Python wiki has a nice time complexity page that can be found at the
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - Lists' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - Списки' data-toggle="tooltip">
     <a href="Lists.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>

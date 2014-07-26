@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Programming Exercises &mdash; Problem Solving with Algorithms and Data Structures</title>
+    <title>Упражнения &mdash; Problem Solving with Algorithms and Data Structures</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -73,7 +73,7 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
-    <link rel="next" title="Objectives" href="../AlgorithmAnalysis/Objectives.html" />
+    <link rel="next" title="Цели" href="../AlgorithmAnalysis/Objectives.html" />
     <link rel="prev" title="Discussion Questions" href="DiscussionQuestions.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -265,7 +265,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Programming Exercises</a></li>
+<li><a class="reference internal" href="#">Упражнения</a></li>
 </ul>
 </ul>
 </li>
@@ -279,7 +279,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Objectives' data-toggle="tooltip" >
+  <li id="relations-next" title='Next Chapter - Цели' data-toggle="tooltip" >
     <a href="../AlgorithmAnalysis/Objectives.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
@@ -310,54 +310,53 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 
 <div class="container" id="main-content">
   
-  <div class="section" id="programming-exercises">
-<h1>Programming Exercises<a class="headerlink" href="#programming-exercises" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="id1">
+<h1>Упражнения<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <ol class="arabic simple">
-<li>Implement the simple methods <tt class="docutils literal"><span class="pre">getNum</span></tt> and <tt class="docutils literal"><span class="pre">getDen</span></tt> that will
-return the numerator and denominator of a fraction.</li>
-<li>In many ways it would be better if all fractions were maintained in
-lowest terms right from the start. Modify the constructor for the
-<tt class="docutils literal"><span class="pre">Fraction</span></tt> class so that <tt class="docutils literal"><span class="pre">GCD</span></tt> is used to reduce fractions
-immediately. Notice that this means the <tt class="docutils literal"><span class="pre">__add__</span></tt> function no
-longer needs to reduce. Make the necessary modifications.</li>
-<li>Implement the remaining simple arithmetic operators (<tt class="docutils literal"><span class="pre">__sub__</span></tt>,
-<tt class="docutils literal"><span class="pre">__mul__</span></tt>, and <tt class="docutils literal"><span class="pre">__truediv__</span></tt>).</li>
-<li>Implement the remaining relational operators (<tt class="docutils literal"><span class="pre">__gt__</span></tt>,
-<tt class="docutils literal"><span class="pre">__ge__</span></tt>, <tt class="docutils literal"><span class="pre">__lt__</span></tt>, <tt class="docutils literal"><span class="pre">__le__</span></tt>, and <tt class="docutils literal"><span class="pre">__ne__</span></tt>)</li>
-<li>Modify the constructor for the fraction class so that it checks to
-make sure that the numerator and denominator are both integers. If
-either is not an integer the constructor should raise an exception.</li>
-<li>In the definition of fractions we assumed that negative fractions
-have a negative numerator and a positive denominator. Using a
-negative denominator would cause some of the relational operators to
-give incorrect results. In general, this is an unnecessary
-constraint. Modify the constructor to allow the user to pass a
-negative denominator so that all of the operators continue to work
-properly.</li>
-<li>Research the <tt class="docutils literal"><span class="pre">__radd__</span></tt> method. How does it differ from
-<tt class="docutils literal"><span class="pre">__add__</span></tt>? When is it used? Implement <tt class="docutils literal"><span class="pre">__radd__</span></tt>.</li>
-<li>Repeat the last question but this time consider the <tt class="docutils literal"><span class="pre">__iadd__</span></tt>
-method.</li>
-<li>Research the <tt class="docutils literal"><span class="pre">__repr__</span></tt> method. How does it differ from
-<tt class="docutils literal"><span class="pre">__str__</span></tt>? When is it used? Implement <tt class="docutils literal"><span class="pre">__repr__</span></tt>.</li>
-<li>Research other types of gates that exist (such as NAND, NOR, and
-XOR). Add them to the circuit hierarchy. How much additional coding
-did you need to do?</li>
-<li>The most simple arithmetic circuit is known as the half-adder.
-Research the simple half-adder circuit. Implement this circuit.</li>
-<li>Now extend that circuit and implement an 8 bit full-adder.</li>
-<li>The circuit simulation shown in this chapter works in a backward
-direction. In other words, given a circuit, the output is produced by
-working back through the input values, which in turn cause other
-outputs to be queried. This continues until external input lines are
-found, at which point the user is asked for values. Modify the
-implementation so that the action is in the forward direction; upon
-receiving inputs the circuit produces an output.</li>
-<li>Design a class to represent a playing card. Now design a class to
-represent a deck of cards. Using these two classes, implement a
-favorite card game.</li>
-<li>Find a Sudoku puzzle in the local newspaper. Write a program to solve
-the puzzle.</li>
+<li>Реализуйте простые методы <tt class="docutils literal"><span class="pre">getNum</span></tt> и <tt class="docutils literal"><span class="pre">getDen</span></tt>, возвращающие
+числитель и знаменатель дроби.</li>
+<li>Во многих отношениях было бы лучше, если бы все дроби приводились
+в сокращённом виде с самого начала. Измените конструктор класса
+<tt class="docutils literal"><span class="pre">Fraction</span></tt> таким образом, чтобы GCD использовался для сокращения
+дробей немедленно. Заметьте - это означает, что функция <tt class="docutils literal"><span class="pre">__add__</span></tt>
+больше не нуждается в сокращениях. Произведите необходимые модификации.</li>
+<li>Реализуйте оставшиеся простые арифметические операторы (<tt class="docutils literal"><span class="pre">__sub__</span></tt>,
+<tt class="docutils literal"><span class="pre">__mul__</span></tt> и <tt class="docutils literal"><span class="pre">__truediv__</span></tt>).</li>
+<li>Реализуйте оставшиеся операторы отношений (<tt class="docutils literal"><span class="pre">__gt__</span></tt>, <tt class="docutils literal"><span class="pre">__ge__</span></tt>,
+<tt class="docutils literal"><span class="pre">__lt__</span></tt>, <tt class="docutils literal"><span class="pre">__le__</span></tt>, and <tt class="docutils literal"><span class="pre">__ne__</span></tt>)</li>
+<li>Модифицируйте конструктор класса дробей таким образом, чтобы он поверял,
+являются ли числитель и знаменатель целыми числами. Если хотя бы одно
+из условий не выполняется, то вызовите исключение.</li>
+<li>В определении дробей мы предположили, что отрицательные дроби имеют
+отрицательный числитель и положительный знаменатель. Использование
+отрицательного знаменателя может повлечь за собой неправильные результаты
+некоторых операторов отношений. Вообще, это ограничение является не таким
+уж необходимым. Модифицируйте конструктор таким образом, чтобы позволить
+пользователю вводить отрицательный знаменатель, а все операторы продолжили
+работать правильным образом.</li>
+<li>Исследуйте метод <tt class="docutils literal"><span class="pre">__radd__</span></tt>. В чём его отличие от <tt class="docutils literal"><span class="pre">__add__</span></tt>?
+Когда он используется? Реализуйте <tt class="docutils literal"><span class="pre">__radd__</span></tt>.</li>
+<li>Задание аналогично предыдущему, но на этот раз рассмотрите
+<tt class="docutils literal"><span class="pre">__iadd__</span></tt> метод.</li>
+<li>Исследуйте <tt class="docutils literal"><span class="pre">__repr__</span></tt> метод. Чем он отличается от <tt class="docutils literal"><span class="pre">__str__</span></tt>?
+Когда используется? Реализуйте &lt;code&gt;__repr__``.</li>
+<li>Исследуйте другие типы существующих вентилей (таких как NAND(НЕ-И),
+NOR(НЕ-ИЛИ) и исключающее XOR(ИЛИ)). Добавьте их в иерархию цепей.
+Сколько дополнительного кода вам понадобилось?</li>
+<li>Наиболее простая арифметическая цепь называется полусумматор.
+Исследуйте и реализуйте её.</li>
+<li>Теперь расширьте эту цепь и реализуйте 8-битный полный сумматор.</li>
+<li>Симуляция цепи, показанная в данной части, работает в обратном
+направлении. Другими словами, выходное значение производится путём
+обратной работы через входные значения, которые в свою очередь запрашивают
+другие выходы. Это продолжается до тех пор, пока не будут найдены внешние
+входные линии. В этот момент у пользователя будут запрошены значения для
+них. Измените реализацию таким образом, чтобы эти действия происходили в
+прямом направлении: схема производила выход после получения значений на входах.</li>
+<li>Создайте класс, представляющий игровые карты. Потом создайте класс,
+представляющий колоду карт. Используя эти два класса, реализуйте вашу
+любимую карточную игру.</li>
+<li>Найдите головоломку Судоку в местной газете. Напишите программу для её решения.</li>
 </ol>
 </div>
 
@@ -371,12 +370,12 @@ the puzzle.</li>
   </li>
   <a class="navLinkBg" id="navLinkBgLeft"  href="DiscussionQuestions.html" ></a>
   
-  <li id="relations-next" class="navLink" title='Next Section - Objectives' data-toggle="tooltip" >
+  <li id="relations-next" class="navLink" title='Next Section - Цели' data-toggle="tooltip" >
     <a href="../AlgorithmAnalysis/Objectives.html" >
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="../AlgorithmAnalysis/Objectives.html" >Next Section - Objectives</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="../AlgorithmAnalysis/Objectives.html" >Next Section - Цели</a>
 
 <script type="text/javascript">
 
