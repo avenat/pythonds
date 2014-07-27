@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Programming Exercises &mdash; Problem Solving with Algorithms and Data Structures</title>
+    <title>Упражнения для программирования &mdash; Problem Solving with Algorithms and Data Structures</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -74,7 +74,7 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
     <link rel="next" title="Objectives" href="../Recursion/Objectives.html" />
-    <link rel="prev" title="Discussion Questions" href="DiscussionQuestions.html" />
+    <link rel="prev" title="Вопросы для обсуждения" href="DiscussionQuestions.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -265,7 +265,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Programming Exercises</a></li>
+<li><a class="reference internal" href="#">Упражнения для программирования</a></li>
 </ul>
 </ul>
 </li>
@@ -273,7 +273,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Discussion Questions" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - Вопросы для обсуждения" data-toggle="tooltip">
     <a href="DiscussionQuestions.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
@@ -310,68 +310,66 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 
 <div class="container" id="main-content">
   
-  <div class="section" id="programming-exercises">
-<h1>Programming Exercises<a class="headerlink" href="#programming-exercises" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="id1">
+<h1>Упражнения для программирования<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <ol class="arabic">
-<li><p class="first">Modify the infix-to-postfix algorithm so that it can handle errors.</p>
+<li><p class="first">Измените алгоритм &#8220;из инфикса в постфикс&#8221; таким образом,
+чтобы он обрабатывал ошибки.</p>
 </li>
-<li><p class="first">Modify the postfix evaluation algorithm so that it can handle errors.</p>
+<li><p class="first">Измените алгоритм вычисления постфиксного выражения
+таким образом, чтобы он обрабатывал ошибки.</p>
 </li>
-<li><p class="first">Implement a direct infix evaluator that combines the functionality of
-infix-to-postfix conversion and the postfix evaluation algorithm.
-Your evaluator should process infix tokens from left to right and use
-two stacks, one for operators and one for operands, to perform the
-evaluation.</p>
+<li><p class="first">Создайте направленный инфиксный вычислитель, который
+совмещает функциональность преобразования из инфикса
+в постфикс и алгоритм постфиксных вычислений.</p>
 </li>
-<li><p class="first">Turn your direct infix evaluator from the previous problem into a
-calculator.</p>
+<li><p class="first">Оберните результат предыдущего задания в калькулятор.</p>
 </li>
-<li><p class="first">Implement the <tt class="docutils literal"><span class="pre">Queue</span></tt> ADT, using a list such that the rear of the
-queue is at the end of the list.</p>
+<li><p class="first">Реализуйте АТД <tt class="docutils literal"><span class="pre">Queue</span></tt>, используя список таким образом,
+чтобы хвост очереди совпадал с его концом.</p>
 </li>
-<li><p class="first">Design and implement an experiment to do benchmark comparisons of the
-two queue implementations. What can you learn from such an
-experiment?</p>
+<li><p class="first">Продумайте и воплотите эксперимент по тестовому сравнению
+двух реализаций очереди. Какие выводы вы можете из него сделать?</p>
 </li>
-<li><p class="first">It is possible to implement a queue such that both enqueue and
-dequeue have <span class="math">\(O(1)\)</span> performance <em>on average</em>. In this case it
-means that most of the time enqueue and dequeue will be
-<span class="math">\(O(1)\)</span> except in one particular circumstance where dequeue
-will be <span class="math">\(O(n)\)</span>.</p>
+<li><p class="first">Существует возможность реализовать очередь таким образом, чтобы обе
+операции <tt class="docutils literal"><span class="pre">enqueue</span></tt> и <tt class="docutils literal"><span class="pre">dequeue</span></tt> <em>в среднем</em> имели производительность
+<span class="math">\(O(1)\)</span>. Это подразумевает, что большую часть времени они будут
+<span class="math">\(O(1)\)</span>, за исключением единственного случая, при котором <tt class="docutils literal"><span class="pre">dequeue</span></tt>
+будет <span class="math">\(O(n)\)</span>.</p>
 </li>
-<li><p class="first">Consider a real life situation. Formulate a question and then design
-a simulation that can help to answer it. Possible situations include:</p>
+<li><p class="first">Рассмотрите ситуацию из реальной жизни. Сформулируйте вопрос и создайте
+симуляцию, которая поможет на него ответить. Возможные ситуации:</p>
 <ul class="simple">
-<li>Cars lined up at a car wash</li>
-<li>Customers at a grocery store check-out</li>
-<li>Airplanes taking off and landing on a runway</li>
-<li>A bank teller</li>
+<li>Машины, стоящие в очереди в мойку.</li>
+<li>Покупатели в очереди на кассе бакалейного магазина.</li>
+<li>Самолёты, взлетающие и приземляющиеся на взлётно-посадочную полосу.</li>
+<li>Кассир банка.</li>
 </ul>
-<p>Be sure to state any assumptions that you make and provide any
-probabilistic data that must be considered as part of the scenario.</p>
+<p>Обязательно укажите сделанные вами предположения и предоставьте любые
+вероятностные данные, которые нужно будет рассмотреть в качестве части сценария.</p>
 </li>
-<li><p class="first">Modify the Hot Potato simulation to allow for a randomly chosen
-counting value so that each pass is not predictable from the previous
-one.</p>
+<li><p class="first">Измените симуляцию &#8220;Hot Potato&#8221;, чтобы можно было случайным образом
+выбирать значение для отсчёта. Таким образом, результат каждого прохода
+станет непредсказуемым.</p>
 </li>
-<li><p class="first">Implement a radix sorting machine. A radix sort for base 10 integers
-is a mechanical sorting technique that utilizes a collection of bins,
-one main bin and 10 digit bins. Each bin acts like a queue and
-maintains its values in the order that they arrive. The algorithm
-begins by placing each number in the main bin. Then it considers each
-value digit by digit. The first value is removed and placed in a
-digit bin corresponding to the digit being considered. For example,
-if the ones digit is being considered, 534 is placed in digit bin 4
-and 667 is placed in digit bin 7. Once all the values are placed in
-the corresponding digit bins, the values are collected from bin 0 to
-bin 9 and placed back in the main bin. The process continues with the
-tens digit, the hundreds, and so on. After the last digit is
-processed, the main bin contains the values in order.</p>
+<li><p class="first">Реализуйте машину поразрядной сортировки. Поразрядная сортировка для десятичных
+целых чисел - это чисто механическая сортировочная техника, использующая набор
+корзин: одну главную и десять цифровых. Каждая корзина работает как очередь и
+содержит внутри значения в порядке их поступления. Алгоритм начинает работу с
+помещения всех заданных чисел в главную корзину, после чего считывает их оттуда
+по одиночке. Из главной корзины берётся первое число и помещается в цифровую
+корзину, соответствующую его наименьшему разряду. Например, число 534 отправится
+в четвёртую корзину, а 667 - в седьмую. После того, как все числа разложены по
+цифровым корзинам, последовательность вновь собирается в главную, но при этом
+числа берутся из корзин по порядку. Т.е, сначала из нулевой, потом из первой и
+так далее. Процесс повторяется, но критерием уже служат цифры десятков, сотен и
+так далее. После того, как будет обработан последний разряд, главная корзина будет
+содержать значения в упорядоченном виде.</p>
 </li>
-<li><p class="first">Another example of the parentheses matching problem comes from
-hypertext markup language (HTML). In HTML, tags exist in both opening
-and closing forms and must be balanced to properly describe a web
-document. This very simple HTML document:</p>
+<li><p class="first">Другой пример, в котором может возникнуть проблема соответствия скобок, приходит
+из гипертекстового языка разметки (или HTML). В HTML у каждого тега существуют
+открывающая и закрывающая формы, которые должны быть сбалансированы, чтобы адекватно
+описывать веб-документ. Вот пример очень простого веб-документа:</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;html&gt;
    &lt;head&gt;
       &lt;title&gt;
@@ -385,69 +383,67 @@ document. This very simple HTML document:</p>
 &lt;/html&gt;
 </pre></div>
 </div>
-<p>is intended only to show the matching and nesting structure for tags
-in the language. Write a program that can check an HTML document for
-proper opening and closing tags.</p>
+<p>предназначенный исключительно для того, чтобы показать соответствующие и
+вложенные структуры тегов языка. Напишите программу, которая проверит HTML
+документ на соответствие открывающих и закрывающих тегов.</p>
 </li>
-<li><p class="first">Extend the program from Listing 2.15 to handle palindromes with
-spaces. For example, I PREFER PI is a palindrome that reads the same
-forward and backward if you ignore the blank characters.</p>
+<li><p class="first">Расширьте программу из листинга 2.15, чтобы обрабатывать палиндромы с пробелами.
+Например, I PREFER PI - это палиндром, который читается одинаково слева направо и
+справа налево, если проигнорировать пробелы.</p>
 </li>
-<li><p class="first">To implement the <tt class="docutils literal"><span class="pre">length</span></tt> method, we counted the number of nodes in
-the list. An alternative strategy would be to store the number of
-nodes in the list as an additional piece of data in the head of the
-list. Modify the <tt class="docutils literal"><span class="pre">UnorderedList</span></tt> class to include this information
-and rewrite the <tt class="docutils literal"><span class="pre">length</span></tt> method.</p>
+<li><p class="first">В реализации метода <tt class="docutils literal"><span class="pre">`size`</span></tt> мы подсчитываем количество узлов в списке.
+Альтернативной стратегией было бы хранить количество узлов в дополнительном
+кусочке данных в голове списка. Измените класс <tt class="docutils literal"><span class="pre">UnorderedList</span></tt>, чтобы включить
+в него эту информацию, и перепишите метод <tt class="docutils literal"><span class="pre">size</span></tt>.</p>
 </li>
-<li><p class="first">Implement the <tt class="docutils literal"><span class="pre">remove</span></tt> method so that it works correctly in the
-case where the item is not in the list.</p>
+<li><p class="first">Реализуйте метод <tt class="docutils literal"><span class="pre">remove</span></tt>, который работал бы корректно, если
+элемент отсутствует в списке.</p>
 </li>
-<li><p class="first">Modify the list classes to allow duplicates. Which methods will be
-impacted by this change?</p>
+<li><p class="first">Измените классы списков, исключив дубляж операций. Какие методы
+затронет это изменение?</p>
 </li>
-<li><p class="first">Implement the __str__ method in the UnorderedList class. What
-would be a good string representation for a list?</p>
+<li><p class="first">Реализуйте метод <tt class="docutils literal"><span class="pre">__str__</span></tt> для класса UnorderedList. Как выглядело бы
+красивое представление списка?</p>
 </li>
-<li><p class="first">Implement __str__ method so that lists are displayed the
-Python way (with square brackets).</p>
+<li><p class="first">Реализуйте метод <tt class="docutils literal"><span class="pre">__str__</span></tt>, чтобы списки отображались Python-способом
+(в квадратных скобках).</p>
 </li>
-<li><p class="first">Implement the remaining operations defined in the UnorderedList ADT
-(append, index, pop, insert).</p>
+<li><p class="first">Реализуйте оставшиеся операции, определённые в АТД <tt class="docutils literal"><span class="pre">UnorderedList</span></tt>
+(<tt class="docutils literal"><span class="pre">append</span></tt>, <tt class="docutils literal"><span class="pre">index</span></tt>, <tt class="docutils literal"><span class="pre">pop</span></tt>, <tt class="docutils literal"><span class="pre">insert</span></tt>).</p>
 </li>
-<li><p class="first">Implement a slice method for the <tt class="docutils literal"><span class="pre">UnorderedList</span></tt> class. It should
-take two parameters, <tt class="docutils literal"><span class="pre">start</span></tt> and <tt class="docutils literal"><span class="pre">stop</span></tt>, and return a copy of the
-list starting at the <tt class="docutils literal"><span class="pre">start</span></tt> position and going up to but not
-including the <tt class="docutils literal"><span class="pre">stop</span></tt> position.</p>
+<li><p class="first">Реализуйте метод &#8220;среза&#8221; для класса <tt class="docutils literal"><span class="pre">UnorderedList</span></tt>. Он должен
+принимать два параметра - <tt class="docutils literal"><span class="pre">start</span></tt> и <tt class="docutils literal"><span class="pre">stop</span></tt> - и возвращать
+копию списка, начиная с позиции <tt class="docutils literal"><span class="pre">start</span></tt> и заканчивая (но не включая!)
+позицией <tt class="docutils literal"><span class="pre">stop</span></tt>.</p>
 </li>
-<li><p class="first">Implement the remaining operations defined in the OrderedList ADT.</p>
+<li><p class="first">Реализуйте оставшиеся операции, определённые в АТД <tt class="docutils literal"><span class="pre">OrderedList</span></tt>.</p>
 </li>
-<li><p class="first">Consider the relationship between Unordered and Ordered lists. Is it
-possible that inheritance could be used to build a more efficient
-implementation? Implement this inheritance hierarchy.</p>
+<li><p class="first">Рассмотрите отношения между упорядоченными и неупорядоченными списками.
+Возможно ли использовать наследование для создания более эффективной
+реализации? Воплотите эту наследственную иерархию.</p>
 </li>
-<li><p class="first">Implement a stack using linked lists.</p>
+<li><p class="first">Реализуйте стек, используя связанный список.</p>
 </li>
-<li><p class="first">Implement a queue using linked lists.</p>
+<li><p class="first">Реализуйте очередь, используя связанный список.</p>
 </li>
-<li><p class="first">Implement a deque using linked lists.</p>
+<li><p class="first">Реализуйте дек, используя связанный список.</p>
 </li>
-<li><p class="first">Design and implement an experiment that will compare the performance
-of a Python list with a list implemented as a linked list.</p>
+<li><p class="first">Продумайте и воплотите эксперимент, сравнивающий производительности
+списков Python и списков, реализованных как связанные.</p>
 </li>
-<li><p class="first">Design and implement an experiment that will compare the performance
-of the Python list based stack and queue with the linked list
-implementation.</p>
+<li><p class="first">Продумайте и воплотите эксперимент, сравнивающий производительность
+стека и очереди, основанных на списках Python, с реализациями на основе
+связанного списка.</p>
 </li>
-<li><p class="first">The linked list implementation given above is called a singly linked
-list because each node has a single reference to the next node in
-sequence. An alternative implementation is known as a doubly linked
-list. In this implementation, each node has a reference to the next
-node (commonly called next) as well as a reference to the preceding
-node (commonly called back). The head reference also contains two
-references, one to the first node in the linked list and one to the
-last. Code this implementation in Python.</p>
+<li><p class="first">Данная выше реализация связанного списка называется единичным связанным
+списком, поскольку каждый его узел содержит единственную ссылку на следующий
+в последовательности. Альтернативная реализация известна как двойной связанный
+список. В ней нужный узел ссылается на следующий за ним (<tt class="docutils literal"><span class="pre">next</span></tt>) и на
+предыдущий ему (<tt class="docutils literal"><span class="pre">back</span></tt>). Голова также имеет две ссылки: одну на первый узел
+в связанном списке, а вторую - на последний. Закодируйте эту реализацию в Python.</p>
 </li>
-<li><p class="first">Create an implementation of a queue that would have an average</p>
+<li><p class="first">Создайте реализацию очереди, которая имела бы среднюю производительность
+<span class="math">\(O(1)\)</span> для операций постановки в очередь и извлечения из неё.</p>
 </li>
 </ol>
 </div>
@@ -455,7 +451,7 @@ last. Code this implementation in Python.</p>
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - Discussion Questions' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - Вопросы для обсуждения' data-toggle="tooltip">
     <a href="DiscussionQuestions.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
