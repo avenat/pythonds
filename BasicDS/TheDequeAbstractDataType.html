@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The Deque Abstract Data Type &mdash; Problem Solving with Algorithms and Data Structures</title>
+    <title>Абстрактный тип данных “дек” &mdash; Problem Solving with Algorithms and Data Structures</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -73,7 +73,7 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
-    <link rel="next" title="Implementing a Deque in Python" href="ImplementingaDequeinPython.html" />
+    <link rel="next" title="Реализация дека в Python" href="ImplementingaDequeinPython.html" />
     <link rel="prev" title="What Is a Deque?" href="WhatIsaDeque.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -265,7 +265,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">The Deque Abstract Data Type</a></li>
+<li><a class="reference internal" href="#">Абстрактный тип данных &#8220;дек&#8221;</a></li>
 </ul>
 </ul>
 </li>
@@ -279,7 +279,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Implementing a Deque in Python' data-toggle="tooltip" >
+  <li id="relations-next" title='Next Chapter - Реализация дека в Python' data-toggle="tooltip" >
     <a href="ImplementingaDequeinPython.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
@@ -310,45 +310,45 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 
 <div class="container" id="main-content">
   
-  <div class="section" id="the-deque-abstract-data-type">
-<h1>The Deque Abstract Data Type<a class="headerlink" href="#the-deque-abstract-data-type" title="Permalink to this headline">¶</a></h1>
-<p>The deque abstract data type is defined by the following structure and
-operations. A deque is structured, as described above, as an ordered
-collection of items where items are added and removed from either end,
-either front or rear. The deque operations are given below.</p>
+  <div class="section" id="id1">
+<h1>Абстрактный тип данных &#8220;дек&#8221;<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Абстрактный тип данных дека определяется следующими структурой и операциями.
+Как было описано выше, дек имеет структуру упорядоченной коллекции элементов,
+которые могут добавляться и удаляться с любого конца - и с головы, и с хвоста.
+Операции для дека представлены ниже:</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">Deque()</span></tt> creates a new deque that is empty. It needs no parameters
-and returns an empty deque.</li>
-<li><tt class="docutils literal"><span class="pre">addFront(item)</span></tt> adds a new item to the front of the deque. It
-needs the item and returns nothing.</li>
-<li><tt class="docutils literal"><span class="pre">addRear(item)</span></tt> adds a new item to the rear of the deque. It needs
-the item and returns nothing.</li>
-<li><tt class="docutils literal"><span class="pre">removeFront()</span></tt> removes the front item from the deque. It needs no
-parameters and returns the item. The deque is modified.</li>
-<li><tt class="docutils literal"><span class="pre">removeRear()</span></tt> removes the rear item from the deque. It needs no
-parameters and returns the item. The deque is modified.</li>
-<li><tt class="docutils literal"><span class="pre">isEmpty()</span></tt> tests to see whether the deque is empty. It needs no
-parameters and returns a boolean value.</li>
-<li><tt class="docutils literal"><span class="pre">size()</span></tt> returns the number of items in the deque. It needs no
-parameters and returns an integer.</li>
+<li><tt class="docutils literal"><span class="pre">Deque()</span></tt> создаёт новый пустой дек. Не нуждается в параметрах и
+возвращает пустой дек.</li>
+<li><tt class="docutils literal"><span class="pre">addFront(item)</span></tt> добавляет новый элемент в голову дека. Параметр
+(элемент) необходим, ничего не возвращает.</li>
+<li><tt class="docutils literal"><span class="pre">addRear(item)</span></tt> добавляет новый элемент в хвост дека. Параметр
+(элемент) необходим, ничего не возвращает.</li>
+<li><tt class="docutils literal"><span class="pre">removeFront()</span></tt> удаляет первый элемент из дека. Не нуждается в
+параметрах и возвращает элемент. Дек модифицируется.</li>
+<li><tt class="docutils literal"><span class="pre">removeRear()</span></tt> удаляет последний элемент из дека. Не нуждается в
+параметрах и возвращает элемент. Дек модифицируется.</li>
+<li><tt class="docutils literal"><span class="pre">isEmpty()</span></tt> проверяет дек на пустоту. Не нуждается в параметрах и
+возвращает булево значение.</li>
+<li><tt class="docutils literal"><span class="pre">size()</span></tt> возвращает количество элементов в деке. Не нуждается в
+параметрах и возвращает целое.</li>
 </ul>
-<p>As an example, if we assume that <tt class="docutils literal"><span class="pre">d</span></tt> is a deque that has been created
-and is currently empty, then Table {dequeoperations} shows the results
-of a sequence of deque operations. Note that the contents in front are
-listed on the right. It is very important to keep track of the front and
-the rear as you move items in and out of the collection as things can
-get a bit confusing.</p>
+<p>В качестве примера, если мы предположим, что <tt class="docutils literal"><span class="pre">d</span></tt> - это дек, который был
+создан и всё ещё пуст, то <em>таблица 1</em> демонстрирует результаты серии
+операций над ним. Обратите внимание, что содержимое головы располагается
+справа. Очень важно отслеживать, где голова, а где хвост дека, когда вы
+перемещаете элементы в и из коллекции, поскольку эти вещи могут быть
+несколько запутанными.</p>
 <table border="1" class="docutils" id="tbl-dequeoperations">
-<caption><strong>Table 1: Examples of Deque Operations</strong></caption>
+<caption><strong>Таблица 1: Пример операций для дека</strong></caption>
 <colgroup>
-<col width="38%" />
-<col width="38%" />
-<col width="24%" />
+<col width="32%" />
+<col width="32%" />
+<col width="36%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head"><strong>Deque Operation</strong></th>
-<th class="head"><strong>Deque Contents</strong></th>
-<th class="head"><strong>Return Value</strong></th>
+<tr class="row-odd"><th class="head"><strong>Операция</strong></th>
+<th class="head"><strong>Содержимое дека</strong></th>
+<th class="head"><strong>Возвращаемое значение</strong></th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -406,12 +406,12 @@ get a bit confusing.</p>
   </li>
   <a class="navLinkBg" id="navLinkBgLeft"  href="WhatIsaDeque.html" ></a>
   
-  <li id="relations-next" class="navLink" title='Next Section - Implementing a Deque in Python' data-toggle="tooltip" >
+  <li id="relations-next" class="navLink" title='Next Section - Реализация дека в Python' data-toggle="tooltip" >
     <a href="ImplementingaDequeinPython.html" >
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="ImplementingaDequeinPython.html" >Next Section - Implementing a Deque in Python</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="ImplementingaDequeinPython.html" >Next Section - Реализация дека в Python</a>
 
 <script type="text/javascript">
 

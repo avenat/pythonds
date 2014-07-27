@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>What Is a Queue? &mdash; Problem Solving with Algorithms and Data Structures</title>
+    <title>Что такое очередь? &mdash; Problem Solving with Algorithms and Data Structures</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -73,8 +73,8 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
-    <link rel="next" title="The Queue Abstract Data Type" href="TheQueueAbstractDataType.html" />
-    <link rel="prev" title="Infix, Prefix and Postfix Expressions" href="InfixPrefixandPostfixExpressions.html" />
+    <link rel="next" title="Абстрактный тип данных “очередь”" href="TheQueueAbstractDataType.html" />
+    <link rel="prev" title="Инфиксные, префиксные и постфиксные выражения" href="InfixPrefixandPostfixExpressions.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -265,7 +265,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">What Is a Queue?</a></li>
+<li><a class="reference internal" href="#">Что такое очередь?</a></li>
 </ul>
 </ul>
 </li>
@@ -273,13 +273,13 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Infix, Prefix and Postfix Expressions" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - Инфиксные, префиксные и постфиксные выражения" data-toggle="tooltip">
     <a href="InfixPrefixandPostfixExpressions.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - The Queue Abstract Data Type' data-toggle="tooltip" >
+  <li id="relations-next" title='Next Chapter - Абстрактный тип данных &#8220;очередь&#8221;' data-toggle="tooltip" >
     <a href="TheQueueAbstractDataType.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
@@ -310,64 +310,62 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 
 <div class="container" id="main-content">
   
-  <div class="section" id="what-is-a-queue">
-<h1>What Is a Queue?<a class="headerlink" href="#what-is-a-queue" title="Permalink to this headline">¶</a></h1>
-<p>A queue is an ordered collection of items where the addition of new
-items happens at one end, called the “rear,” and the removal of existing
-items occurs at the other end, commonly called the “front.” As an
-element enters the queue it starts at the rear and makes its way toward
-the front, waiting until that time when it is the next element to be
-removed.</p>
-<p>The most recently added item in the queue must wait at the end of the
-collection. The item that has been in the collection the longest is at
-the front. This ordering principle is sometimes called <strong>FIFO</strong>,
-<strong>first-in first-out</strong>. It is also known as “first-come first-served.”</p>
-<p>The simplest example of a queue is the typical line that we all
-participate in from time to time. We wait in a line for a movie, we wait
-in the check-out line at a grocery store, and we wait in the cafeteria
-line (so that we can pop the tray stack). Well-behaved lines, or queues,
-are very restrictive in that they have only one way in and only one way
-out. There is no jumping in the middle and no leaving before you have
-waited the necessary amount of time to get to the front.
-<a class="reference internal" href="#fig-qubasicqueue"><em>Figure 1</em></a> shows a simple queue of Python data objects.</p>
+  <div class="section" id="id1">
+<h1>Что такое очередь?<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Очередь - это упорядоченная коллекция элементов, в которой добавление новых
+происходит с одного конца, называемого &#8220;хвост очереди&#8221;, а удаление существующих
+- с другого, &#8220;головы очереди&#8221;. Как только элемент добавляется в конец очереди,
+он начинает путь по направлению к её началу, ожидая удаления предыдущих.</p>
+<p>Самые последние из добавленных в очередь единиц должны ждать в конце коллекции.
+Элемент, который пробыл в коллекции дольше всего, находится в начале очереди.
+Такой принцип упорядочения иногда называют <strong>FIFO, first-in first-out</strong>
+(<em>англ. &#8220;первый пришёл, первый вышел&#8221;</em>). Ещё он известен, как &#8220;первый пришёл -
+первым обслужен&#8221;.</p>
+<p>Простейший пример такой структуры данных - это обычная очередь, в которой все
+мы иногда стоим: в кинотеатре, перед кассой в бакалейной лавке, в закусочной
+(где мы, кстати, можем &#8220;выталкивать&#8221; поднос из стопки/стека). Правильные очереди
+очень огранены тем, что имеют только один путь в и один путь из. Для них не
+предусмотрены прыжки в середину или выход до того, как пройдёт достаточно
+времени, чтобы переместиться в начало. <em>Рисунок 1</em> показывает простую очередь
+из объектов данных Python.
+<a class="reference internal" href="#fig-qubasicqueue"><em>Рисунок 1</em></a> очередь из объектов данных Python</p>
 <div class="figure align-center" id="fig-qubasicqueue">
 <img alt="../_images/basicqueue.png" src="../_images/basicqueue.png" />
-<p class="caption">Figure 1: A Queue of Python Data Objects</p>
+<p class="caption">Рисунок 1: Очередь из объектов данных Python</p>
 </div>
-<p>Computer science also has common examples of queues. Our computer
-laboratory has 30 computers networked with a single printer. When
-students want to print, their print tasks “get in line” with all the
-other printing tasks that are waiting. The first task in is the next to
-be completed. If you are last in line, you must wait for all the other
-tasks to print ahead of you. We will explore this interesting example in
-more detail later.</p>
-<p>In addition to printing queues, operating systems use a number of
-different queues to control processes within a computer. The scheduling
-of what gets done next is typically based on a queuing algorithm that
-tries to execute programs as quickly as possible and serve as many users
-as it can. Also, as we type, sometimes keystrokes get ahead of the
-characters that appear on the screen. This is due to the computer doing
-other work at that moment. The keystrokes are being placed in a
-queue-like buffer so that they can eventually be displayed on the screen
-in the proper order.</p>
+<p>В информатике тоже есть распространённые примеры очередей. В нашей компьютерной
+лаборатории стоит 30 компьютеров, подключённых по сети к одному принтеру. Когда
+студенты хотят что-то распечатать, они набирают задание &#8220;встать в очередь&#8221; вместе
+со всеми другими ожидающими печати заданиями. Первое задание - следующее, которое
+будет выполнено. Если вы последний в очереди, то должны ждать, пока напечатаются
+все стоящие перед вами документы. Позднее мы исследуем этот интересный пример
+более подробно.</p>
+<p>В дополнение к очереди на печать оперативная система использует несколько различных
+очередей для контроля процессов внутри компьютера. Планирование, что делать следующим,
+обычно основывается на алгоритме очереди, который пытается запускать программы на
+выполнение так быстро, как это возможно, и обслуживать максимальное число пользователей.
+Также иногда в процессе печати на клавиатуре нажатия клавиш опережают появление символов
+на экране. Это происходит из-за того, что компьютер в этот момент выполняет другую работу.
+Нажатия клавиш помещаются в очередеподобный буфер, чтобы в конце концов отобразиться на
+экране в правильном порядке.</p>
 </div>
 
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - Infix, Prefix and Postfix Expressions' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - Инфиксные, префиксные и постфиксные выражения' data-toggle="tooltip">
     <a href="InfixPrefixandPostfixExpressions.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
   </li>
   <a class="navLinkBg" id="navLinkBgLeft"  href="InfixPrefixandPostfixExpressions.html" ></a>
   
-  <li id="relations-next" class="navLink" title='Next Section - The Queue Abstract Data Type' data-toggle="tooltip" >
+  <li id="relations-next" class="navLink" title='Next Section - Абстрактный тип данных &#8220;очередь&#8221;' data-toggle="tooltip" >
     <a href="TheQueueAbstractDataType.html" >
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="TheQueueAbstractDataType.html" >Next Section - The Queue Abstract Data Type</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="TheQueueAbstractDataType.html" >Next Section - Абстрактный тип данных &#8220;очередь&#8221;</a>
 
 <script type="text/javascript">
 

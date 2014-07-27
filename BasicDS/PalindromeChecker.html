@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Palindrome-Checker &mdash; Problem Solving with Algorithms and Data Structures</title>
+    <title>Проверка палиндрома &mdash; Problem Solving with Algorithms and Data Structures</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -74,7 +74,7 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
     <link rel="next" title="Lists" href="Lists.html" />
-    <link rel="prev" title="Implementing a Deque in Python" href="ImplementingaDequeinPython.html" />
+    <link rel="prev" title="Реализация дека в Python" href="ImplementingaDequeinPython.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -265,7 +265,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Palindrome-Checker</a></li>
+<li><a class="reference internal" href="#">Проверка палиндрома</a></li>
 </ul>
 </ul>
 </li>
@@ -273,7 +273,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Implementing a Deque in Python" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - Реализация дека в Python" data-toggle="tooltip">
     <a href="ImplementingaDequeinPython.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
@@ -310,31 +310,29 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 
 <div class="container" id="main-content">
   
-  <div class="section" id="palindrome-checker">
-<h1>Palindrome-Checker<a class="headerlink" href="#palindrome-checker" title="Permalink to this headline">¶</a></h1>
-<p>An interesting problem that can be easily solved using the deque data
-structure is the classic palindrome problem. A <strong>palindrome</strong> is a
-string that reads the same forward and backward, for example, <em>radar</em>,
-<em>toot</em>, and <em>madam</em>. We would like to construct an algorithm to input a
-string of characters and check whether it is a palindrome.</p>
-<p>The solution to this problem will use a deque to store the characters of
-the string. We will process the string from left to right and add each
-character to the rear of the deque. At this point, the deque will be
-acting very much like an ordinary queue. However, we can now make use of
-the dual functionality of the deque. The front of the deque will hold
-the first character of the string and the rear of the deque will hold
-the last character (see <a class="reference internal" href="#fig-palindrome"><em>Figure 2</em></a>).</p>
+  <div class="section" id="id1">
+<h1>Проверка палиндрома<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Интересная задача, которая может быть легко решена с использованием структуры
+данных &#8220;дек&#8221; - это классическая задача палиндрома. <strong>Палиндромом</strong> называют
+строку, которая одинаково читается справа налево и слева направо. Например,
+<em>radar</em>, <em>toot</em> или <em>madam</em>. Мы хотим создать алгоритм, принимающий на вход
+строку символов и проверяющий, является ли она палиндромом.</p>
+<p>Для решения данной задачи мы будем использовать дек в качестве хранилища строковых
+символов. Мы будем обрабатывать строку слева направо и добавлять каждый её элемент
+в хвост дека. В этот момент он будет работать очень схоже с обычной очередью.
+Однако, теперь мы можем использовать дуальную функциональность дека. Его голова
+будет хранить первый символ строки, а хвост - последний (see <a class="reference internal" href="#fig-palindrome"><em>Рисунок 2</em></a>).</p>
 <div class="figure align-center" id="fig-palindrome">
 <img alt="../_images/palindromesetup.png" src="../_images/palindromesetup.png" />
-<p class="caption">Figure 2: A Deque</p>
+<p class="caption">Рисунок 2: Дек</p>
 </div>
-<p>Since we can remove both of them directly, we can compare them and
-continue only if they match. If we can keep matching first and the last
-items, we will eventually either run out of characters or be left with a
-deque of size 1 depending on whether the length of the original string
-was even or odd. In either case, the string must be a palindrome. The
-complete function for palindrome-checking appears in
-<a class="reference internal" href="#lst-palchecker"><em>ActiveCode 1</em></a>.</p>
+<p>Поскольку мы способны удалять оба элемента сразу, то можно производить
+сравнение и продолжать только в случае, если символы совпадают. Если
+соответствие первого и последнего элементов будет сохраняться, то в
+конечном итоге мы придём или к отсутствию символов, или останемся с деком
+размером 1 - в зависимости от того, была ли длина исходной строки чётным
+или нечётным числом. Но обоих случаях входная последовательность будет
+палиндромом. Полностью функция проверки представлена в <a class="reference internal" href="#lst-palchecker"><em>ActiveCode 1</em></a>.</p>
 
 <div id="cont"></div>
 <div id="palchecker" lang="python" class="ac_section alert alert-warning" >
@@ -381,7 +379,7 @@ print(palchecker("radar"))
 
 </div> 
 <div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text">A Palindrome Checker Using Deque (palchecker)</span> </p>
+<p class="ac_caption"><span class="ac_caption_text">Проверка палиндрома с использованием дека (palchecker)</span> </p>
 
 <script>
 if ('block' == 'none') {
@@ -436,7 +434,7 @@ else{
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - Implementing a Deque in Python' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - Реализация дека в Python' data-toggle="tooltip">
     <a href="ImplementingaDequeinPython.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>

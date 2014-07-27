@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Simulation: Hot Potato &mdash; Problem Solving with Algorithms and Data Structures</title>
+    <title>Симуляция: Hot Potato &mdash; Problem Solving with Algorithms and Data Structures</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -73,8 +73,8 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
-    <link rel="next" title="Simulation: Printing Tasks" href="SimulationPrintingTasks.html" />
-    <link rel="prev" title="Implementing a Queue in Python" href="ImplementingaQueueinPython.html" />
+    <link rel="next" title="Симуляция: Задания на печать" href="SimulationPrintingTasks.html" />
+    <link rel="prev" title="Реализация очереди на Python" href="ImplementingaQueueinPython.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -265,7 +265,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Simulation: Hot Potato</a></li>
+<li><a class="reference internal" href="#">Симуляция: Hot Potato</a></li>
 </ul>
 </ul>
 </li>
@@ -273,13 +273,13 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Implementing a Queue in Python" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - Реализация очереди на Python" data-toggle="tooltip">
     <a href="ImplementingaQueueinPython.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Simulation: Printing Tasks' data-toggle="tooltip" >
+  <li id="relations-next" title='Next Chapter - Симуляция: Задания на печать' data-toggle="tooltip" >
     <a href="SimulationPrintingTasks.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
@@ -310,52 +310,50 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 
 <div class="container" id="main-content">
   
-  <div class="section" id="simulation-hot-potato">
-<h1>Simulation: Hot Potato<a class="headerlink" href="#simulation-hot-potato" title="Permalink to this headline">¶</a></h1>
-<p>One of the typical applications for showing a queue in action is to
-simulate a real situation that requires data to be managed in a FIFO
-manner. To begin, let’s consider the children’s game Hot Potato. In this
-game (see <a class="reference internal" href="#fig-quhotpotato"><em>Figure 2</em></a>) children line up in a circle and
-pass an item from neighbor to neighbor as fast as they can. At a certain
-point in the game, the action is stopped and the child who has the item
-(the potato) is removed from the circle. Play continues until only one
-child is left.</p>
+  <div class="section" id="hot-potato">
+<h1>Симуляция: Hot Potato<a class="headerlink" href="#hot-potato" title="Permalink to this headline">¶</a></h1>
+<p>Одно из типичных приложений для демонстрации очереди в действии - это
+симуляция реальной ситуации, которая требует управления данными в манере
+FIFO. Для начала давайте рассмотрим детскую игру Hot Potato. В этой игре
+(см. <a class="reference internal" href="#fig-quhotpotato"><em>Рисунок 2</em></a>) дети выстраиваются в круг и
+перебрасывают предмет от соседа к соседу так быстро, как только могут.
+В некоторый момент игры действие останавливается, и ребёнок, у которого
+остался в руках предмет (картошка), выбывает из круга. Игра продолжается
+до тех пор, пока не останется единственный победитель.</p>
 <div class="figure align-center" id="fig-quhotpotato">
 <img alt="../_images/hotpotato.png" src="../_images/hotpotato.png" />
-<p class="caption">Figure 2: A Six Person Game of Hot Potato</p>
+<p class="caption">Рисунок 2: Игра Hot Potato с шестью игроками</p>
 </div>
-<p>This game is a modern-day equivalent of the famous Josephus problem.
-Based on a legend about the famous first-century historian Flavius
-Josephus, the story is told that in the Jewish revolt against Rome,
-Josephus and 39 of his comrades held out against the Romans in a cave.
-With defeat imminent, they decided that they would rather die than be
-slaves to the Romans. They arranged themselves in a circle. One man was
-designated as number one, and proceeding clockwise they killed every
-seventh man. Josephus, according to the legend, was among other things
-an accomplished mathematician. He instantly figured out where he ought
-to sit in order to be the last to go. When the time came, instead of
-killing himself, he joined the Roman side. You can find many different
-versions of this story. Some count every third man and some allow the
-last man to escape on a horse. In any case, the idea is the same.</p>
-<p>We will implement a general <strong>simulation</strong> of Hot Potato. Our program
-will input a list of names and a constant, call it “num,” to be used for
-counting. It will return the name of the last person remaining after
-repetitive counting by <tt class="docutils literal"><span class="pre">num</span></tt>. What happens at that point is up to you.</p>
-<p>To simulate the circle, we will use a queue (see
-<a class="reference internal" href="#fig-qupotatoqueue"><em>Figure 3</em></a>). Assume that the child holding the potato will
-be at the front of the queue. Upon passing the potato, the simulation
-will simply dequeue and then immediately enqueue that child, putting her
-at the end of the line. She will then wait until all the others have
-been at the front before it will be her turn again. After <tt class="docutils literal"><span class="pre">num</span></tt>
-dequeue/enqueue operations, the child at the front will be removed
-permanently and another cycle will begin. This process will continue
-until only one name remains (the size of the queue is 1).</p>
+<p>Эта игра - современный вариант знаменитой считалки Джозефуса. Основываясь
+на легенде о знаменитом историке первого века Иосифе Флавии, история
+рассказывает, что когда евреи восстали против Рима, Иосиф и 39 его товарищей
+оборонялись против римлян в пещере. Осознав, что поражение неизбежно, они
+решили, что лучше умереть, чем стать рабами империи. Воины встали в круг,
+и один из них был назначен первым номером. Затем, следуя по часовой стрелке,
+они убивали каждого седьмого. Иосиф, как говорит легенда, кроме всего прочего
+был прекрасным математиком. Он сразу сообразил, где нужно встать, чтобы
+оказаться последним. Когда подошло время, то вместо того, чтобы убить себя,
+он перешёл на сторону римлян. Вы можете найти множество различных версий этой
+истории. Одни считают каждого третьего человека, а другие полагают, что
+последний мог сбежать на лошади. В любом случае, идея остаётся прежней.</p>
+<p>Мы реализуем общую <strong>симуляцию</strong> игры Hot Potato. Наша программа будет получать
+на входе список имён и константу &#8220;num&#8221;, используемую для подсчёта. Она будет
+возвращать имя последнего человека, оставшегося после повторяющегося отсчёта
+<tt class="docutils literal"><span class="pre">num</span></tt>. Что случится в этот момент - зависит уже от вас.</p>
+<p>Для симуляции круга мы будем использовать очередь
+(см. <a class="reference internal" href="#fig-qupotatoqueue"><em>Рисунок 3</em></a>). Предположим, что ребёнок, держащий
+картошку, - первый в очереди. После переброса картошки мы просто извлечём его
+оттуда и тут же поставим обратно, но уже в хвост. Ребёнок будет ждать, пока все,
+кто перед ним, побудут первыми, а затем вернётся на это место снова. После <tt class="docutils literal"><span class="pre">num</span></tt>
+операций извлечений/постановок ребёнок, стоящий впереди, будет удалён окончательно,
+и цикл начнётся заново. Этот процесс будет продолжаться до тех пор, пока не останется
+всего одно имя (размер очереди станет равным 1).</p>
 <div class="figure align-center" id="fig-qupotatoqueue">
 <img alt="../_images/namequeue.png" src="../_images/namequeue.png" />
-<p class="caption">Figure 3: A Queue Implementation of Hot Potato</p>
+<p class="caption">Рисунок 3: Реализация Hot Potato в виде очереди</p>
 </div>
-<p>The program is shown in <a class="reference internal" href="#lst-josephussim"><em>ActiveCode 1</em></a>. A call to the
-<tt class="docutils literal"><span class="pre">hotPotato</span></tt> function using 7 as the counting constant returns <tt class="docutils literal"><span class="pre">Susan</span></tt>.</p>
+<p>Программа показана в <a class="reference internal" href="#lst-josephussim"><em>ActiveCode 1</em></a>. Вызов функции
+<tt class="docutils literal"><span class="pre">hotPotato</span></tt>, использующий 7 в качестве константы для подсчёта, возвращает <tt class="docutils literal"><span class="pre">Susan</span></tt>.</p>
 
 <div id="cont"></div>
 <div id="qujosephussim" lang="python" class="ac_section alert alert-warning" >
@@ -398,7 +396,7 @@ print(hotPotato(["Bill","David","Susan","Jane","Kent","Brad"],7))
 
 </div> 
 <div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text">Hot Potato Simulation (qujosephussim)</span> </p>
+<p class="ac_caption"><span class="ac_caption_text">Симуляция Hot Potato (qujosephussim)</span> </p>
 
 <script>
 if ('block' == 'none') {
@@ -448,32 +446,31 @@ else{
 
 </div>
 
-<p>Note that in this example the value of the counting constant is greater
-than the number of names in the list. This is not a problem since the
-queue acts like a circle and counting continues back at the beginning
-until the value is reached. Also, notice that the list is loaded into
-the queue such that the first name on the list will be at the front of
-the queue. <tt class="docutils literal"><span class="pre">Bill</span></tt> in this case is the first item in the list and
-therefore moves to the front of the queue. A variation of this
-implementation, described in the exercises, allows for a random counter.</p>
+<p>Обратите внимание, что в этом примере значение константы подсчёта больше количества
+имён в списке. Это не является проблемой, поскольку очередь работает как круг и
+продолжает считать с начала до тех пор, пока не будет достигнуто нужное значение.
+Также заметьте, что список загружается в очередь таким образом, чтобы его первое имя
+было в её начале. В данном случае первым элементом в списке будет <tt class="docutils literal"><span class="pre">Bill</span></tt>, поэтому
+он помещается в начало очереди. Варианты этой реализации, описанные в упражнениях,
+позволяют выбирать счётчик случайным образом.</p>
 </div>
 
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - Implementing a Queue in Python' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - Реализация очереди на Python' data-toggle="tooltip">
     <a href="ImplementingaQueueinPython.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
   </li>
   <a class="navLinkBg" id="navLinkBgLeft"  href="ImplementingaQueueinPython.html" ></a>
   
-  <li id="relations-next" class="navLink" title='Next Section - Simulation: Printing Tasks' data-toggle="tooltip" >
+  <li id="relations-next" class="navLink" title='Next Section - Симуляция: Задания на печать' data-toggle="tooltip" >
     <a href="SimulationPrintingTasks.html" >
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="SimulationPrintingTasks.html" >Next Section - Simulation: Printing Tasks</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="SimulationPrintingTasks.html" >Next Section - Симуляция: Задания на печать</a>
 
 <script type="text/javascript">
 

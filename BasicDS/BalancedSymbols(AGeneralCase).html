@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Balanced Symbols (A General Case) &mdash; Problem Solving with Algorithms and Data Structures</title>
+    <title>Сбалансированные символы (общий случай) &mdash; Problem Solving with Algorithms and Data Structures</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -73,8 +73,8 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
-    <link rel="next" title="Converting Decimal Numbers to Binary Numbers" href="ConvertingDecimalNumberstoBinaryNumbers.html" />
-    <link rel="prev" title="Simple Balanced Parentheses" href="SimpleBalancedParentheses.html" />
+    <link rel="next" title="Конвертирование десятичных чисел в двоичные" href="ConvertingDecimalNumberstoBinaryNumbers.html" />
+    <link rel="prev" title="Простые сбалансированные скобки" href="SimpleBalancedParentheses.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -265,7 +265,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Balanced Symbols (A General Case)</a></li>
+<li><a class="reference internal" href="#">Сбалансированные символы (общий случай)</a></li>
 </ul>
 </ul>
 </li>
@@ -273,13 +273,13 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Simple Balanced Parentheses" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - Простые сбалансированные скобки" data-toggle="tooltip">
     <a href="SimpleBalancedParentheses.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Converting Decimal Numbers to Binary Numbers' data-toggle="tooltip" >
+  <li id="relations-next" title='Next Chapter - Конвертирование десятичных чисел в двоичные' data-toggle="tooltip" >
     <a href="ConvertingDecimalNumberstoBinaryNumbers.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
@@ -310,17 +310,16 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 
 <div class="container" id="main-content">
   
-  <div class="section" id="balanced-symbols-a-general-case">
-<h1>Balanced Symbols (A General Case)<a class="headerlink" href="#balanced-symbols-a-general-case" title="Permalink to this headline">¶</a></h1>
-<p>The balanced parentheses problem shown above is a specific case of a
-more general situation that arises in many programming languages. The
-general problem of balancing and nesting different kinds of opening and
-closing symbols occurs frequently. For example, in Python
-square brackets, <tt class="docutils literal"><span class="pre">[</span></tt> and <tt class="docutils literal"><span class="pre">]</span></tt>, are used for lists; curly braces, <tt class="docutils literal"><span class="pre">{</span></tt> and <tt class="docutils literal"><span class="pre">}</span></tt>, are
-used for dictionaries; and parentheses, <tt class="docutils literal"><span class="pre">(</span></tt> and <tt class="docutils literal"><span class="pre">)</span></tt>, are used for tuples and
-arithmetic expressions. It is possible to mix symbols as long as each
-maintains its own open and close relationship. Strings of symbols such
-as</p>
+  <div class="section" id="id1">
+<h1>Сбалансированные символы (общий случай)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Показанная выше задача о сбалансированных скобках является частным случаем
+более общей ситуации, возникающей во многих языках программирования.
+Обобщённая проблема балансировки и вложенности различных типов открывающих и
+закрывающих символов возникает очень часто. Например, в Python квадратные
+скобки, <tt class="docutils literal"><span class="pre">[</span></tt> и <tt class="docutils literal"><span class="pre">]</span></tt>, используются для списков, фигурные скобки, <tt class="docutils literal"><span class="pre">{</span></tt> и <tt class="docutils literal"><span class="pre">}</span></tt>,
+- для словарей, а круглые (<tt class="docutils literal"><span class="pre">(</span></tt> и <tt class="docutils literal"><span class="pre">)</span></tt>) - для кортежей и арифметических выражений.
+Можно сколько угодно перемешивать символы до тех пор, пока каждый из них поддерживает
+свои открывающие и закрывающие отношения. Для строк вроде</p>
 <div class="highlight-python"><div class="highlight"><pre>{ { ( [ ] [ ] ) } ( ) }
 
 [ [ { { ( ( ) ) } } ] ]
@@ -328,9 +327,9 @@ as</p>
 [ ] [ ] [ ] ( ) { }
 </pre></div>
 </div>
-<p>are properly balanced in that not only does each opening symbol have a
-corresponding closing symbol, but the types of symbols match as well.</p>
-<p>Compare those with the following strings that are not balanced:</p>
+<p>&#8220;хорошая сбалансированность&#8221; заключается не только в том, что каждый открывающий
+символ имеет соответствующий закрывающий, но и в совпадении типов этих символов.</p>
+<p>Сравните верхний пример со следующими несбалансированными строками:</p>
 <div class="highlight-python"><div class="highlight"><pre>( [ ) ]
 
 ( ( ( ) ] ) )
@@ -338,20 +337,19 @@ corresponding closing symbol, but the types of symbols match as well.</p>
 [ { ( ) ]
 </pre></div>
 </div>
-<p>The simple parentheses checker from the previous section can easily be
-extended to handle these new types of symbols. Recall that each opening
-symbol is simply pushed on the stack to wait for the matching closing
-symbol to appear later in the sequence. When a closing symbol does
-appear, the only difference is that we must check to be sure that it
-correctly matches the type of the opening symbol on top of the stack. If
-the two symbols do not match, the string is not balanced. Once again, if
-the entire string is processed and nothing is left on the stack, the
-string is correctly balanced.</p>
-<p>The Python program to implement this is shown in <a class="reference internal" href="#lst-parcheck2"><em>ActiveCode 5</em></a>.
-The only change appears in line 16 where we call a helper function, <tt class="docutils literal"><span class="pre">matches</span></tt>, to
-assist with symbol-matching. Each symbol that is removed from the stack
-must be checked to see that it matches the current closing symbol. If a
-mismatch occurs, the boolean variable <tt class="docutils literal"><span class="pre">balanced</span></tt> is set to <tt class="docutils literal"><span class="pre">False</span></tt>.</p>
+<p>Простой контролёр скобок из предыдущего раздела может быть легко расширен для
+обработки этих новых типов символов. Напомним, что каждый открывающий символ
+просто помещается в стек в ожидании появления в последовательности соответствующего
+закрывающего символа. Когда это происходит, единственная разница в том, что мы
+должны проверить, корректна ли связь с типом символа на вершине стека. Если они
+не соответствуют друг другу, то строка не сбалансирована. Аналогично, если вся
+входная последовательность обработана и стек пуст, то строка сбалансирована правильно.</p>
+<p>Реализующая это программа на Python показана в <a class="reference internal" href="#lst-parcheck2"><em>ActiveCode 5</em></a>.
+Единственное изменение коснулось строки 16, где вызывается вспомогательная функция
+<tt class="docutils literal"><span class="pre">matches</span></tt>, помогающая с соотнесением символов. Каждый символ, удаляемый из стека,
+должен быть проверен, чтобы убедиться, что он верно сопоставляется с текущим
+закрывающим символом. Если возникает ошибка, то булева переменная <tt class="docutils literal"><span class="pre">balanced</span></tt>
+устанавливается в <tt class="docutils literal"><span class="pre">False</span></tt></p>
 
 <div id="cont"></div>
 <div id="parcheck2" lang="python" class="ac_section alert alert-warning" >
@@ -409,7 +407,7 @@ print(parChecker('[{()]'))
 
 </div> 
 <div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text">Solving the General Balanced Symbol Problem (parcheck2)</span> </p>
+<p class="ac_caption"><span class="ac_caption_text">Решение общего случая балансирования символов (parcheck2)</span> </p>
 
 <script>
 if ('block' == 'none') {
@@ -459,30 +457,30 @@ else{
 
 </div>
 
-<p>These two examples show that stacks are very important data structures
-for the processing of language constructs in computer science. Almost
-any notation you can think of has some type of nested symbol that must
-be matched in a balanced order. There are a number of other important
-uses for stacks in computer science. We will continue to explore them
-in the next sections.</p>
+<p>Эти два примера показывают, что стеки - очень важная структура данных для
+обработки языковых конструкций в информатике. Практически любая нотация,
+о которой вы можете подумать, имеет некоторый тип вложенных символов,
+которые должны согласовываться между собой сбалансированным образом.
+Кроме вышеизложенного, есть целый ряд других важных применений стеков
+в области информатики. Мы продолжим их исследовать в следующем разделе.</p>
 </div>
 
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - Simple Balanced Parentheses' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - Простые сбалансированные скобки' data-toggle="tooltip">
     <a href="SimpleBalancedParentheses.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
   </li>
   <a class="navLinkBg" id="navLinkBgLeft"  href="SimpleBalancedParentheses.html" ></a>
   
-  <li id="relations-next" class="navLink" title='Next Section - Converting Decimal Numbers to Binary Numbers' data-toggle="tooltip" >
+  <li id="relations-next" class="navLink" title='Next Section - Конвертирование десятичных чисел в двоичные' data-toggle="tooltip" >
     <a href="ConvertingDecimalNumberstoBinaryNumbers.html" >
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="ConvertingDecimalNumberstoBinaryNumbers.html" >Next Section - Converting Decimal Numbers to Binary Numbers</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="ConvertingDecimalNumberstoBinaryNumbers.html" >Next Section - Конвертирование десятичных чисел в двоичные</a>
 
 <script type="text/javascript">
 

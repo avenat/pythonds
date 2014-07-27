@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>What is a Stack? &mdash; Problem Solving with Algorithms and Data Structures</title>
+    <title>Что такое “стек”? &mdash; Problem Solving with Algorithms and Data Structures</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -73,8 +73,8 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
-    <link rel="next" title="The Stack Abstract Data Type" href="TheStackAbstractDataType.html" />
-    <link rel="prev" title="What Are Linear Structures?" href="WhatAreLinearStructures.html" />
+    <link rel="next" title="Абстрактный тип данных “стек”" href="TheStackAbstractDataType.html" />
+    <link rel="prev" title="Что такое линейные структуры?" href="WhatAreLinearStructures.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -265,7 +265,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">What is a Stack?</a></li>
+<li><a class="reference internal" href="#">Что такое &#8220;стек&#8221;?</a></li>
 </ul>
 </ul>
 </li>
@@ -273,13 +273,13 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
         
         
           
-  <li id="relations-prev" title="Previous Chapter - What Are Linear Structures?" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - Что такое линейные структуры?" data-toggle="tooltip">
     <a href="WhatAreLinearStructures.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - The Stack Abstract Data Type' data-toggle="tooltip" >
+  <li id="relations-next" title='Next Chapter - Абстрактный тип данных &#8220;стек&#8221;' data-toggle="tooltip" >
     <a href="TheStackAbstractDataType.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
@@ -310,76 +310,76 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 
 <div class="container" id="main-content">
   
-  <div class="section" id="what-is-a-stack">
-<h1>What is a Stack?<a class="headerlink" href="#what-is-a-stack" title="Permalink to this headline">¶</a></h1>
-<p>A <strong>stack</strong> (sometimes called a “push-down stack”) is an ordered
-collection of items where the addition of new items and the removal of
-existing items always takes place at the same end. This end is commonly
-referred to as the “top.” The end opposite the top is known as the
-“base.”</p>
-<p>The base of the stack is significant since items stored in the stack
-that are closer to the base represent those that have been in the stack
-the longest. The most recently added item is the one that is in position
-to be removed first. This ordering principle is sometimes called
-<strong>LIFO</strong>, <strong>last-in first-out</strong>. It provides an ordering based on length
-of time in the collection. Newer items are near the top, while older
-items are near the base.</p>
-<p>Many examples of stacks occur in everyday situations. Almost any
-cafeteria has a stack of trays or plates where you take the one at the
-top, uncovering a new tray or plate for the next customer in line.
-Imagine a stack of books on a desk (<a class="reference internal" href="#fig-bookstack"><em>Figure 1</em></a>). The only
-book whose cover is visible is the one on top. To access others in the
-stack, we need to remove the ones that are sitting on top of them.
-<a class="reference internal" href="#fig-objectstack"><em>Figure 2</em></a> shows another stack. This one contains a number
-of primitive Python data objects.</p>
+  <div class="section" id="id1">
+<h1>Что такое &#8220;стек&#8221;?<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p><strong>Стек</strong> (иногда говорят &#8220;магазин&#8221; - по аналогии с магазином огнестрельного
+оружия) - это упорядоченная коллекция элементов, где добавление нового или
+удаление существующих всегда происходит только на одном из концов. Этот
+конец обычно называют &#8220;вершиной&#8221;, а противоположный ему - &#8220;основанием&#8221;.</p>
+<p>Важность основания стека в том, что хранящиеся ближе к нему элементы
+представляют из себя те, что находятся в стеке дольше всего. Элемент,
+добавленный последним, расположен на той позиции, с которой будет удалён
+в первую очередь. Такой принцип организации иногда называется
+<strong>LIFO, last-in first-out</strong> (<em>англ. «последним пришёл — первым вышел»</em>).
+Он предоставляет упорядочение по длительности нахождения в коллекции.
+Более новые элементы расположены ближе к вершине, в то время как более
+старые - ближе к основанию.</p>
+<p>С примерами стека мы сталкиваемся ежедневно. Едва ли не каждая закусочная
+имеет стопку из подносов или тарелок, где вам нужно брать одну сверху,
+открывая новый поднос или тарелку для следующего посетителя в очереди.
+Вообразите стек из книг на столе (<a class="reference internal" href="#fig-bookstack"><em>Рисунок 1</em></a>).
+Единственной книгой, чья обложка видна, является самая верхняя. Чтобы
+получить доступ к остальным в стопке, нам нужно удалить лежащую поверх
+остальных. <a class="reference internal" href="#fig-objectstack"><em>Рисунок 2</em></a> демонстрирует другой стек,
+содержащий несколько простых объектов данных Python.</p>
 <div class="figure align-center" id="fig-bookstack">
 <a class="reference internal image-reference" href="../_images/bookstack2.png"><img alt="../_images/bookstack2.png" src="../_images/bookstack2.png" /></a>
-<p class="caption">Figure 1: A Stack of Books</p>
+<p class="caption">Рисунок 1: Стек из книг</p>
 </div>
 <div class="figure align-center" id="fig-objectstack">
 <a class="reference internal image-reference" href="../_images/primitive.png"><img alt="../_images/primitive.png" src="../_images/primitive.png" /></a>
-<p class="caption">Figure 2: A Stack of Primitive Python Objects</p>
+<p class="caption">Рисунок 2: Стек из простых объектов Python</p>
 </div>
-<p>One of the most useful ideas related to stacks comes from the simple
-observation of items as they are added and then removed. Assume you
-start out with a clean desktop. Now place books one at a time on top of
-each other. You are constructing a stack. Consider what happens when you
-begin removing books. The order that they are removed is exactly the
-reverse of the order that they were placed. Stacks are fundamentally
-important, as they can be used to reverse the order of items. The order
-of insertion is the reverse of the order of removal.
-<a class="reference internal" href="#fig-reversal"><em>Figure 3</em></a> shows the Python data object stack as it was
-created and then again as items are removed. Note the order of the
-objects.</p>
+<p>Одна из наиболее часто используемых идей, связанных со стеком, пришла из
+простого наблюдения за тем, как добавляются и удаляются его элементы.
+Предположим, что вы начинаете с чистого стола. Теперь кладите книги по
+одной за раз друг поверх друга. Вы конструируете стек. Посмотрим, что
+случится, когда вы начнёте их удалять. Очерёдность, в которой это будет
+происходить, в точности противоположна тому, как они клались. Стеки
+фундаментально важны, поскольку их можно использовать для реверсирования
+порядка элементов. Последовательность вставок противоположена последовательности
+удалений. <a class="reference internal" href="#fig-reversal"><em>Рисунок 3</em></a> показывает стек из объектов
+данных Python в процессе его создания и удаления из него элементов.
+Обратите внимание на порядок объектов.</p>
 <div class="figure align-center" id="fig-reversal">
 <img alt="../_images/simplereversal.png" src="../_images/simplereversal.png" />
-<p class="caption">Figure 3: The Reversal Property of Stacks</p>
+<p class="caption">Рисунок 3: Свойство реверсирования у стеков</p>
 </div>
-<p>Considering this reversal property, you can perhaps think of examples of
-stacks that occur as you use your computer. For example, every web
-browser has a Back button. As you navigate from web page to web page,
-those pages are placed on a stack (actually it is the URLs that are
-going on the stack). The current page that you are viewing is on the top
-and the first page you looked at is at the base. If you click on the
-Back button, you begin to move in reverse order through the pages.</p>
+<p>Рассматривая это реверсивное свойство, вы, возможно, подумаете о примерах
+стека, имеющих место в процессе использования вами компьютера. Например,
+каждый веб-браузер имеет кнопку &#8220;Назад&#8221;. Когда вы перемещаетесь от одной
+веб-страницы к другой, они помещаются в стек (точнее, в стек помещаются
+их URL&#8217;ы). Текущая страница, которую вы просматриваете, находится на вершине,
+а самая первая из просмотренных - в основании. Если вы нажмёте кнопку &#8220;Назад&#8221;,
+то начнёте перемещаться по страницам в обратном порядке.</p>
 </div>
 
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - What Are Linear Structures?' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - Что такое линейные структуры?' data-toggle="tooltip">
     <a href="WhatAreLinearStructures.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
   </li>
   <a class="navLinkBg" id="navLinkBgLeft"  href="WhatAreLinearStructures.html" ></a>
   
-  <li id="relations-next" class="navLink" title='Next Section - The Stack Abstract Data Type' data-toggle="tooltip" >
+  <li id="relations-next" class="navLink" title='Next Section - Абстрактный тип данных &#8220;стек&#8221;' data-toggle="tooltip" >
     <a href="TheStackAbstractDataType.html" >
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="TheStackAbstractDataType.html" >Next Section - The Stack Abstract Data Type</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="TheStackAbstractDataType.html" >Next Section - Абстрактный тип данных &#8220;стек&#8221;</a>
 
 <script type="text/javascript">
 
