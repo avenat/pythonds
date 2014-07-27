@@ -712,71 +712,68 @@ else{
 </div>
 <div class="section" id="id4">
 <h2>Постфиксные вычисления<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p>As a final stack example, we will consider the evaluation of an
-expression that is already in postfix notation. In this case, a stack is
-again the data structure of choice. However, as you scan the postfix
-expression, it is the operands that must wait, not the operators as in
-the conversion algorithm above. Another way to think about the solution
-is that whenever an operator is seen on the input, the two most recent
-operands will be used in the evaluation.</p>
-<p>To see this in more detail, consider the postfix expression
-<tt class="docutils literal"><span class="pre">4</span> <span class="pre">5</span> <span class="pre">6</span> <span class="pre">*</span> <span class="pre">+</span></tt>. As you scan the expression from left to right, you first
-encounter the operands 4 and 5. At this point, you are still unsure what
-to do with them until you see the next symbol. Placing each on the stack
-ensures that they are available if an operator comes next.</p>
-<p>In this case, the next symbol is another operand. So, as before, push it
-and check the next symbol. Now we see an operator, *. This means that
-the two most recent operands need to be used in a multiplication
-operation. By popping the stack twice, we can get the proper operands
-and then perform the multiplication (in this case getting the result
-30).</p>
-<p>We can now handle this result by placing it back on the stack so that it
-can be used as an operand for the later operators in the expression.
-When the final operator is processed, there will be only one value left
-on the stack. Pop and return it as the result of the expression.
-<a class="reference internal" href="#fig-evalpost1"><em>Figure 10</em></a> shows the stack contents as this entire example
-expression is being processed.</p>
+<p>В последнем примере использования стека мы рассмотрим вычисление выражения,
+которое уже находится в постфиксной форме. В этом случае стек вновь выбран
+структурой данных для решения задачи. Однако, поскольку вы сканируете
+постфиксное выражение, ждать своей очереди должны уже операнды, а не операторы,
+в противоположность алгоритму выше. Ещё один способ думать об этом решении:
+когда на входе обнаружится оператор, для вычисления будут использованы два
+самых последних операнда.</p>
+<p>Чтобы увидеть это более детально, рассмотрим постфиксное выражение <tt class="docutils literal"><span class="pre">4</span> <span class="pre">5</span> <span class="pre">6</span> <span class="pre">*</span> <span class="pre">+</span></tt>.
+Сканируя его слева направо, прежде всего вы натолкнётесь на операнды 4 и 5.
+Что с ними делать вы не узнаете, пока не увидите следующий символ. Помещение
+каждого из них в стек гарантирует их доступность на случай, если следующим
+появится оператор.</p>
+<p>В нашем случае следующий символ - ещё один операнд. Так что, как и раньше,
+помещаем его в стек и проверяем следующий символ. Теперь мы видим оператор *.
+Это означает, что два самых последних операнда нужно перемножить. Сделав дважды
+выталкивание из стека, мы получим необходимые множители, а затем выполним умножение
+(в данном случае результатом будет 30).</p>
+<p>Теперь мы можем обработать полученное значение, поместив его обратно в стек,
+чтобы оно могло использоваться в качестве операнда для последующих операторов в
+выражении. Когда будет обработан последний оператор, в стеке останется только одно
+значение. Выталкиваем его и возвращаем как результат выражения.
+<a class="reference internal" href="#fig-evalpost1"><em>Рисунок 10</em></a> демонстрирует содержание стека на протяжении всего
+процесса вычисления выражения из примера.</p>
 <div class="figure align-center" id="fig-evalpost1">
 <img alt="../_images/evalpostfix1.png" src="../_images/evalpostfix1.png" />
-<p class="caption">Figure 10: Stack Contents During Evaluation</p>
+<p class="caption">Рисунок 10: Содержание стека в процессе вычисления</p>
 </div>
-<p><a class="reference internal" href="#fig-evalpost2"><em>Figure 11</em></a> shows a slightly more complex example, 7 8 + 3 2
-+ /. There are two things to note in this example. First, the stack size
-grows, shrinks, and then grows again as the subexpressions are
-evaluated. Second, the division operation needs to be handled carefully.
-Recall that the operands in the postfix expression are in their original
-order since postfix changes only the placement of operators. When the
-operands for the division are popped from the stack, they are reversed.
-Since division is <em>not</em> a commutative operator, in other words
-<span class="math">\(15/5\)</span> is not the same as <span class="math">\(5/15\)</span>, we must be sure that
-the order of the operands is not switched.</p>
+<p>На <a class="reference internal" href="#fig-evalpost2"><em>Рисунке 11</em></a> показан несколько более сложный
+пример: 7 8 + 3 2 + /. Здесь есть два момента, которые стоит отметить.
+Первый: размер стека возрастает, сужается и вновь растёт в процессе вычисления
+подвыражений. Второй: обрабатывать оператор деления нужно очень внимательно.
+Напомним, что операнды в постфиксном выражении идут в их изначальном порядке,
+поскольку постфикс меняет только положение оператора. Когда операнды деления
+выталкиваются из стека, они находятся в обратной последовательности. Поскольку
+деление <strong>не</strong> коммутативный оператор (другими словами, <span class="math">\(15/5\)</span> не то же
+самое, что <span class="math">\(5/15\)</span>), мы должны быть уверены, что порядок операндов не изменился.</p>
 <div class="figure align-center" id="fig-evalpost2">
 <img alt="../_images/evalpostfix2.png" src="../_images/evalpostfix2.png" />
-<p class="caption">Figure 11: A More Complex Example of Evaluation</p>
+<p class="caption">Рисунок 11: Более сложный пример вычисления</p>
 </div>
-<p>Assume the postfix expression is a string of tokens delimited by spaces.
-The operators are *, /, +, and - and the operands are assumed to be
-single-digit integer values. The output will be an integer result.</p>
+<p>Предположим, что постфиксное выражение - это строка токенов, разделённых пробелами.
+Операторами являются *, /, + и -, а под операндами понимаются одноразрядные целые
+значения. На выходе будет целочисленный результат.</p>
 <ol class="arabic simple">
-<li>Create an empty stack called <tt class="docutils literal"><span class="pre">operandStack</span></tt>.</li>
-<li>Convert the string to a list by using the string method <tt class="docutils literal"><span class="pre">split</span></tt>.</li>
-<li>Scan the token list from left to right.<ul>
-<li>If the token is an operand, convert it from a string to an integer
-and push the value onto the <tt class="docutils literal"><span class="pre">operandStack</span></tt>.</li>
-<li>If the token is an operator, *, /, +, or -, it will need two
-operands. Pop the <tt class="docutils literal"><span class="pre">operandStack</span></tt> twice. The first pop is the
-second operand and the second pop is the first operand. Perform
-the arithmetic operation. Push the result back on the
-<tt class="docutils literal"><span class="pre">operandStack</span></tt>.</li>
+<li>Создать пустой стек под названием <tt class="docutils literal"><span class="pre">operandStack</span></tt>.</li>
+<li>Преобразовать строку в список, используя строковый метод <tt class="docutils literal"><span class="pre">split</span></tt>.</li>
+<li>Сканировать список токенов слева направо.<ul>
+<li>Если токен является операндом, преобразовать его из строки в целое
+число и поместить значение в <tt class="docutils literal"><span class="pre">operandStack</span></tt>.</li>
+<li>Если токен является оператором *, /, + или -, то он нуждается в двух
+операндах. Произвести выталкивание из <tt class="docutils literal"><span class="pre">operandStack</span></tt> дважды. Сначала
+вытолкнется второй операнд, а затем - первый. Выполнить арифметическую
+операцию. Поместить результат обратно в <tt class="docutils literal"><span class="pre">operandStack</span></tt>.</li>
 </ul>
 </li>
-<li>When the input expression has been completely processed, the result
-is on the stack. Pop the <tt class="docutils literal"><span class="pre">operandStack</span></tt> and return the value.</li>
+<li>Когда входное выражение полностью обработано, его результат находится в стеке.
+Вытолкнуть его из <tt class="docutils literal"><span class="pre">operandStack</span></tt> и возвратить в качестве результата..</li>
 </ol>
-<p>The complete function for the evaluation of postfix expressions is shown
-in <a class="reference internal" href="#lst-postfixeval"><em>ActiveCode 9</em></a>. To assist with the arithmetic, a helper
-function <tt class="docutils literal"><span class="pre">doMath</span></tt> is defined that will take two operands and an
-operator and then perform the proper arithmetic operation.</p>
+<p>Полностью функция для вычисления постфиксных выражений показана в
+<a class="reference internal" href="#lst-postfixeval"><em>ActiveCode 9</em></a>. Для помощи с арифметикой определена
+вспомогательная функция <tt class="docutils literal"><span class="pre">doMath</span></tt>. Она принимает два операнда и оператор,
+после чего совершает надлежащую арифметическую операцию.</p>
 
 <div id="cont"></div>
 <div id="postfixeval" lang="python" class="ac_section alert alert-warning" >
@@ -830,7 +827,7 @@ print(postfixEval('7 8 + 3 2 + /'))
 
 </div> 
 <div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text">Postfix Evaluation (postfixeval)</span> </p>
+<p class="ac_caption"><span class="ac_caption_text">Постфиксное вычисление (postfixeval)</span> </p>
 
 <script>
 if ('block' == 'none') {
@@ -880,16 +877,16 @@ else{
 
 </div>
 
-<p>It is important to note that in both the postfix conversion and the
-postfix evaluation programs we assumed that there were no errors in the
-input expression. Using these programs as a starting point, you can
-easily see how error detection and reporting can be included. We leave
-this as an exercise at the end of the chapter.</p>
+<p>Важно отметить, что для обеих программ - постфиксного преобразования и
+постфиксного вычисления, - мы предполагаем, что во входном выражении нет
+ошибок. Используя эти программы, как точку отсчёта, вы можете легко увидеть,
+как в них могут быть включены определение ошибок и сообщение об этом.
+Мы оставляем это как упражнение в конце главы.</p>
 <div class="admonition-self-check admonition">
 <p class="first admonition-title">Self Check</p>
 
             <div id="postfix1" class="alert alert-warning">
-            sc-1-24: Without using the activecode infixToPostfix function, convert the following expression to postfix  <tt class="docutils literal"><span class="pre">10</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">5</span> <span class="pre">/</span> <span class="pre">(16</span> <span class="pre">-</span> <span class="pre">4)</span></tt> <input type='text' id='pfblank1' class="form-control" style="display:inline; width: 210px;" value=""></input>
+            sc-1-27: Без использования функции activecode infixToPostfix преобразуйте следующее выражение в постфиксную форму <tt class="docutils literal"><span class="pre">10</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">5</span> <span class="pre">/</span> <span class="pre">(16</span> <span class="pre">-</span> <span class="pre">4)</span></tt> <input type='text' id='pfblank1' class="form-control" style="display:inline; width: 210px;" value=""></input>
             <script>
             $(document).ready(function(){checkPreviousFIB('postfix1');});
             </script>
@@ -902,7 +899,7 @@ this as an exercise at the end of the chapter.</p>
             </div>
             
             <div id="postfix2" class="alert alert-warning">
-            sc-1-25: <tt class="docutils literal"><span class="pre">17</span> <span class="pre">10</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">9</span> <span class="pre">/</span> <span class="pre">==</span></tt> <input type='text' id='pfblank2' class="form-control" style="display:inline; width: 60px;" value=""></input>
+            sc-1-28: <tt class="docutils literal"><span class="pre">17</span> <span class="pre">10</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">9</span> <span class="pre">/</span> <span class="pre">==</span></tt> <input type='text' id='pfblank2' class="form-control" style="display:inline; width: 60px;" value=""></input>
             <script>
             $(document).ready(function(){checkPreviousFIB('postfix2');});
             </script>
@@ -915,7 +912,7 @@ this as an exercise at the end of the chapter.</p>
             </div>
             
             <div id="postfix3" class="alert alert-warning">
-            sc-1-26: Modify the infixToPostfix function so that it can convert the following expression:  <tt class="docutils literal"><span class="pre">5</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">^</span> <span class="pre">(4</span> <span class="pre">-</span> <span class="pre">2)</span></tt>   Paste the answer here: <input type='text' id='pfblank3' class="form-control" style="display:inline; width: 210px;" value=""></input>
+            sc-1-29: Модифицируйте функцию infixToPostfix таким образом, чтобы она могла конвертировать следующее выражение:  <tt class="docutils literal"><span class="pre">5</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">^</span> <span class="pre">(4</span> <span class="pre">-</span> <span class="pre">2)</span></tt>   Вставьте ответ сюда: <input type='text' id='pfblank3' class="form-control" style="display:inline; width: 210px;" value=""></input>
             <script>
             $(document).ready(function(){checkPreviousFIB('postfix3');});
             </script>
