@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The Ordered List Abstract Data Type &mdash; Problem Solving with Algorithms and Data Structures</title>
+    <title>Абстрактный тип данных “упорядоченный список” &mdash; Problem Solving with Algorithms and Data Structures</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -73,8 +73,8 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
-    <link rel="next" title="Implementing an Ordered List" href="ImplementinganOrderedList.html" />
-    <link rel="prev" title="Implementing an Unordered List: Linked Lists" href="ImplementinganUnorderedListLinkedLists.html" />
+    <link rel="next" title="Реализация упорядоченного списка" href="ImplementinganOrderedList.html" />
+    <link rel="prev" title="Реализация неупорядоченного списка: связанные списки" href="ImplementinganUnorderedListLinkedLists.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -265,7 +265,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">The Ordered List Abstract Data Type</a></li>
+<li><a class="reference internal" href="#">Абстрактный тип данных &#8220;упорядоченный список&#8221;</a></li>
 </ul>
 </ul>
 </li>
@@ -273,13 +273,13 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Implementing an Unordered List: Linked Lists" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - Реализация неупорядоченного списка: связанные списки" data-toggle="tooltip">
     <a href="ImplementinganUnorderedListLinkedLists.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Implementing an Ordered List' data-toggle="tooltip" >
+  <li id="relations-next" title='Next Chapter - Реализация упорядоченного списка' data-toggle="tooltip" >
     <a href="ImplementinganOrderedList.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
@@ -310,58 +310,62 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 
 <div class="container" id="main-content">
   
-  <div class="section" id="the-ordered-list-abstract-data-type">
-<h1>The Ordered List Abstract Data Type<a class="headerlink" href="#the-ordered-list-abstract-data-type" title="Permalink to this headline">¶</a></h1>
-<p>We will now consider a type of list known as an ordered list. For
-example, if the list of integers shown above were an ordered list
-(ascending order), then it could be written as 17, 26, 31, 54, 77, and
-93. Since 17 is the smallest item, it occupies the first position in the
-list. Likewise, since 93 is the largest, it occupies the last position.</p>
-<p>The structure of an ordered list is a collection of items where each
-item holds a relative position that is based upon some underlying
-characteristic of the item. The ordering is typically either ascending
-or descending and we assume that list items have a meaningful comparison
-operation that is already defined. Many of the ordered list operations
-are the same as those of the unordered list.</p>
+  <div class="section" id="id1">
+<h1>Абстрактный тип данных &#8220;упорядоченный список&#8221;<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>А теперь рассмотрим такой подвид списков, как упорядоченный список.
+Например, если бы список целых, показанный выше, был упорядоченным
+(по возрастанию), то записался как 17, 26, 31, 54, 77 и 93. 17 -
+наименьший элемент, поэтому он ставится на первую позицию, а 93 -
+наибольший, так что он занимает последнее место.</p>
+<p>По структуре упорядоченный список представляет собой коллекцию
+элементов, каждый из которых занимает положение в зависимости от
+некой общей для всех характеристики. Порядок упорядочения обычно
+или возрастающий, или убывающий, и мы полагаем, что для элементов
+списка существует и определена операция сравнения. Многие из
+операций для упорядоченного списка аналогичны методам неупорядоченного.</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">OrderedList()</span></tt> creates a new ordered list that is empty. It needs
-no parameters and returns an empty list.</li>
-<li><tt class="docutils literal"><span class="pre">add(item)</span></tt> adds a new item to the list making sure that the order
-is preserved. It needs the item and returns nothing. Assume the item
-is not already in the list.</li>
-<li><tt class="docutils literal"><span class="pre">remove(item)</span></tt> removes the item from the list. It needs the item
-and modifies the list. Assume the item is present in the list.</li>
-<li><tt class="docutils literal"><span class="pre">search(item)</span></tt> searches for the item in the list. It needs the item
-and returns a boolean value.</li>
-<li><tt class="docutils literal"><span class="pre">isEmpty()</span></tt> tests to see whether the list is empty. It needs no
-parameters and returns a boolean value.</li>
-<li><tt class="docutils literal"><span class="pre">size()</span></tt> returns the number of items in the list. It needs no
-parameters and returns an integer.</li>
-<li><tt class="docutils literal"><span class="pre">index(item)</span></tt> returns the position of item in the list. It needs
-the item and returns the index. Assume the item is in the list.</li>
-<li><tt class="docutils literal"><span class="pre">pop()</span></tt> removes and returns the last item in the list. It needs
-nothing and returns an item. Assume the list has at least one item.</li>
-<li><tt class="docutils literal"><span class="pre">pop(pos)</span></tt> removes and returns the item at position pos. It needs
-the position and returns the item. Assume the item is in the list.</li>
+<li><tt class="docutils literal"><span class="pre">OrderedList()</span></tt> создаёт новый упорядоченный список.
+Не требует параметров, возвращает пустой список.</li>
+<li><tt class="docutils literal"><span class="pre">add(item)</span></tt> добавляет в список новый элемент,
+предварительно убедившись, что порядок сохраняется.
+Требует элемент в качестве аргумента, ничего не возвращает.
+Предполагается, что элемент ранее в списке отсутствовал.</li>
+<li><tt class="docutils literal"><span class="pre">remove(item)</span></tt> удаляет элемент из списка. Требует элемент
+и изменяет список. Предполагается, что элемент присутствует в списке.</li>
+<li><tt class="docutils literal"><span class="pre">search(item)</span></tt> ищет элемент в списке. Требует элемент и
+возвращает булево значение.</li>
+<li><tt class="docutils literal"><span class="pre">isEmpty()</span></tt> проверяет список на пустоту. Не требует параметров
+и возвращает булево значение.</li>
+<li><tt class="docutils literal"><span class="pre">size()</span></tt> возвращает количество элементов в списке.
+Не требует параметров и возвращает целое число.</li>
+<li><tt class="docutils literal"><span class="pre">index(item)</span></tt> возвращает позицию элемента в списке.
+Требует элемент и возвращает индекс.
+Предполагается, что элемент в списке присутствует.</li>
+<li><tt class="docutils literal"><span class="pre">pop()</span></tt> выталкивает последний элемент списка.
+Не требует параметров и возвращает элемент.
+Предполагается, что список содержит как минимум один элемент.</li>
+<li><tt class="docutils literal"><span class="pre">pop(pos)</span></tt> выталкивает элемент с позиции pos.
+Требует индекс в качестве аргумента, возвращает элемент.
+Предполагается, что элемент в списке присутствует.</li>
 </ul>
 </div>
 
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - Implementing an Unordered List: Linked Lists' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - Реализация неупорядоченного списка: связанные списки' data-toggle="tooltip">
     <a href="ImplementinganUnorderedListLinkedLists.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
   </li>
   <a class="navLinkBg" id="navLinkBgLeft"  href="ImplementinganUnorderedListLinkedLists.html" ></a>
   
-  <li id="relations-next" class="navLink" title='Next Section - Implementing an Ordered List' data-toggle="tooltip" >
+  <li id="relations-next" class="navLink" title='Next Section - Реализация упорядоченного списка' data-toggle="tooltip" >
     <a href="ImplementinganOrderedList.html" >
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="ImplementinganOrderedList.html" >Next Section - Implementing an Ordered List</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="ImplementinganOrderedList.html" >Next Section - Реализация упорядоченного списка</a>
 
 <script type="text/javascript">
 

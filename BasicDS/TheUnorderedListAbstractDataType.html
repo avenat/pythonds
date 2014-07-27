@@ -73,7 +73,7 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
-    <link rel="next" title="Implementing an Unordered List: Linked Lists" href="ImplementinganUnorderedListLinkedLists.html" />
+    <link rel="next" title="Реализация неупорядоченного списка: связанные списки" href="ImplementinganUnorderedListLinkedLists.html" />
     <link rel="prev" title="Списки" href="Lists.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -279,7 +279,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Implementing an Unordered List: Linked Lists' data-toggle="tooltip" >
+  <li id="relations-next" title='Next Chapter - Реализация неупорядоченного списка: связанные списки' data-toggle="tooltip" >
     <a href="ImplementinganUnorderedListLinkedLists.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
@@ -317,30 +317,36 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 позиции по отношению к остальным. Некоторые из возможных операций над
 неупорядоченными списками представлены ниже.</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">List()</span></tt> создаёт новый пустой список. Не нуждается в параметрах
-и возвращает пустой список.</li>
-<li><tt class="docutils literal"><span class="pre">add(item)</span></tt> adds a new item to the list. It needs the item and
-returns nothing. Assume the item is not already in the list.</li>
-<li><tt class="docutils literal"><span class="pre">remove(item)</span></tt> removes the item from the list. It needs the item
-and modifies the list. Assume the item is present in the list.</li>
-<li><tt class="docutils literal"><span class="pre">search(item)</span></tt> searches for the item in the list. It needs the item
-and returns a boolean value.</li>
-<li><tt class="docutils literal"><span class="pre">isEmpty()</span></tt> tests to see whether the list is empty. It needs no
-parameters and returns a boolean value.</li>
-<li><tt class="docutils literal"><span class="pre">size()</span></tt> returns the number of items in the list. It needs no
-parameters and returns an integer.</li>
-<li><tt class="docutils literal"><span class="pre">append(item)</span></tt> adds a new item to the end of the list making it the
-last item in the collection. It needs the item and returns nothing.
-Assume the item is not already in the list.</li>
-<li><tt class="docutils literal"><span class="pre">index(item)</span></tt> returns the position of item in the list. It needs
-the item and returns the index. Assume the item is in the list.</li>
-<li><tt class="docutils literal"><span class="pre">insert(pos,item)</span></tt> adds a new item to the list at position pos. It
-needs the item and returns nothing. Assume the item is not already in
-the list and there are enough existing items to have position pos.</li>
-<li><tt class="docutils literal"><span class="pre">pop()</span></tt> removes and returns the last item in the list. It needs
-nothing and returns an item. Assume the list has at least one item.</li>
-<li><tt class="docutils literal"><span class="pre">pop(pos)</span></tt> removes and returns the item at position pos. It needs
-the position and returns the item. Assume the item is in the list.</li>
+<li><tt class="docutils literal"><span class="pre">List()</span></tt> создаёт новый пустой список.
+Не нуждается в параметрах и возвращает пустой список.</li>
+<li><tt class="docutils literal"><span class="pre">add(item)</span></tt> добавляет в список новый элемент.
+Требует значение в качестве аргумента, ничего не возвращает.
+Предполагает, что до этого элемент в списке отсутствовал.</li>
+<li><tt class="docutils literal"><span class="pre">remove(item)</span></tt> удаляет элемент из списка.
+Требует значение элемента и изменяет список.
+Предполагает первоначальное наличие элемента в списке.</li>
+<li><tt class="docutils literal"><span class="pre">search(item)</span></tt> ищет элемент в списке.
+Требует элемент и возвращает булево значение.</li>
+<li><tt class="docutils literal"><span class="pre">isEmpty()</span></tt> проверка списка на пустоту.
+Не нуждается в параметрах, возвращает булево значение.</li>
+<li><tt class="docutils literal"><span class="pre">size()</span></tt> возвращает количество элементов в списке.
+Не нуждается в параметрах, возвращает целое число.</li>
+<li><tt class="docutils literal"><span class="pre">append(item)</span></tt> добавляет новый элемент в конец списка.
+Требует значение в качестве аргумента, ничего не возвращает.
+Предполагает, что до сих пор такой элемент в списке отсутствовал.</li>
+<li><tt class="docutils literal"><span class="pre">index(item)</span></tt> возвращает позицию элемента в списке.
+Требует значение в качестве аргумента, возвращает его индекс.
+Предполагает, что элемент присутствует в списке.</li>
+<li><tt class="docutils literal"><span class="pre">insert(pos,item)</span></tt> вставляет новый элемент в заданную позицию
+<tt class="docutils literal"><span class="pre">pos</span></tt> списка. Требует элемент, ничего не возвращает.
+Предполагает, что до сих пор такой элемент в списке отсутствовал
+и существующий размер списка позволяет задать индекс <tt class="docutils literal"><span class="pre">pos</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">pop()</span></tt> удаляет и возвращает последний элемент списка.
+Не требует аргументов, возвращает элемент.
+Предполагает, что в списке есть хотя бы один элемент.</li>
+<li><tt class="docutils literal"><span class="pre">pop(pos)</span></tt> удаляет и возвращает элемент из позиции <tt class="docutils literal"><span class="pre">pos</span></tt>.
+Требует позицию в качестве аргумента и возвращает элемент.
+Предполагает, что такой элемент присутствует в списке.</li>
 </ul>
 </div>
 
@@ -354,12 +360,12 @@ the position and returns the item. Assume the item is in the list.</li>
   </li>
   <a class="navLinkBg" id="navLinkBgLeft"  href="Lists.html" ></a>
   
-  <li id="relations-next" class="navLink" title='Next Section - Implementing an Unordered List: Linked Lists' data-toggle="tooltip" >
+  <li id="relations-next" class="navLink" title='Next Section - Реализация неупорядоченного списка: связанные списки' data-toggle="tooltip" >
     <a href="ImplementinganUnorderedListLinkedLists.html" >
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="ImplementinganUnorderedListLinkedLists.html" >Next Section - Implementing an Unordered List: Linked Lists</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="ImplementinganUnorderedListLinkedLists.html" >Next Section - Реализация неупорядоченного списка: связанные списки</a>
 
 <script type="text/javascript">
 
