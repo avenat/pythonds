@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Sierpinski Triangle &mdash; Problem Solving with Algorithms and Data Structures</title>
+    <title>Треугольник Серпинского &mdash; Problem Solving with Algorithms and Data Structures</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -73,8 +73,8 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
-    <link rel="next" title="Complex Recursive Problems" href="ComplexRecursiveProblems.html" />
-    <link rel="prev" title="Introduction: Visualizing Recursion" href="intro-VisualizingRecursion.html" />
+    <link rel="next" title="Сложные рекурсивные задачи" href="ComplexRecursiveProblems.html" />
+    <link rel="prev" title="Визуализация рекурсии" href="intro-VisualizingRecursion.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -265,7 +265,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Sierpinski Triangle</a></li>
+<li><a class="reference internal" href="#">Треугольник Серпинского</a></li>
 </ul>
 </ul>
 </li>
@@ -273,13 +273,13 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Introduction: Visualizing Recursion" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - Визуализация рекурсии" data-toggle="tooltip">
     <a href="intro-VisualizingRecursion.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Complex Recursive Problems' data-toggle="tooltip" >
+  <li id="relations-next" title='Next Chapter - Сложные рекурсивные задачи' data-toggle="tooltip" >
     <a href="ComplexRecursiveProblems.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
@@ -310,32 +310,14 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 
 <div class="container" id="main-content">
   
-  <div class="section" id="sierpinski-triangle">
-<h1>Sierpinski Triangle<a class="headerlink" href="#sierpinski-triangle" title="Permalink to this headline">¶</a></h1>
-<p>Another fractal that exhibits the property of self-similarity is the
-Sierpinski triangle. An example is shown in <a class="reference internal" href="#fig-sierpinski"><em>Figure 3</em></a>. The
-Sierpinski triangle illustrates a three-way recursive algorithm. The
-procedure for drawing a Sierpinski triangle by hand is simple. Start
-with a single large triangle. Divide this large triangle into four new
-triangles by connecting the midpoint of each side. Ignoring the middle
-triangle that you just created, apply the same procedure to each of the
-three corner triangles. Each time you create a new set of triangles, you
-recursively apply this procedure to the three smaller corner triangles.
-You can continue to apply this procedure indefinitely if you have a
-sharp enough pencil. Before you continue reading, you may want to try
-drawing the Sierpinski triangle yourself, using the method described.</p>
+  <div class="section" id="id1">
+<h1>Треугольник Серпинского<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Ещё один фрактал, обладающий свойством самоподобия, - это треугольник Серпинского. Его пример показан на <a class="reference internal" href="#fig-sierpinski"><em>рисунке 3</em></a>. Треугольник Серпинского иллюстрирует трёхходовой рекурсивный алгоритм. Процедура его отрисовки вручную очень проста. Начинаем с большого треугольника, который делим на четыре маленьких, связанных с серединами сторон первоначального. Игнорируя вновь созданный внутренний треугольник, делаем всё то же самое для каждого из трёх угловых. Каждый раз при создании нового набора треугольников, вы рекурсивно применяете эту процедуру к трём меньшим угловым фигурам. Так можно продолжать до бесконечности (если у вас достаточно острый карандаш). Перед тем, как продолжить чтение, можете попробовать самостоятельно нарисовать треугольник Серпинского, используя описанный метод.</p>
 <div class="figure align-center" id="fig-sierpinski">
 <img alt="../_images/sierpinski.png" src="../_images/sierpinski.png" />
-<p class="caption">Figure 3: The Sierpinski Triangle</p>
 </div>
-<p>Since we can continue to apply the algorithm indefinitely, what is the
-base case? We will see that the base case is set arbitrarily as the
-number of times we want to divide the triangle into pieces. Sometimes we
-call this number the “degree” of the fractal. Each time we make a
-recursive call, we subtract 1 from the degree until we reach 0. When we
-reach a degree of 0, we stop making recursive calls. The code that
-generated the Sierpinski Triangle in <a class="reference internal" href="#fig-sierpinski"><em>Figure 3</em></a> is shown in
-<a class="reference internal" href="#lst-st"><em>ActiveCode 4</em></a>.</p>
+<p>Рисунок 3: Треугольник Серпинского.</p>
+<p>Поскольку мы можем повторять этот алгоритм до бесконечности, что сделать базовым случаем? Им станет произвольное число - сколько раз мы хотим разделить треугольник на части. Иногда это число называют &#8220;степенью&#8221; фрактала. Каждый раз, когда делается рекурсивный вызов, мы вычитаем из степени единицу, пока она не станет равной нулю. Тогда мы останавливаем рекурсию. Код, генерирующий треугольник Серпинского на <a class="reference internal" href="#fig-sierpinski"><em>рисунке 3</em></a>, показан в <a class="reference internal" href="#lst-st"><em>ActiveCode 4</em></a>.</p>
 
 <div id="cont"></div>
 <div id="lst_st" lang="python" class="ac_section alert alert-warning" >
@@ -404,7 +386,7 @@ main()
 
 </div> 
 <div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text">Drawing a Sierpinski Triangle (lst_st)</span> </p>
+<p class="ac_caption"><span class="ac_caption_text">Рисование треугольника Серпинского (lst_st)</span> </p>
 
 <script>
 if ('block' == 'none') {
@@ -454,57 +436,32 @@ else{
 
 </div>
 
-<p>The program in <a class="reference internal" href="#lst-st"><em>ActiveCode 4</em></a> follows the ideas outlined above. The
-first thing <tt class="docutils literal"><span class="pre">sierpinski</span></tt> does is draw the outer triangle. Next, there
-are three recursive calls, one for each of the new corner triangles we
-get when we connect the midpoints. Once again we make use of the
-standard turtle module that comes with Python. You can learn all the
-details of the methods available in the turtle module by using
-<tt class="docutils literal"><span class="pre">help('turtle')</span></tt> from the Python prompt.</p>
-<p>Look at the code and think about the order in which the triangles will
-be drawn. While the exact order of the corners depends upon how the
-initial set is specified, let’s assume that the corners are ordered
-lower left, top, lower right. Because of the way the <tt class="docutils literal"><span class="pre">sierpinski</span></tt>
-function calls itself, <tt class="docutils literal"><span class="pre">sierpinski</span></tt> works its way to the smallest
-allowed triangle in the lower-left corner, and then begins to fill out
-the rest of the triangles working back. Then it fills in the triangles
-in the top corner by working toward the smallest, topmost triangle.
-Finally, it fills in the lower-right corner, working its way toward the
-smallest triangle in the lower right.</p>
-<p>Sometimes it is helpful to think of a recursive algorithm in terms of a
-diagram of function calls. <a class="reference internal" href="#fig-stcalltree"><em>Figure 4</em></a> shows that the recursive
-calls are always made going to the left. The active functions are
-outlined in black, and the inactive function calls are in gray. The
-farther you go toward the bottom of <a class="reference internal" href="#fig-stcalltree"><em>Figure 4</em></a>, the smaller the
-triangles. The function finishes drawing one level at a time; once it is
-finished with the bottom left it moves to the bottom middle, and so on.</p>
+<p>Программа из <a class="reference internal" href="#lst-st"><em>ActiveCode 4</em></a> следует изложенным выше идеям. Первое, что делает <tt class="docutils literal"><span class="pre">sierpinski</span></tt>, - это прорисовывает внешний треугольника. Затем идут три рекурсивных вызова, по одному для каждого из новых угловых треугольников, полученных после соединения средних точек сторон. Мы снова используем стандартный модуль Python <tt class="docutils literal"><span class="pre">turtle</span></tt>. Вы можете изучить в подробностях все его методы, воспользовавшись командой <tt class="docutils literal"><span class="pre">help('turtle')</span></tt> в командной строке Python.</p>
+<p>Посмотрите на код и подумайте, в каком порядке будут прорисовываться треугольники. Поскольку точный порядок углов определяется спецификацией начального набора, давайте предположим, что углы идут в следующем порядке: нижний левый, верхний, нижний правый. Поскольку функция <tt class="docutils literal"><span class="pre">sierpinski</span></tt> вызывает сама себя, вычисление будет идти к наименьшему возможному треугольнику в левом нижнем углу, а затем уже будут заполняться остальные треугольники в обратном порядке. Потом заполнятся треугольники в верхнем углу - к наименьшему и самому верхнему. Наконец, будут заполнен правый нижний угол, опять же по направлению к наименьшему нижнему правому.</p>
+<p>Иногда полезно думать о рекурсивных алгоритмах в терминах диаграммы вызовов функции. <a class="reference internal" href="#fig-stcalltree"><em>Рисунок 4</em></a> показывает, что рекурсивные вызовы всегда начинаются слева. Ативная функция выделена чёрным, неактивные вызовы - серым. Чем ниже вы спускаетесь по <a class="reference internal" href="#fig-stcalltree"><em>рисунку 4</em></a>, тем меньше треугольники. Функция заканчивает рисунок одного уровня за один раз; закончив с нижней левой частью, она перемещается к нижней середине и так далее.</p>
 <div class="figure align-center" id="fig-stcalltree">
 <img alt="../_images/stCallTree.png" src="../_images/stCallTree.png" />
-<p class="caption">Figure 4: Building a Sierpinski Triangle</p>
 </div>
-<p>The <tt class="docutils literal"><span class="pre">sierpinski</span></tt> function relies heavily on the <tt class="docutils literal"><span class="pre">getMid</span></tt> function.
-<tt class="docutils literal"><span class="pre">getMid</span></tt> takes as arguments two endpoints and returns the point
-halfway between them. In addition, <a class="reference internal" href="#lst-st"><em>ActiveCode 4</em></a> has a function that
-draws a filled triangle using the <tt class="docutils literal"><span class="pre">begin_fill</span></tt> and <tt class="docutils literal"><span class="pre">end_fill</span></tt> turtle
-methods. This means that each degree of the Sierpinski triangle is drawn</p>
+<p>Рисунок 4: Построение треугольника Серпинского.</p>
+<p>Функция <tt class="docutils literal"><span class="pre">sierpinski</span></tt> сильно зависит от функции <tt class="docutils literal"><span class="pre">getMid</span></tt>. Последняя принимает в качестве аргументов две конечные точки и возвращает точку, находящуюся по середине между ними. В дополнение, <a class="reference internal" href="#lst-st"><em>ActiveCode 4</em></a> содержит функцию раскраски треугольников, использующую методы <tt class="docutils literal"><span class="pre">begin_fill</span></tt> и <tt class="docutils literal"><span class="pre">end_fill</span></tt> из модуля <tt class="docutils literal"><span class="pre">turtle</span></tt>. Это означает, что каждая степень треугольника Серпинского рисуется другим цветом.</p>
 </div>
 
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - Introduction: Visualizing Recursion' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - Визуализация рекурсии' data-toggle="tooltip">
     <a href="intro-VisualizingRecursion.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
   </li>
   <a class="navLinkBg" id="navLinkBgLeft"  href="intro-VisualizingRecursion.html" ></a>
   
-  <li id="relations-next" class="navLink" title='Next Section - Complex Recursive Problems' data-toggle="tooltip" >
+  <li id="relations-next" class="navLink" title='Next Section - Сложные рекурсивные задачи' data-toggle="tooltip" >
     <a href="ComplexRecursiveProblems.html" >
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="ComplexRecursiveProblems.html" >Next Section - Complex Recursive Problems</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="ComplexRecursiveProblems.html" >Next Section - Сложные рекурсивные задачи</a>
 
 <script type="text/javascript">
 

@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Stack Frames: Implementing Recursion &mdash; Problem Solving with Algorithms and Data Structures</title>
+    <title>Фрейм стека: реализация рекурсии &mdash; Problem Solving with Algorithms and Data Structures</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -73,8 +73,8 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
-    <link rel="next" title="Introduction: Visualizing Recursion" href="intro-VisualizingRecursion.html" />
-    <link rel="prev" title="Converting an Integer to a String in Any Base" href="ConvertinganIntegertoaStringinAnyBase.html" />
+    <link rel="next" title="Визуализация рекурсии" href="intro-VisualizingRecursion.html" />
+    <link rel="prev" title="Конвертирование целого числа в строку по любому основанию" href="ConvertinganIntegertoaStringinAnyBase.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -265,7 +265,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Stack Frames: Implementing Recursion</a></li>
+<li><a class="reference internal" href="#">Фрейм стека: реализация рекурсии</a></li>
 </ul>
 </ul>
 </li>
@@ -273,13 +273,13 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Converting an Integer to a String in Any Base" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - Конвертирование целого числа в строку по любому основанию" data-toggle="tooltip">
     <a href="ConvertinganIntegertoaStringinAnyBase.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Introduction: Visualizing Recursion' data-toggle="tooltip" >
+  <li id="relations-next" title='Next Chapter - Визуализация рекурсии' data-toggle="tooltip" >
     <a href="intro-VisualizingRecursion.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
@@ -310,13 +310,9 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 
 <div class="container" id="main-content">
   
-  <div class="section" id="stack-frames-implementing-recursion">
-<h1>Stack Frames: Implementing Recursion<a class="headerlink" href="#stack-frames-implementing-recursion" title="Permalink to this headline">¶</a></h1>
-<p>Suppose that instead of concatenating the result of the recursive call
-to <tt class="docutils literal"><span class="pre">toStr</span></tt> with the string from <tt class="docutils literal"><span class="pre">convertString</span></tt>, we modified our
-algorithm to push the strings onto a stack prior to making the recursive
-call. The code for this modified algorithm is shown in
-<a class="reference internal" href="#lst-recstack"><em>ActiveCode 6</em></a>.</p>
+  <div class="section" id="id1">
+<h1>Фрейм стека: реализация рекурсии<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Предположим, что вместо того, чтобы объединять результаты рекурсивных вызовов <tt class="docutils literal"><span class="pre">toStr</span></tt> со строкой из <tt class="docutils literal"><span class="pre">convertString</span></tt>, мы изменим наш алгоритм таким образом, чтобы он складывал строки в стек перед тем, как сделать рекурсивный вызов. Код такого алгоритма показан в <a class="reference internal" href="#lst-recstack"><em>ActiveCode 6</em></a>.</p>
 
 <div id="cont"></div>
 <div id="lst_recstack" lang="python" class="ac_section alert alert-warning" >
@@ -361,7 +357,7 @@ print(toStr(1453,16))
 
 </div> 
 <div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text">Converting an Integer to a String Using a Stack (lst_recstack)</span> </p>
+<p class="ac_caption"><span class="ac_caption_text">Преобразование целого числа в строку с использованием стека (lst_recstack)</span> </p>
 
 <script>
 if ('block' == 'none') {
@@ -411,54 +407,37 @@ else{
 
 </div>
 
-<p>Each time we make a call to <tt class="docutils literal"><span class="pre">toStr</span></tt>, we push a character on the stack.
-Returning to the previous example we can see that after the fourth call
-to <tt class="docutils literal"><span class="pre">toStr</span></tt> the stack would look like <a class="reference internal" href="#fig-recstack"><em>Figure 5</em></a>. Notice
-that now we can simply pop the characters off the stack and concatenate
-them into the final result, <tt class="docutils literal"><span class="pre">&quot;1010&quot;</span></tt>.</p>
+<p>Каждый раз, когда вызывается <tt class="docutils literal"><span class="pre">toStr</span></tt>, в стек помещается символ. Возвращаясь к предыдущему примеру, мы можем увидеть, что после четвёртого вызова <tt class="docutils literal"><span class="pre">toStr</span></tt> стек будет выглядеть, как показано на <a class="reference internal" href="#fig-recstack"><em>рисунке 5</em></a>. Обратите внимание, что теперь мы можем просто вытолкнуть символы из стека и объединить их в итоговый результат <tt class="docutils literal"><span class="pre">&quot;1010&quot;</span></tt>.</p>
+<blockquote>
+<div></div></blockquote>
 <div class="figure align-center" id="fig-recstack">
 <img alt="../_images/recstack.png" src="../_images/recstack.png" />
-<p class="caption">Figure 5: Strings Placed on the Stack During Conversion</p>
 </div>
-<p>The previous example gives us some insight into how Python implements a
-recursive function call. When a function is called in Python, a <strong>stack
-frame</strong> is allocated to handle the local variables of the function. When
-the function returns, the return value is left on top of the stack for
-the calling function to access. <a class="reference internal" href="#fig-callstack"><em>Figure 6</em></a> illustrates the
-call stack after the return statement on line 4.</p>
+<p>Предыдущий пример даёт нам некоторое представление о том, как в Python реализованы рекурсивные вызовы. Когда в Python вызывается функция, для управления её локальными переменными выделяется <strong>фрейм стека</strong>. Возвращаемое значение к моменту окончания работы функции будет лежать на вершине стека, доступное для вызывающей части программы. <em>Рисунок 6</em> иллюстрирует стек после оператора <tt class="docutils literal"><span class="pre">return</span></tt> в строке 4.</p>
 <div class="figure align-center" id="fig-callstack">
 <img alt="../_images/newcallstack.png" src="../_images/newcallstack.png" />
-<p class="caption">Figure 6: Call Stack Generated from <tt class="docutils literal"><span class="pre">toStr(10,2)</span></tt></p>
 </div>
-<p>Notice that the call to <tt class="docutils literal"><span class="pre">toStr(2//2,2)</span></tt> leaves a return value of
-<tt class="docutils literal"><span class="pre">&quot;1&quot;</span></tt> on the stack. This return value is then used in place of the
-function call (<tt class="docutils literal"><span class="pre">toStr(1,2)</span></tt>) in the expression <tt class="docutils literal"><span class="pre">&quot;1&quot;</span> <span class="pre">+</span> <span class="pre">convertString[2%2]</span></tt>, which will leave the string <tt class="docutils literal"><span class="pre">&quot;10&quot;</span></tt> on the top of
-the stack. In this way, the Python call stack takes the place of the
-stack we used explicitly in <a class="reference internal" href="#lst-recstack"><em>Listing 4</em></a>. In our list summing
-example, you can think of the return value on the stack taking the place
-of an accumulator variable.</p>
-<p>The stack frames also provide a scope for the variables used by the
-function. Even though we are calling the same function over and over,
-each call creates a new scope for the variables that are local to the
-function.</p>
+<p>Обратите внимание, что вызов <tt class="docutils literal"><span class="pre">toStr(2//2,</span> <span class="pre">2)</span></tt> оставляет возвращаемое значение <tt class="docutils literal"><span class="pre">&quot;1&quot;</span></tt> в стеке. Затем оно подставляется вместо функции <tt class="docutils literal"><span class="pre">toStr(1,</span> <span class="pre">2)</span></tt> в выражение <tt class="docutils literal"><span class="pre">&quot;1&quot;</span> <span class="pre">+</span> <span class="pre">convertString[2%2]</span></tt>, которое оставляет на вершине стека <tt class="docutils literal"><span class="pre">&quot;10&quot;</span></tt>. Таким образом, стек вызовов Python работает так же, как и стек, который мы явно использовали в <a class="reference internal" href="#lst-recstack"><em>листинге 4</em></a>. В нашем суммирующем список примере вы можете думать о возвращаемом значении в стеке, как об аккумулирующей переменной.</p>
+<p>Также фрейм стека предоставляет область видимости для переменных, используемых функцией. Несмотря на то, что мы вновь и вновь вызываем одну и ту же функцию, каждый вызов создаёт новую область видимости для её локальных переменных.</p>
+<p>Если вы хорошо уясните для себя идею стека, то вам будет намного легче писать соответствующие рекурсивные функции.</p>
 </div>
 
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - Converting an Integer to a String in Any Base' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - Конвертирование целого числа в строку по любому основанию' data-toggle="tooltip">
     <a href="ConvertinganIntegertoaStringinAnyBase.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
   </li>
   <a class="navLinkBg" id="navLinkBgLeft"  href="ConvertinganIntegertoaStringinAnyBase.html" ></a>
   
-  <li id="relations-next" class="navLink" title='Next Section - Introduction: Visualizing Recursion' data-toggle="tooltip" >
+  <li id="relations-next" class="navLink" title='Next Section - Визуализация рекурсии' data-toggle="tooltip" >
     <a href="intro-VisualizingRecursion.html" >
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="intro-VisualizingRecursion.html" >Next Section - Introduction: Visualizing Recursion</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="intro-VisualizingRecursion.html" >Next Section - Визуализация рекурсии</a>
 
 <script type="text/javascript">
 

@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Converting an Integer to a String in Any Base &mdash; Problem Solving with Algorithms and Data Structures</title>
+    <title>Конвертирование целого числа в строку по любому основанию &mdash; Problem Solving with Algorithms and Data Structures</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -73,8 +73,8 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
-    <link rel="next" title="Stack Frames: Implementing Recursion" href="StackFramesImplementingRecursion.html" />
-    <link rel="prev" title="The Three Laws of Recursion" href="TheThreeLawsofRecursion.html" />
+    <link rel="next" title="Фрейм стека: реализация рекурсии" href="StackFramesImplementingRecursion.html" />
+    <link rel="prev" title="Три закона рекурсии" href="TheThreeLawsofRecursion.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -265,7 +265,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Converting an Integer to a String in Any Base</a></li>
+<li><a class="reference internal" href="#">Конвертирование целого числа в строку по любому основанию</a></li>
 </ul>
 </ul>
 </li>
@@ -273,13 +273,13 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
         
         
           
-  <li id="relations-prev" title="Previous Chapter - The Three Laws of Recursion" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - Три закона рекурсии" data-toggle="tooltip">
     <a href="TheThreeLawsofRecursion.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Stack Frames: Implementing Recursion' data-toggle="tooltip" >
+  <li id="relations-next" title='Next Chapter - Фрейм стека: реализация рекурсии' data-toggle="tooltip" >
     <a href="StackFramesImplementingRecursion.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
@@ -310,57 +310,22 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 
 <div class="container" id="main-content">
   
-  <div class="section" id="converting-an-integer-to-a-string-in-any-base">
-<h1>Converting an Integer to a String in Any Base<a class="headerlink" href="#converting-an-integer-to-a-string-in-any-base" title="Permalink to this headline">¶</a></h1>
-<p>Suppose you want to convert an integer to a string in some base between
-binary and hexadecimal. For example, convert the integer 10 to its
-string representation in decimal as <tt class="docutils literal"><span class="pre">&quot;10&quot;</span></tt>, or to its string
-representation in binary as <tt class="docutils literal"><span class="pre">&quot;1010&quot;</span></tt>. While there are many algorithms
-to solve this problem, including the algorithm discussed in the stack
-section, the recursive formulation of the problem is very
-elegant.</p>
-<p>Let’s look at a concrete example using base 10 and the number 769.
-Suppose we have a sequence of characters corresponding to the first 10
-digits, like <tt class="docutils literal"><span class="pre">convString</span> <span class="pre">=</span> <span class="pre">&quot;0123456789&quot;</span></tt>. It is easy to convert a
-number less than 10 to its string equivalent by looking it up in the
-sequence. For example, if the number is 9, then the string is
-<tt class="docutils literal"><span class="pre">convString[9]</span></tt> or <tt class="docutils literal"><span class="pre">&quot;9&quot;</span></tt>. If we can arrange to break up the number
-769 into three single-digit numbers, 7, 6, and 9, then converting it to
-a string is simple. A number less than 10 sounds like a good base case.</p>
-<p>Knowing what our base is suggests that the overall algorithm will
-involve three components:</p>
+  <div class="section" id="id1">
+<h1>Конвертирование целого числа в строку по любому основанию<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Предположим, вы хотите преобразовать целое число в строку по какому-либо основанию между двойкой и шестнадцатью. Например, переведём число 10 в его строковое десятичное <tt class="docutils literal"><span class="pre">&quot;10&quot;</span></tt> или двоичное <tt class="docutils literal"><span class="pre">&quot;1010&quot;</span></tt> представление. Хотя существует множество алгоритмов для решения этой задачи (в том числе, алгоритм, обсуждавшийся в разделе о стеках), рекурсивная формулировка задания самая элегантная.</p>
+<p>Давайте рассмотрим конкретный пример, используя основание 10 и число 769. Предположим, у нас есть последовательность символов, соответствующих первым десяти цифрам, - что-то вроде <tt class="docutils literal"><span class="pre">convString</span> <span class="pre">=</span> <span class="pre">&quot;0123456789&quot;</span></tt>. Тогда конвертировать число, меньшее десяти, в его строковый эквивалент очень просто: достаточно всего лишь найти его в этом перечне. Например, для числа 9 строка будет <tt class="docutils literal"><span class="pre">convString[9]</span></tt> или <tt class="docutils literal"><span class="pre">&quot;9&quot;</span></tt>. Если мы сможем организовать разбиение числа 769 на три цифры 7, 6 и 9, то конвертировать их будет просто. Вариант с числом меньше 10 очень подходит для базового случая рекурсии.</p>
+<p>Зная наше основание, можно положить, что алгоритм в целом будет включать три компонента:</p>
 <ol class="arabic simple">
-<li>Reduce the original number to a series of single-digit numbers.</li>
-<li>Convert the single digit-number to a string using a lookup.</li>
-<li>Concatenate the single-digit strings together to form the final
-result.</li>
+<li>Разбить первоначальное число на последовательность из цифр.</li>
+<li>Конвертировать каждое из них в строку с помощью поиска.</li>
+<li>Слить получившиеся односимвольные строки в одну, которая и будет конечным результатом.</li>
 </ol>
-<p>The next step is to figure out how to change state and make progress
-toward the base case. Since we are working with an integer, let’s
-consider what mathematical operations might reduce a number. The most
-likely candidates are division and subtraction. While subtraction might
-work, it is unclear what we should subtract from what. Integer division
-with remainders gives us a clear direction. Let’s look at what happens
-if we divide a number by the base we are trying to convert to.</p>
-<p>Using integer division to divide 769 by 10, we get 76 with a remainder
-of 9. This gives us two good results. First, the remainder is a number
-less than our base that can be converted to a string immediately by
-lookup. Second, we get a number that is smaller than our original and
-moves us toward the base case of having a single number less than our
-base. Now our job is to convert 76 to its string representation. Again
-we will use integer division plus remainder to get results of 7 and 6
-respectively. Finally, we have reduced the problem to converting 7,
-which we can do easily since it satisfies the base case condition of
-<span class="math">\(n &lt; base\)</span>, where <span class="math">\(base = 10\)</span>. The series of operations
-we have just performed is illustrated in <a class="reference internal" href="#fig-tostr"><em>Figure 3</em></a>. Notice that
-the numbers we want to remember are in the remainder boxes along the
-right side of the diagram.</p>
+<p>Следующий шаг - это придумать, как изменять состояние и продвигаться в строну базового случая. Поскольку мы работаем с числовыми значениями, то давайте рассмотрим, какие математические операции могут уменьшить число. Наиболее очевидными кандидатами будут деление и вычитание. Хотя последнее может работать, не совсем понятно, что из чего требуется вычитать. А вот деление нацело с получением остатка даёт нам чёткое направление. Давайте посмотрим, что произойдёт, если мы разделим число на основание, по которому пытаемся конвертировать.</p>
+<p>Разделив 769 на 10 нацело, мы получим 76 и 9 в остатке. Это даст нам два хороших результата. Во-первых, остаток меньше нашего основания, следовательно, сразу же может быть преобразован в строку. Во-вторых, у нас есть число, меньшее первоначального и приближающееся к базовому случаю. Теперь наша задача - конвертировать 76 в строковое представление. Вновь использовав деление нацело, получим 7 и 6 в остатке. Наконец, задача свелась к конвертированию 7, что может быть легко сделано, поскольку удовлетворяет условию <span class="math">\(n &lt; base\)</span> базового случая (<span class="math">\(base = 10\)</span>). Последовательность проделанных нами операций проиллюстрирована на <a class="reference internal" href="#fig-tostr"><em>рисунке 3</em></a>. Заметьте, что число, которое мы хотим запомнить, находится в коробочке остатка вдоль правого края диаграммы.</p>
 <div class="figure align-center" id="fig-tostr">
 <img alt="image" src="../_images/toStr.png" />
-<p class="caption">Figure 3: Converting an Integer to a String in Base 10</p>
 </div>
-<p><a class="reference internal" href="#lst-rectostr"><em>ActiveCode 3</em></a> shows the Python code that implements the algorithm
-outlined above for any base between 2 and 16.</p>
+<p><a class="reference internal" href="#lst-rectostr"><em>ActiveCode 3</em></a> демонстрирует код на Python, реализующий описанный выше алгоритм для любого основания между двойкой и шестнадцатью.</p>
 
 <div id="cont"></div>
 <div id="lst_rectostr" lang="python" class="ac_section alert alert-warning" >
@@ -395,7 +360,7 @@ print(toStr(1453,16))
 
 </div> 
 <div class="clearfix"></div>
-<p class="ac_caption"><span class="ac_caption_text">Recursively Converting from Integer to String (lst_rectostr)</span> </p>
+<p class="ac_caption"><span class="ac_caption_text">Рекурсивное конвертирование целого числа в строку (lst_rectostr)</span> </p>
 
 <script>
 if ('block' == 'none') {
@@ -445,30 +410,14 @@ else{
 
 </div>
 
-<p>Notice that in line 3 we check for the base case where <tt class="docutils literal"><span class="pre">n</span></tt>
-is less than the base we are converting to. When we detect the base
-case, we stop recursing and simply return the string from the
-<tt class="docutils literal"><span class="pre">convertString</span></tt> sequence. In line 6 we satisfy both the
-second and third laws–by making the recursive call and by reducing the
-problem size–using division.</p>
-<p>Let’s trace the algorithm again; this time we will convert the number 10
-to its base 2 string representation (<tt class="docutils literal"><span class="pre">&quot;1010&quot;</span></tt>).</p>
+<p>Обратите внимание, что в строке 3 мы проверяем базовый случай, в котором <tt class="docutils literal"><span class="pre">n</span></tt> должно быть меньше, чем основание, по которому мы конвертируем. Когда мы определяем базовый случай, то останавливаем рекурсию и просто возвращаем строку из последовательности <tt class="docutils literal"><span class="pre">convertString</span></tt>. Строка 6 удовлетворяет требования второго и третьего законов: делает рекурсивный вызов и уменьшает размер задачи с помощью деления.</p>
+<p>Давайте пройдём по алгоритму ещё раз. На этот раз мы будем конвертировать число 10 в его строковое представление по основанию 2 (&#8220;1010&#8221;).</p>
 <div class="figure align-center" id="fig-tostr2">
 <img alt="image" src="../_images/toStrBase2.png" />
-<p class="caption">Figure 4: Converting the Number 10 to its Base 2 String Representation</p>
 </div>
-<p><a class="reference internal" href="#fig-tostr2"><em>Figure 4</em></a> shows that we get the results we are looking for,
-but it looks like the digits are in the wrong order. The algorithm works
-correctly because we make the recursive call first on line
-6, then we add the string representation of the remainder.
-If we reversed returning the <tt class="docutils literal"><span class="pre">convertString</span></tt> lookup and returning the
-<tt class="docutils literal"><span class="pre">toStr</span></tt> call, the resulting string would be backward! But by delaying
-the concatenation operation until after the recursive call has returned,
-we get the result in the proper order. This should remind you of our
-discussion of stacks back in the previous chapter.</p>
-<div class="admonition-self-check admonition">
-<p class="first admonition-title">Self Check</p>
-<p>Write a function that takes a string as a parameter and returns a new string that is the reverse of the old string.</p>
+<p>Рисунок 4: Преобразование числа 10 в строку по основанию 2.</p>
+<p><a class="reference internal" href="#fig-tostr2"><em>Рисунок 4</em></a> показывает, что мы получаем искомый результат, вот только цифры находятся в неверном порядке. Алгоритм работает правильно, потому что мы сначала делаем рекурсивный вызов в строке 6, а затем добавляем строковое представление остатка. Если мы поменяем местами возврат из поиска по <tt class="docutils literal"><span class="pre">convertString</span></tt> и возврат из вызова <tt class="docutils literal"><span class="pre">toStr</span></tt>, то результирующая строка будет задом наперёд! Но если придержать операцию слияния до тех пор, пока не вернётся результат рекурсивного вызова, то ответ получит нужный порядок. Это должно напомнить вам наше обсуждение обратной работы стека в предыдущей главе.</p>
+<p>Напишите функцию, которая принимает строку в качестве параметра и возвращает её же, но задом наперёд.</p>
 
 <div id="cont"></div>
 <div id="recursion_sc_1" lang="python" class="ac_section alert alert-warning" >
@@ -559,18 +508,17 @@ else{
 
 </div>
 
-<p>Write a function that takes a string as a parameter and returns True if the string is a palindrome, False otherwise.  Remember that a string is a palindrome if it is spelled the same both forward and backward.  for example:  radar is a palindrome.  for bonus points palindromes can also be phrases, but you need to remove the spaces and punctuation before checking.  for example:  madam i&#8217;m adam  is a palindrome.  Other fun palindromes include:</p>
-<ul class="simple">
-<li>kayak</li>
-<li>aibohphobia</li>
-<li>Live not on evil</li>
-<li>Reviled did I live, said I, as evil I did deliver</li>
-<li>Go hang a salami; I&#8217;m a lasagna hog.</li>
-<li>Able was I ere I saw Elba</li>
-<li>Kanakanak &#8211;  a town in Alaska</li>
-<li>Wassamassaw &#8211; a town in South Dakota</li>
-</ul>
-
+<p>Напишите функцию, которая принимает строку в качестве параметра и возвращает истину в случае палиндрома, ложь - в обратном. Напомним, что строка является ппалиндромом, если одинаково читается справа налево и слева направо. Например, radar - это палиндром. Словосочетания тоже могут быть палиндромами, но прежде из них нужно удалить все пробелы и знаки препинания. Например, madam i’m adam - это палиндром. Вот ещё несколько забавных палиндромов:
+* kayak
+* aibohphobia
+* Live not on evil
+* Reviled did I live, said I, as evil I did deliver
+* Go hang a salami; I’m a lasagna hog.
+* Able was I ere I saw Elba
+* Kanakanak – a town in Alaska
+* Wassamassaw – a town in South Dakota</p>
+<blockquote>
+<div>
 <div id="cont"></div>
 <div id="recursion_sc_2" lang="python" class="ac_section alert alert-warning" >
 
@@ -665,25 +613,25 @@ else{
 
 </div>
 
-</div>
+</div></blockquote>
 </div>
 
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - The Three Laws of Recursion' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - Три закона рекурсии' data-toggle="tooltip">
     <a href="TheThreeLawsofRecursion.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
   </li>
   <a class="navLinkBg" id="navLinkBgLeft"  href="TheThreeLawsofRecursion.html" ></a>
   
-  <li id="relations-next" class="navLink" title='Next Section - Stack Frames: Implementing Recursion' data-toggle="tooltip" >
+  <li id="relations-next" class="navLink" title='Next Section - Фрейм стека: реализация рекурсии' data-toggle="tooltip" >
     <a href="StackFramesImplementingRecursion.html" >
       <i id="relationsNextIcon" class='nextNav glyphicon glyphicon-chevron-right'></i>
     </a>
   </li>
-  <a class="navLinkBg navLink" id="navLinkBgRight" href="StackFramesImplementingRecursion.html" >Next Section - Stack Frames: Implementing Recursion</a>
+  <a class="navLinkBg navLink" id="navLinkBgRight" href="StackFramesImplementingRecursion.html" >Next Section - Фрейм стека: реализация рекурсии</a>
 
 <script type="text/javascript">
 
