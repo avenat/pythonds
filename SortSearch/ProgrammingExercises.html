@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Programming Exercises &mdash; Problem Solving with Algorithms and Data Structures</title>
+    <title>Упражнения для программирования &mdash; Problem Solving with Algorithms and Data Structures</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -74,7 +74,7 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="Problem Solving with Algorithms and Data Structures" href="../index.html" />
     <link rel="next" title="Objectives" href="../Trees/Objectives.html" />
-    <link rel="prev" title="Discussion Questions" href="DiscussionQuestions.html" />
+    <link rel="prev" title="Вопросы для обсуждения" href="DiscussionQuestions.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -265,7 +265,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Programming Exercises</a></li>
+<li><a class="reference internal" href="#">Упражнения для программирования</a></li>
 </ul>
 </ul>
 </li>
@@ -273,7 +273,7 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
         
         
           
-  <li id="relations-prev" title="Previous Chapter - Discussion Questions" data-toggle="tooltip">
+  <li id="relations-prev" title="Previous Chapter - Вопросы для обсуждения" data-toggle="tooltip">
     <a href="DiscussionQuestions.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
@@ -310,63 +310,32 @@ var _prum = [['id', '521dfcc4abe53d0749000000'],
 
 <div class="container" id="main-content">
   
-  <div class="section" id="programming-exercises">
-<h1>Programming Exercises<a class="headerlink" href="#programming-exercises" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="id1">
+<h1>Упражнения для программирования<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <ol class="arabic simple">
-<li>Set up a random experiment to test the difference between a
-sequential search and a binary search on a list of integers.</li>
-<li>Use the binary search functions given in the text (recursive and
-iterative). Generate a random, ordered list of integers and do a
-benchmark analysis for each one. What are your results? Can you
-explain them?</li>
-<li>Implement the binary search using recursion without the slice
-operator. Recall that you will need to pass the list along with the
-starting and ending index values for the sublist. Generate a random,
-ordered list of integers and do a benchmark analysis.</li>
-<li>Implement the <tt class="docutils literal"><span class="pre">len</span></tt> method (__len__) for the hash table Map ADT
-implementation.</li>
-<li>Implement the <tt class="docutils literal"><span class="pre">in</span></tt> method (__contains__) for the hash table Map
-ADT implementation.</li>
-<li>How can you delete items from a hash table that uses chaining for
-collision resolution? How about if open addressing is used? What are
-the special circumstances that must be handled? Implement the <tt class="docutils literal"><span class="pre">del</span></tt>
-method for the <tt class="docutils literal"><span class="pre">HashTable</span></tt> class.</li>
-<li>In the hash table map implementation, the hash table size was chosen
-to be 101. If the table gets full, this needs to be increased.
-Re-implement the <tt class="docutils literal"><span class="pre">put</span></tt> method so that the table will automatically
-resize itself when the loading factor reaches a predetermined value
-(you can decide the value based on your assessment of load versus
-performance).</li>
-<li>Implement quadratic probing as a rehash technique.</li>
-<li>Using a random number generator, create a list of 500 integers.
-Perform a benchmark analysis using some of the sorting algorithms
-from this chapter. What is the difference in execution speed?</li>
-<li>Implement the bubble sort using simultaneous assignment.</li>
-<li>A bubble sort can be modified to “bubble” in both directions. The
-first pass moves “up” the list, and the second pass moves “down.”
-This alternating pattern continues until no more passes are
-necessary. Implement this variation and describe under what
-circumstances it might be appropriate.</li>
-<li>Implement the selection sort using simultaneous assignment.</li>
-<li>Perform a benchmark analysis for a shell sort, using different
-increment sets on the same list.</li>
-<li>Implement the <tt class="docutils literal"><span class="pre">mergeSort</span></tt> function without using the slice
-operator.</li>
-<li>One way to improve the quick sort is to use an insertion sort on
-lists that have a small length (call it the “partition limit”). Why
-does this make sense? Re-implement the quick sort and use it to sort
-a random list of integers. Perform an analysis using different list
-sizes for the partition limit.</li>
-<li>Implement the median-of-three method for selecting a pivot value as a
-modification to <tt class="docutils literal"><span class="pre">quickSort</span></tt>. Run an experiment to compare the two
-techniques.</li>
+<li>Проведите эксперимент по тестированию различий между последовательным и бинарным поиском на списке случайных целых чисел.</li>
+<li>Используйте функции бинарного поиска, данные в тексте (итеративную и рекурсивную). Сгенерируйте упорядоченный список случайных целых чисел и сделайте сравнительный анализ для каждой. Какие результаты вы получили? Можете ли вы их объяснить?</li>
+<li>Реализуйте бинарный поиск, используя рекурсию без оператора среза. Напоминаем, что для этого вам нужно передать в функцию начальный и конечный индексы подсписка. Сгенерируйте упорядоченный список случайных значений и проведите сравнительный анализ.</li>
+<li>Реализуйте метод <tt class="docutils literal"><span class="pre">len</span></tt> (<tt class="docutils literal"><span class="pre">__len__</span></tt>) для хэш-таблицы реализации АТД Map.</li>
+<li>Реализуйте метод <tt class="docutils literal"><span class="pre">in</span></tt> (<tt class="docutils literal"><span class="pre">__contains__</span></tt>) для хэш-таблицы реализации АТД Map.</li>
+<li>Как вы можете удалять элементы из хэш-таблицы, использующей цепочки для разрешения коллизий? А если используется открытая адресация? Какие особые случаи должны обрабатываться? Реализуйте метод <tt class="docutils literal"><span class="pre">del</span></tt> для класса <tt class="docutils literal"><span class="pre">HashTable</span></tt>.</li>
+<li>Для хэш-таблицы реализации отображения выбран размер 11. Если таблица полна, его требуется увеличить. Переделайте метод <tt class="docutils literal"><span class="pre">put</span></tt> таким образом, чтобы таблица автоматически меняла размер, когда загрузочный фактор достигает предопределённого значения (его вы можете определить, основываясь на оценке &#8220;загрузка vs производительность&#8221;).</li>
+<li>Реализуйте квадратичное сканирование как технику повторного хэширования.</li>
+<li>Создайте список из 500 целых, используя генератор случайных чисел. Проведите сравнительный анализ, используя любые алгоритмы сортировки из этой главы. Каковы различия в скорости выполнения?</li>
+<li>Реализуйте сортировку пузырьком, руководствуясь аналогичным заданием.</li>
+<li>Пузырьковая сортировка может быть изменена, чтобы &#8220;пузыриться&#8221; в обоих направлениях. Первый проход перемещает &#8220;верх&#8221; списка, второй - &#8220;низ&#8221;. Этот альтернативный шаблон продолжается, пока не иссякнет необходимость в проходах. Воплотите этот вариант и опишите, в каких обстоятельствах он может использоваться.</li>
+<li>Реализуйте сортировку выбором, используя аналогичное задание.</li>
+<li>Проведите сравнительный анализ для сортировки Шелла, используя различные наборы инкрементов на одном и том же списке.</li>
+<li>Реализуйте функцию <tt class="docutils literal"><span class="pre">mergeSort</span></tt> без оператора среза.</li>
+<li>Одним из способов улучшить быструю сортировку является использование сортирки вставками на списках малой длины (назовите её &#8220;пределом деления&#8221;). Почему это работает? Реализуйте заново быструю сортировку и используйте её для сортировки списка случайных целых чисел. Проанализируйте результат использования различных величин для предела деления.</li>
+<li>Реализуйте метод &#8220;медианы трёх&#8221; для выбора опорного значения, как модификацию <tt class="docutils literal"><span class="pre">quickSort</span></tt>. Запустите эксперимент по сравнению двух техник.</li>
 </ol>
 </div>
 
 
   
       
-  <li id="relations-prev" class="navLink" title='Previous Section - Discussion Questions' data-toggle="tooltip">
+  <li id="relations-prev" class="navLink" title='Previous Section - Вопросы для обсуждения' data-toggle="tooltip">
     <a href="DiscussionQuestions.html" >
       <i class='prevNav glyphicon glyphicon-chevron-left'></i>
     </a>
